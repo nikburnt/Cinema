@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
 		1C7F66EF2465AC9300781406 /* backyardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66EE2465AC9300781406 /* backyardTests.swift */; };
-		1C7F66F62466A1FC00781406 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* Vapor */; };
-		1C7F66F92466A22400781406 /* FluentMySQL in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F82466A22400781406 /* FluentMySQL */; };
-		1C7F66FC2466A26600781406 /* Mailgun in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66FB2466A26600781406 /* Mailgun */; };
-		1C7F66FF2466A29200781406 /* CrudRouter in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66FE2466A29200781406 /* CrudRouter */; };
-		1C7F67022466A2B100781406 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67012466A2B100781406 /* SwiftyBeaver */; };
-		1C7F67052466A2E300781406 /* SwiftyBeaverProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67042466A2E300781406 /* SwiftyBeaverProvider */; };
-		1C7F67082466A32200781406 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67072466A32200781406 /* PromiseKit */; };
-		1C7F670B2466A34700781406 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F670A2466A34700781406 /* Rainbow */; };
-		1C7F670E2466A36C00781406 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F670D2466A36C00781406 /* ArgumentParser */; };
+		1C7F66F62466A1FC00781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* SwiftPackageProductDependency */; };
+		1C7F66F92466A22400781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F82466A22400781406 /* SwiftPackageProductDependency */; };
+		1C7F66FC2466A26600781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66FB2466A26600781406 /* SwiftPackageProductDependency */; };
+		1C7F66FF2466A29200781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66FE2466A29200781406 /* SwiftPackageProductDependency */; };
+		1C7F67022466A2B100781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67012466A2B100781406 /* SwiftPackageProductDependency */; };
+		1C7F67052466A2E300781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67042466A2E300781406 /* SwiftPackageProductDependency */; };
+		1C7F67082466A32200781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67072466A32200781406 /* SwiftPackageProductDependency */; };
+		1C7F670B2466A34700781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F670A2466A34700781406 /* SwiftPackageProductDependency */; };
+		1C7F670E2466A36C00781406 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F670D2466A36C00781406 /* SwiftPackageProductDependency */; };
+		C46E562210D6D593D87373A4 /* libPods-backyardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5A1C393E6A2B3FDCBA0B94 /* libPods-backyardTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,9 @@
 		1C7F66EE2465AC9300781406 /* backyardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backyardTests.swift; sourceTree = "<group>"; };
 		1C7F66F02465AC9300781406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C7F670F2466A39A00781406 /* backyard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = backyard.entitlements; sourceTree = "<group>"; };
+		1D5A1C393E6A2B3FDCBA0B94 /* libPods-backyardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-backyardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9432C17CA99213945AC015B6 /* Pods-backyardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backyardTests.release.xcconfig"; path = "Target Support Files/Pods-backyardTests/Pods-backyardTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C1CFA922EAC3B51ACCD7BA9 /* Pods-backyardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backyardTests.debug.xcconfig"; path = "Target Support Files/Pods-backyardTests/Pods-backyardTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,15 +50,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7F66FC2466A26600781406 /* Mailgun in Frameworks */,
-				1C7F670B2466A34700781406 /* Rainbow in Frameworks */,
-				1C7F66FF2466A29200781406 /* CrudRouter in Frameworks */,
-				1C7F670E2466A36C00781406 /* ArgumentParser in Frameworks */,
-				1C7F67052466A2E300781406 /* SwiftyBeaverProvider in Frameworks */,
-				1C7F67022466A2B100781406 /* SwiftyBeaver in Frameworks */,
-				1C7F66F62466A1FC00781406 /* Vapor in Frameworks */,
-				1C7F67082466A32200781406 /* PromiseKit in Frameworks */,
-				1C7F66F92466A22400781406 /* FluentMySQL in Frameworks */,
+				1C7F66FC2466A26600781406 /* BuildFile in Frameworks */,
+				1C7F670B2466A34700781406 /* BuildFile in Frameworks */,
+				1C7F66FF2466A29200781406 /* BuildFile in Frameworks */,
+				1C7F670E2466A36C00781406 /* BuildFile in Frameworks */,
+				1C7F67052466A2E300781406 /* BuildFile in Frameworks */,
+				1C7F67022466A2B100781406 /* BuildFile in Frameworks */,
+				1C7F66F62466A1FC00781406 /* BuildFile in Frameworks */,
+				1C7F67082466A32200781406 /* BuildFile in Frameworks */,
+				1C7F66F92466A22400781406 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46E562210D6D593D87373A4 /* libPods-backyardTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,8 @@
 				1C7F66E02465AB5300781406 /* backyard */,
 				1C7F66ED2465AC9300781406 /* backyardTests */,
 				1C7F66DF2465AB5300781406 /* Products */,
+				D3C28A0F5A7DC752B0DF9F50 /* Pods */,
+				FCE2F8602818F85CC55CBF19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +111,24 @@
 			path = backyardTests;
 			sourceTree = "<group>";
 		};
+		D3C28A0F5A7DC752B0DF9F50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CFA922EAC3B51ACCD7BA9 /* Pods-backyardTests.debug.xcconfig */,
+				9432C17CA99213945AC015B6 /* Pods-backyardTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		FCE2F8602818F85CC55CBF19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D5A1C393E6A2B3FDCBA0B94 /* libPods-backyardTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,15 +146,15 @@
 			);
 			name = backyard;
 			packageProductDependencies = (
-				1C7F66F52466A1FC00781406 /* Vapor */,
-				1C7F66F82466A22400781406 /* FluentMySQL */,
-				1C7F66FB2466A26600781406 /* Mailgun */,
-				1C7F66FE2466A29200781406 /* CrudRouter */,
-				1C7F67012466A2B100781406 /* SwiftyBeaver */,
-				1C7F67042466A2E300781406 /* SwiftyBeaverProvider */,
-				1C7F67072466A32200781406 /* PromiseKit */,
-				1C7F670A2466A34700781406 /* Rainbow */,
-				1C7F670D2466A36C00781406 /* ArgumentParser */,
+				1C7F66F52466A1FC00781406 /* SwiftPackageProductDependency */,
+				1C7F66F82466A22400781406 /* SwiftPackageProductDependency */,
+				1C7F66FB2466A26600781406 /* SwiftPackageProductDependency */,
+				1C7F66FE2466A29200781406 /* SwiftPackageProductDependency */,
+				1C7F67012466A2B100781406 /* SwiftPackageProductDependency */,
+				1C7F67042466A2E300781406 /* SwiftPackageProductDependency */,
+				1C7F67072466A32200781406 /* SwiftPackageProductDependency */,
+				1C7F670A2466A34700781406 /* SwiftPackageProductDependency */,
+				1C7F670D2466A36C00781406 /* SwiftPackageProductDependency */,
 			);
 			productName = backyard;
 			productReference = 1C7F66DE2465AB5300781406 /* backyard */;
@@ -139,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C7F66F12465AC9300781406 /* Build configuration list for PBXNativeTarget "backyardTests" */;
 			buildPhases = (
+				282A4CA3C16C7CD5AB9C3A5C /* [CP] Check Pods Manifest.lock */,
 				1C7F66E82465AC9300781406 /* Sources */,
 				1C7F66E92465AC9300781406 /* Frameworks */,
 				1C7F66EA2465AC9300781406 /* Resources */,
@@ -180,15 +206,15 @@
 			);
 			mainGroup = 1C7F66D52465AB5300781406;
 			packageReferences = (
-				1C7F66F42466A1FB00781406 /* XCRemoteSwiftPackageReference "vapor" */,
-				1C7F66F72466A22400781406 /* XCRemoteSwiftPackageReference "fluent-mysql-driver" */,
-				1C7F66FA2466A26600781406 /* XCRemoteSwiftPackageReference "VaporMailgunService" */,
-				1C7F66FD2466A29200781406 /* XCRemoteSwiftPackageReference "VaporCRUDRouter" */,
-				1C7F67002466A2B100781406 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
-				1C7F67032466A2E300781406 /* XCRemoteSwiftPackageReference "swiftybeaver-provider" */,
-				1C7F67062466A32200781406 /* XCRemoteSwiftPackageReference "PromiseKit" */,
-				1C7F67092466A34600781406 /* XCRemoteSwiftPackageReference "Rainbow" */,
-				1C7F670C2466A36C00781406 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				1C7F66F42466A1FB00781406 /* RemoteSwiftPackageReference */,
+				1C7F66F72466A22400781406 /* RemoteSwiftPackageReference */,
+				1C7F66FA2466A26600781406 /* RemoteSwiftPackageReference */,
+				1C7F66FD2466A29200781406 /* RemoteSwiftPackageReference */,
+				1C7F67002466A2B100781406 /* RemoteSwiftPackageReference */,
+				1C7F67032466A2E300781406 /* RemoteSwiftPackageReference */,
+				1C7F67062466A32200781406 /* RemoteSwiftPackageReference */,
+				1C7F67092466A34600781406 /* RemoteSwiftPackageReference */,
+				1C7F670C2466A36C00781406 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 1C7F66DF2465AB5300781406 /* Products */;
 			projectDirPath = "";
@@ -209,6 +235,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		282A4CA3C16C7CD5AB9C3A5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-backyardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C7F66DA2465AB5300781406 /* Sources */ = {
@@ -369,6 +420,7 @@
 		};
 		1C7F66F22465AC9300781406 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C1CFA922EAC3B51ACCD7BA9 /* Pods-backyardTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -387,6 +439,7 @@
 		};
 		1C7F66F32465AC9300781406 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9432C17CA99213945AC015B6 /* Pods-backyardTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -436,7 +489,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1C7F66F42466A1FB00781406 /* XCRemoteSwiftPackageReference "vapor" */ = {
+		1C7F66F42466A1FB00781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vapor/vapor.git";
 			requirement = {
@@ -444,7 +497,7 @@
 				minimumVersion = 3.3.0;
 			};
 		};
-		1C7F66F72466A22400781406 /* XCRemoteSwiftPackageReference "fluent-mysql-driver" */ = {
+		1C7F66F72466A22400781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vapor/fluent-mysql-driver.git";
 			requirement = {
@@ -452,7 +505,7 @@
 				minimumVersion = 3.1.0;
 			};
 		};
-		1C7F66FA2466A26600781406 /* XCRemoteSwiftPackageReference "VaporMailgunService" */ = {
+		1C7F66FA2466A26600781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twof/VaporMailgunService.git";
 			requirement = {
@@ -460,7 +513,7 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		1C7F66FD2466A29200781406 /* XCRemoteSwiftPackageReference "VaporCRUDRouter" */ = {
+		1C7F66FD2466A29200781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twof/VaporCRUDRouter.git";
 			requirement = {
@@ -468,7 +521,7 @@
 				minimumVersion = 1.7.0;
 			};
 		};
-		1C7F67002466A2B100781406 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+		1C7F67002466A2B100781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
 			requirement = {
@@ -476,7 +529,7 @@
 				minimumVersion = 1.9.1;
 			};
 		};
-		1C7F67032466A2E300781406 /* XCRemoteSwiftPackageReference "swiftybeaver-provider" */ = {
+		1C7F67032466A2E300781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vapor-community/swiftybeaver-provider.git";
 			requirement = {
@@ -484,7 +537,7 @@
 				minimumVersion = 3.1.1;
 			};
 		};
-		1C7F67062466A32200781406 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+		1C7F67062466A32200781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
 			requirement = {
@@ -492,7 +545,7 @@
 				minimumVersion = 6.13.1;
 			};
 		};
-		1C7F67092466A34600781406 /* XCRemoteSwiftPackageReference "Rainbow" */ = {
+		1C7F67092466A34600781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Rainbow";
 			requirement = {
@@ -500,7 +553,7 @@
 				minimumVersion = 3.1.5;
 			};
 		};
-		1C7F670C2466A36C00781406 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+		1C7F670C2466A36C00781406 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-argument-parser";
 			requirement = {
@@ -511,49 +564,49 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1C7F66F52466A1FC00781406 /* Vapor */ = {
+		1C7F66F52466A1FC00781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F66F42466A1FB00781406 /* XCRemoteSwiftPackageReference "vapor" */;
+			package = 1C7F66F42466A1FB00781406 /* RemoteSwiftPackageReference */;
 			productName = Vapor;
 		};
-		1C7F66F82466A22400781406 /* FluentMySQL */ = {
+		1C7F66F82466A22400781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F66F72466A22400781406 /* XCRemoteSwiftPackageReference "fluent-mysql-driver" */;
+			package = 1C7F66F72466A22400781406 /* RemoteSwiftPackageReference */;
 			productName = FluentMySQL;
 		};
-		1C7F66FB2466A26600781406 /* Mailgun */ = {
+		1C7F66FB2466A26600781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F66FA2466A26600781406 /* XCRemoteSwiftPackageReference "VaporMailgunService" */;
+			package = 1C7F66FA2466A26600781406 /* RemoteSwiftPackageReference */;
 			productName = Mailgun;
 		};
-		1C7F66FE2466A29200781406 /* CrudRouter */ = {
+		1C7F66FE2466A29200781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F66FD2466A29200781406 /* XCRemoteSwiftPackageReference "VaporCRUDRouter" */;
+			package = 1C7F66FD2466A29200781406 /* RemoteSwiftPackageReference */;
 			productName = CrudRouter;
 		};
-		1C7F67012466A2B100781406 /* SwiftyBeaver */ = {
+		1C7F67012466A2B100781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F67002466A2B100781406 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			package = 1C7F67002466A2B100781406 /* RemoteSwiftPackageReference */;
 			productName = SwiftyBeaver;
 		};
-		1C7F67042466A2E300781406 /* SwiftyBeaverProvider */ = {
+		1C7F67042466A2E300781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F67032466A2E300781406 /* XCRemoteSwiftPackageReference "swiftybeaver-provider" */;
+			package = 1C7F67032466A2E300781406 /* RemoteSwiftPackageReference */;
 			productName = SwiftyBeaverProvider;
 		};
-		1C7F67072466A32200781406 /* PromiseKit */ = {
+		1C7F67072466A32200781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F67062466A32200781406 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			package = 1C7F67062466A32200781406 /* RemoteSwiftPackageReference */;
 			productName = PromiseKit;
 		};
-		1C7F670A2466A34700781406 /* Rainbow */ = {
+		1C7F670A2466A34700781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F67092466A34600781406 /* XCRemoteSwiftPackageReference "Rainbow" */;
+			package = 1C7F67092466A34600781406 /* RemoteSwiftPackageReference */;
 			productName = Rainbow;
 		};
-		1C7F670D2466A36C00781406 /* ArgumentParser */ = {
+		1C7F670D2466A36C00781406 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7F670C2466A36C00781406 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			package = 1C7F670C2466A36C00781406 /* RemoteSwiftPackageReference */;
 			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */
