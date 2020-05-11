@@ -87,14 +87,15 @@ struct CommandLineApp: ParsableCommand {
     // MARK: - ParsableCommand
 
     func run() throws {
-        let command = Command(rawValue: self.command ?? "") ?? Command.start
+        CommandLineApp.processor?.initialize(host: self.host ?? defaultHost,
+                                          login: self.login ?? defaultLogin,
+                                          password: self.password ?? defaultPassword,
+                                          database: self.database ?? defaultDatabase)
 
+        let command = Command(rawValue: self.command ?? "") ?? Command.start
         switch command {
         case .start:
-            CommandLineApp.processor?.initialize(host: self.host ?? defaultHost,
-                                              login: self.login ?? defaultLogin,
-                                              password: self.password ?? defaultPassword,
-                                              database: self.database ?? defaultDatabase)
+            CommandLineApp.processor?.start()
 
         case .addStaff:
             if let email = self.email {

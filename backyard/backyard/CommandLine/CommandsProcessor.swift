@@ -17,6 +17,7 @@ protocol CommandsProcessor {
 
     func initialize(host: String, login: String, password: String, database: String)
 
+    func start()
     func addStaff(with email: String)
     func removeStaff(with email: String)
 
