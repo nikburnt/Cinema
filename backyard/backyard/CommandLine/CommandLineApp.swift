@@ -1,5 +1,5 @@
 //
-//  Application.swift
+//  CommandLineApp.swift
 //  backyard
 //
 //  Created by Nik Burnt on 5/9/20.
@@ -19,33 +19,27 @@ private enum Command: String {
 }
 
 
+// MARK: - CommandLineAppErrors
+
+private enum CommandLineAppErrors: Error {
+    case emailNotSpecified(command: Command)
+}
+
+
 // MARK: - Private Constants
 
 private let defaultHost = "127.0.0.1"
 private let defaultLogin = "root"
 private let defaultPassword = ""
+private let defaultDatabase = "cinema"
 private let defaultCommand = Command.start
 
 extension ArgumentHelp {
 
-    static var interactiveMode: ArgumentHelp { ArgumentHelp(
-        "launch the app with an interactive command-line interface".bold,
-        discussion: "We heavily suggest using this mode in the production against using login/password arguments".lightYellow
-    ) }
-
     static var host: ArgumentHelp { ArgumentHelp("mysql server host address; default = \(defaultHost)".bold) }
-
-    static var login: ArgumentHelp { ArgumentHelp(
-        "login for mysql server; default = \(defaultLogin)".bold,
-        discussion: "Only for test and debug purpose, never use this way of initialization in production".lightRed.underline
-    ) }
-
-    static var password: ArgumentHelp { ArgumentHelp(
-        "password for mysql server; default = <empty>".bold,
-        discussion: "Only for test and debug purpose, never use this way of initialization in production".lightRed.underline
-    ) }
-
-    static var database: ArgumentHelp { ArgumentHelp("database name. default = cinema".bold) }
+    static var login: ArgumentHelp { ArgumentHelp("login for mysql server; default = \(defaultLogin)".bold) }
+    static var password: ArgumentHelp { ArgumentHelp("password for mysql server; default = <empty>".bold) }
+    static var database: ArgumentHelp { ArgumentHelp("database name. default = \(defaultDatabase)".bold) }
 
     static var command: ArgumentHelp { ArgumentHelp(
         "command to execute; default = \(defaultCommand.rawValue)".bold,
@@ -62,12 +56,9 @@ extension ArgumentHelp {
 
 // MARK: - Application
 
-struct Application: ParsableCommand {
+struct CommandLineApp: ParsableCommand {
 
     // MARK: - CLI Options
-
-    @Flag(help: .interactiveMode)
-    var interactiveMode: Bool
 
     @Option(help: .host)
     var host: String?
@@ -96,15 +87,39 @@ struct Application: ParsableCommand {
     // MARK: - ParsableCommand
 
     func run() throws {
-        // TODO: - Process parsed command
+        let command = Command(rawValue: self.command ?? "") ?? Command.start
+
+        switch command {
+        case .start:
+            CommandLineApp.processor?.initialize(host: self.host ?? defaultHost,
+                                              login: self.login ?? defaultLogin,
+                                              password: self.password ?? defaultPassword,
+                                              database: self.database ?? defaultDatabase)
+
+        case .addStaff:
+            if let email = self.email {
+                CommandLineApp.processor?.addStaff(with: email)
+            } else {
+                throw CommandLineAppErrors.emailNotSpecified(command: command)
+            }
+
+        case .removeStaf:
+            if let email = self.email {
+                CommandLineApp.processor?.removeStaff(with: email)
+            } else {
+                throw CommandLineAppErrors.emailNotSpecified(command: command)
+            }
+        }
     }
 
-    
+
     // MARK: - Public Methods
 
-    static func run(using processor: CommandsProcessor, arguments: [String]? = nil) -> Never {
+    static func run(using processor: CommandsProcessor, arguments: [String]? = nil) throws {
         self.processor = processor
-        Application.main(arguments)
+
+        let command = try parseAsRoot(arguments)
+        try command.run()
     }
 
 }
