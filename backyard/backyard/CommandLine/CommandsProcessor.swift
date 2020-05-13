@@ -13,11 +13,13 @@ import Foundation
 
 protocol CommandsProcessor {
 
-    func launchInInteractiveMode()
-
-    func initialize(host: String, login: String, password: String, database: String)
+    // Should always be called before any actions performed; otherwise, the app will crash
+    // Database connection setup function, this check is not needed here
+    // swiftlint:disable function_parameter_count
+    func initialize(host: String, port: Int, login: String, password: String, database: String)
 
     func start()
+    func listStaff()
     func addStaff(with email: String)
     func removeStaff(with email: String)
 

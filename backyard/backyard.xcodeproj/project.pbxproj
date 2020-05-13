@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
 		1C7F66F62466A1FC00781406 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* Vapor */; };
 		1C7F66F92466A22400781406 /* FluentMySQL in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F82466A22400781406 /* FluentMySQL */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F66E12465AB5300781406 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1C7F66EC2465AC9300781406 /* backyardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = backyardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C7D0BF9246B4DAB00139D45 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				1C7D0BFA246B4E0B00139D45 /* Backyard.swift */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
 		1C7F66D52465AB5300781406 = {
 			isa = PBXGroup;
 			children = (
@@ -122,10 +132,10 @@
 		1C7F66E02465AB5300781406 /* backyard */ = {
 			isa = PBXGroup;
 			children = (
-				1C80204F24698DC6004031A1 /* New Group */,
+				1C7D0BF9246B4DAB00139D45 /* Facade */,
 				1CCAF1732466C28B00CEF646 /* CommandLine */,
-				1C7F670F2466A39A00781406 /* backyard.entitlements */,
 				1C7F66E12465AB5300781406 /* main.swift */,
+				1C7F670F2466A39A00781406 /* backyard.entitlements */,
 			);
 			path = backyard;
 			sourceTree = "<group>";
@@ -137,13 +147,6 @@
 				1C7F66F02465AC9300781406 /* Info.plist */,
 			);
 			path = backyardTests;
-			sourceTree = "<group>";
-		};
-		1C80204F24698DC6004031A1 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		1CCAF1732466C28B00CEF646 /* CommandLine */ = {
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C7F66E22465AB5300781406 /* main.swift in Sources */,
+				1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */,
 				1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */,
 				1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */,
 			);
