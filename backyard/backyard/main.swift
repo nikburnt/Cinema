@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import SwiftyBeaver
+
 
 do {
+    SwiftyBeaver.configure()
     try CommandLineApp.run(using: Backyard())
 } catch {
     CommandLineApp.exit(withError: error)
