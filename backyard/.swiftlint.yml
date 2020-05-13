@@ -311,7 +311,7 @@ no_grouping_extension: error
 no_space_in_method_call: warning
 number_separator:
   severity: warning
-  minimum_length: 0
+  minimum_length: 5
 object_literal:
   severity: warning
   image_literal: true

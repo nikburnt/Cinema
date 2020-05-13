@@ -8,5 +8,10 @@
 
 import Foundation
 
+do {
+    try CommandLineApp.run(using: Backyard())
+} catch {
+    CommandLineApp.exit(withError: error)
+}
 
-//Application.run(using: Backyard())
+RunLoop.main.run()

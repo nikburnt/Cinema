@@ -14,6 +14,7 @@ import Rainbow
 
 private enum Command: String {
     case start
+    case listStaff
     case addStaff
     case removeStaf
 }
@@ -29,6 +30,7 @@ private enum CommandLineAppErrors: Error {
 // MARK: - Private Constants
 
 private let defaultHost = "127.0.0.1"
+private let defaultPort = 3306
 private let defaultLogin = "root"
 private let defaultPassword = ""
 private let defaultDatabase = "cinema"
@@ -37,6 +39,7 @@ private let defaultCommand = Command.start
 extension ArgumentHelp {
 
     static var host: ArgumentHelp { ArgumentHelp("mysql server host address; default = \(defaultHost)".bold) }
+    static var port: ArgumentHelp { ArgumentHelp("mysql server port; default = \(defaultPort)".bold) }
     static var login: ArgumentHelp { ArgumentHelp("login for mysql server; default = \(defaultLogin)".bold) }
     static var password: ArgumentHelp { ArgumentHelp("password for mysql server; default = <empty>".bold) }
     static var database: ArgumentHelp { ArgumentHelp("database name. default = \(defaultDatabase)".bold) }
@@ -45,6 +48,7 @@ extension ArgumentHelp {
         "command to execute; default = \(defaultCommand.rawValue)".bold,
         discussion: "Execute one of the following commands:\n"
             + "\t  \(Command.start.rawValue.underline) - starts backyard server with specified parameters\n"
+            + "  \(Command.listStaff.rawValue.underline) - display the staff list\n"
             + "  \(Command.addStaff.rawValue.underline) - add staff user with specified email; the password will be sent by email\n"
             + "  \(Command.removeStaf.rawValue.underline) - remove staff user with specified email; confirmation will be required"
     ) }
@@ -62,6 +66,9 @@ struct CommandLineApp: ParsableCommand {
 
     @Option(help: .host)
     var host: String?
+
+    @Option(help: .port)
+    var port: Int?
 
     @Option(help: .login)
     var login: String?
@@ -87,14 +94,19 @@ struct CommandLineApp: ParsableCommand {
     // MARK: - ParsableCommand
 
     func run() throws {
-        let command = Command(rawValue: self.command ?? "") ?? Command.start
+        CommandLineApp.processor?.initialize(host: self.host ?? defaultHost,
+                                             port: self.port ?? defaultPort,
+                                             login: self.login ?? defaultLogin,
+                                             password: self.password ?? defaultPassword,
+                                             database: self.database ?? defaultDatabase)
 
+        let command = Command(rawValue: self.command ?? "") ?? Command.start
         switch command {
         case .start:
-            CommandLineApp.processor?.initialize(host: self.host ?? defaultHost,
-                                              login: self.login ?? defaultLogin,
-                                              password: self.password ?? defaultPassword,
-                                              database: self.database ?? defaultDatabase)
+            CommandLineApp.processor?.start()
+
+        case .listStaff:
+            CommandLineApp.processor?.listStaff()
 
         case .addStaff:
             if let email = self.email {
