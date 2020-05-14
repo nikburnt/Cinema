@@ -14,9 +14,9 @@ import Rainbow
 
 private enum Command: String {
     case start
-    case listStaff
-    case addStaff
-    case removeStaf
+    case listStaff = "list"
+    case addStaff = "add"
+    case removeStaf = "remove"
 }
 
 
@@ -48,9 +48,9 @@ extension ArgumentHelp {
         "command to execute; default = \(defaultCommand.rawValue)".bold,
         discussion: "Execute one of the following commands:\n"
             + "\t  \(Command.start.rawValue.underline) - starts backyard server with specified parameters\n"
-            + "  \(Command.listStaff.rawValue.underline) - display the staff list\n"
+            + "\t \(Command.listStaff.rawValue.underline) - display the staff list\n"
             + "  \(Command.addStaff.rawValue.underline) - add staff user with specified email; the password will be sent by email\n"
-            + "  \(Command.removeStaf.rawValue.underline) - remove staff user with specified email; confirmation will be required"
+            + "  \(Command.removeStaf.rawValue.underline) - remove staff user with specified email"
     ) }
 
     static var email: ArgumentHelp { ArgumentHelp("user email; used as login".bold) }
@@ -88,36 +88,39 @@ struct CommandLineApp: ParsableCommand {
 
     // MARK: - Private Variables
 
-    private static var processor: CommandsProcessor?
+    // This variable will be setted up during initialization
+    // swiftlint:disable implicitly_unwrapped_optional
+    private static var processor: CommandsProcessor!
 
 
     // MARK: - ParsableCommand
 
     func run() throws {
-        CommandLineApp.processor?.initialize(host: self.host ?? defaultHost,
-                                             port: self.port ?? defaultPort,
-                                             login: self.login ?? defaultLogin,
-                                             password: self.password ?? defaultPassword,
-                                             database: self.database ?? defaultDatabase)
+        let storage = MySQLDataStorage(host: self.host ?? defaultHost,
+                                       port: self.port ?? defaultPort,
+                                       login: self.login ?? defaultLogin,
+                                       password: self.password ?? defaultPassword,
+                                       database: self.database ?? defaultDatabase)
+        CommandLineApp.processor.storage = storage
 
         let command = Command(rawValue: self.command ?? "") ?? Command.start
         switch command {
         case .start:
-            CommandLineApp.processor?.start()
+            CommandLineApp.processor.start()
 
         case .listStaff:
-            CommandLineApp.processor?.listStaff()
+            CommandLineApp.processor.staffList()
 
         case .addStaff:
             if let email = self.email {
-                CommandLineApp.processor?.addStaff(with: email)
+                CommandLineApp.processor.addStaff(with: email)
             } else {
                 throw CommandLineAppErrors.emailNotSpecified(command: command)
             }
 
         case .removeStaf:
             if let email = self.email {
-                CommandLineApp.processor?.removeStaff(with: email)
+                CommandLineApp.processor.removeStaff(with: email)
             } else {
                 throw CommandLineAppErrors.emailNotSpecified(command: command)
             }
@@ -128,7 +131,7 @@ struct CommandLineApp: ParsableCommand {
     // MARK: - Public Methods
 
     static func run(using processor: CommandsProcessor, arguments: [String]? = nil) throws {
-        self.processor = processor
+        CommandLineApp.processor = processor
 
         let command = try parseAsRoot(arguments)
         try command.run()

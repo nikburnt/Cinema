@@ -6,51 +6,71 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
-import Foundation
+import SwiftyBeaver
 
+
+enum TestError: Error {
+    case aaa
+}
 
 // MARK: - Backyard
 
 class Backyard: CommandsProcessor {
 
+    // MARK: - CommandsProcessor Variables
+
+    var storage: DataStorage?
+
+
     // MARK: - Private Variables
 
-    // Those values should always be presented before usage, otherwise check the integration
-    // swiftlint:disable implicitly_unwrapped_optional
-    private var host: String!
-    private var port: Int!
-    private var login: String!
-    private var password: String!
-    private var database: String!
-    // swiftlint:enable implicitly_unwrapped_optional
+    var output: OutputProcessor
+
+
+    // MARK: - Lifecycle
+
+    required init(_ output: OutputProcessor) {
+        self.output = output
+    }
 
 
     // MARK: - CommandsProcessor
 
-    // Database connection setup function, this check is not needed here
-    // swiftlint:disable function_parameter_count
-    func initialize(host: String, port: Int, login: String, password: String, database: String) {
-        self.host = host
-        self.port = port
-        self.login = login
-        self.password = password
-        self.database = database
-    }
-
     func start() {
-
+        SwiftyBeaver.debug("Server startup requested...")
+        // start vapor server, log workflow to console(using logger, not print)
     }
 
-    func listStaff() {
+    func staffList() {
+        SwiftyBeaver.debug("Staff listing requested...")
 
+        guard let storage = storage else {
+            SwiftyBeaver.error("Storage required but not set up. Check if the storage variable set up before this call.")
+            return
+        }
+
+        storage
+            .listOfStaff()
+            .done { users in
+                SwiftyBeaver.debug("Staff list obtained.", context: users)
+                self.output.staffList(.success(users))
+            }
+            .catch { error in
+                SwiftyBeaver.error("Error occured during staff list aquiring: \(error.localizedDescription)", context: error)
+                self.output.staffList(.failure(error))
+            }
     }
 
     func addStaff(with email: String) {
-
+        SwiftyBeaver.debug("Adding staff with email \(email) requested...")
+        // add staff user using database provider
+        // print result to console
     }
 
     func removeStaff(with email: String) {
-
+        SwiftyBeaver.debug("Deletion staff with email \(email) requested...")
+        // remove staff user using database provider
+        // print result to console
     }
 
 }
