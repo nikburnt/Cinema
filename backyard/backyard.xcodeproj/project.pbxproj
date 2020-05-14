@@ -12,6 +12,11 @@
 		1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC574246C4504002E0EA4 /* SwiftyBeaver+Configure.swift */; };
 		1C0FC577246C457D002E0EA4 /* BaseDestination+DefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC576246C457D002E0EA4 /* BaseDestination+DefaultConfig.swift */; };
 		1C0FC579246C483B002E0EA4 /* BaseDestination+SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC578246C483B002E0EA4 /* BaseDestination+SBPlatformDestination.swift */; };
+		1C0FC57E246C8B17002E0EA4 /* BackyardOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC57D246C8B17002E0EA4 /* BackyardOutput.swift */; };
+		1C0FC580246C8B25002E0EA4 /* OutputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC57F246C8B25002E0EA4 /* OutputProcessor.swift */; };
+		1C0FC583246C8C5E002E0EA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC582246C8C5E002E0EA4 /* User.swift */; };
+		1C0FC586246D2C01002E0EA4 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC585246D2C01002E0EA4 /* DataStorage.swift */; };
+		1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC58A246D389A002E0EA4 /* MySQLDataStorage.swift */; };
 		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
 		1C7F66F62466A1FC00781406 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* Vapor */; };
@@ -59,6 +64,11 @@
 		1C0FC574246C4504002E0EA4 /* SwiftyBeaver+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyBeaver+Configure.swift"; sourceTree = "<group>"; };
 		1C0FC576246C457D002E0EA4 /* BaseDestination+DefaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDestination+DefaultConfig.swift"; sourceTree = "<group>"; };
 		1C0FC578246C483B002E0EA4 /* BaseDestination+SBPlatformDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDestination+SBPlatformDestination.swift"; sourceTree = "<group>"; };
+		1C0FC57D246C8B17002E0EA4 /* BackyardOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackyardOutput.swift; sourceTree = "<group>"; };
+		1C0FC57F246C8B25002E0EA4 /* OutputProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputProcessor.swift; sourceTree = "<group>"; };
+		1C0FC582246C8C5E002E0EA4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1C0FC585246D2C01002E0EA4 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		1C0FC58A246D389A002E0EA4 /* MySQLDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySQLDataStorage.swift; sourceTree = "<group>"; };
 		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F66E12465AB5300781406 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -111,13 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C0FC56C246C3FAC002E0EA4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		1C0FC56F246C3FCA002E0EA4 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +131,32 @@
 				1C0FC574246C4504002E0EA4 /* SwiftyBeaver+Configure.swift */,
 			);
 			path = Logging;
+			sourceTree = "<group>";
+		};
+		1C0FC57C246C8AE4002E0EA4 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				1C0FC57D246C8B17002E0EA4 /* BackyardOutput.swift */,
+				1C0FC57F246C8B25002E0EA4 /* OutputProcessor.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		1C0FC581246C8C4A002E0EA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C0FC582246C8C5E002E0EA4 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C0FC584246D2BF0002E0EA4 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				1C0FC585246D2C01002E0EA4 /* DataStorage.swift */,
+				1C0FC58A246D389A002E0EA4 /* MySQLDataStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		1C7D0BF9246B4DAB00139D45 /* Facade */ = {
@@ -161,10 +190,12 @@
 		1C7F66E02465AB5300781406 /* backyard */ = {
 			isa = PBXGroup;
 			children = (
-				1C0FC56F246C3FCA002E0EA4 /* Logging */,
 				1CCAF1732466C28B00CEF646 /* CommandLine */,
-				1C0FC56C246C3FAC002E0EA4 /* Extensions */,
 				1C7D0BF9246B4DAB00139D45 /* Facade */,
+				1C0FC56F246C3FCA002E0EA4 /* Logging */,
+				1C0FC581246C8C4A002E0EA4 /* Model */,
+				1C0FC57C246C8AE4002E0EA4 /* Output */,
+				1C0FC584246D2BF0002E0EA4 /* Storage */,
 				1C7F66E12465AB5300781406 /* main.swift */,
 				1C7F670F2466A39A00781406 /* backyard.entitlements */,
 			);
@@ -376,12 +407,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
 				1C7F66E22465AB5300781406 /* main.swift in Sources */,
 				1C0FC577246C457D002E0EA4 /* BaseDestination+DefaultConfig.swift in Sources */,
 				1C0FC579246C483B002E0EA4 /* BaseDestination+SBPlatformDestination.swift in Sources */,
 				1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */,
+				1C0FC580246C8B25002E0EA4 /* OutputProcessor.swift in Sources */,
 				1C0FC573246C44EA002E0EA4 /* BaseDestination+FileDestination.swift in Sources */,
+				1C0FC57E246C8B17002E0EA4 /* BackyardOutput.swift in Sources */,
 				1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */,
+				1C0FC583246C8C5E002E0EA4 /* User.swift in Sources */,
+				1C0FC586246D2C01002E0EA4 /* DataStorage.swift in Sources */,
 				1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */,
 				1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */,
 				1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */,

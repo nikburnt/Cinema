@@ -12,7 +12,12 @@ import SwiftyBeaver
 
 do {
     SwiftyBeaver.configure()
-    try CommandLineApp.run(using: Backyard())
+
+    let output = BackyardOutput()
+    output.appExitRequired = { CommandLineApp.exit(withError: $0) }
+
+    let input = Backyard(output)
+    try CommandLineApp.run(using: input)
 } catch {
     CommandLineApp.exit(withError: error)
 }
