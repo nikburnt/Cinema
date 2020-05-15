@@ -20,9 +20,8 @@ struct User: MySQLModel {
         case staff
     }
 
-    // MARK: - MySQLModel
 
-    static var entity: String = "users"
+    // MARK: - Codable Enum
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,6 +32,11 @@ struct User: MySQLModel {
         case lastName = "last_name"
         case avatar
     }
+
+
+    // MARK: - MySQLModel
+
+    static var entity: String = "users"
 
 
     // MARK: - Public Variables
@@ -47,5 +51,11 @@ struct User: MySQLModel {
     var lastName: String?
 
     var avatar: String?
+
+    // MARK: - Foreign Keys
+
+    var password: Children<User, Password> {
+        children(\.userId)
+    }
 
 }

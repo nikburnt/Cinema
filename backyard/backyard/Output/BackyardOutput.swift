@@ -45,7 +45,17 @@ class BackyardOutput: OutputProcessor {
     }
 
     func addStaff(_ result: Result<User, Error>) {
-        // process add staff result
+        switch result {
+        case .success(let user):
+            print("Staff user registered:".underline.bold.white)
+            printUser(user)
+            appExitRequired?(nil)
+
+        case .failure(let error):
+            print("An error occurred during adding staff!".lightRed.underline)
+            print(error.localizedDescription.bold.lightWhite)
+            appExitRequired?(error)
+        }
     }
 
     func removeStaff(_ result: Result<User, Error>) {
@@ -59,18 +69,22 @@ class BackyardOutput: OutputProcessor {
         print("Staff users list:".underline.bold.white)
 
         for user in users {
-            var userName = user.firstName ?? ""
-            if let lastName = user.lastName {
-                userName += userName.isEmpty ? lastName : " \(lastName)"
-            }
-
-            let email = user.email
-            let birthday = dateFormatter.string(from: user.birthday)
-
-            print("\(email)".bold.white)
-            print("  name: ".lightWhite.bold + "\(userName.isEmpty ? "-" : userName)".clearColor)
-            print("  birthday: ".lightWhite.bold + "\(birthday)\n".clearColor)
+            printUser(user)
         }
+    }
+
+    private func printUser(_ user: User) {
+        var userName = user.firstName ?? ""
+        if let lastName = user.lastName {
+            userName += userName.isEmpty ? lastName : " \(lastName)"
+        }
+
+        let email = user.email
+        let birthday = dateFormatter.string(from: user.birthday)
+
+        print("\(email)".bold.white)
+        print("  name: ".lightWhite.bold + "\(userName.isEmpty ? "-" : userName)".clearColor)
+        print("  birthday: ".lightWhite.bold + "\(birthday)\n".clearColor)
     }
 
 }
