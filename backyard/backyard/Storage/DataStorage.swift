@@ -21,7 +21,7 @@ protocol DataStorage {
     func register(on services: Services)
 
     func listOfStaff() -> PromiseKit.Promise<[User]>
-    func addStaff(email: String) -> PromiseKit.Promise<Void>
-    func removeStaff(email: String) -> PromiseKit.Promise<Void>
+    func addStaff(email: String, password: String) -> PromiseKit.Promise<User>
+    func removeStaff(email: String) -> PromiseKit.Promise<User>
 
 }

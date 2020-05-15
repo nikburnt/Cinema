@@ -38,10 +38,12 @@ private let defaultCommand = Command.start
 
 extension ArgumentHelp {
 
-    static var host: ArgumentHelp { ArgumentHelp("mysql server host address; default = \(defaultHost)".bold) }
-    static var port: ArgumentHelp { ArgumentHelp("mysql server port; default = \(defaultPort)".bold) }
-    static var login: ArgumentHelp { ArgumentHelp("login for mysql server; default = \(defaultLogin)".bold) }
-    static var password: ArgumentHelp { ArgumentHelp("password for mysql server; default = <empty>".bold) }
+    static var dbHost: ArgumentHelp { ArgumentHelp("mysql server host address; default = \(defaultHost)".bold) }
+    static var dbPort: ArgumentHelp { ArgumentHelp("mysql server port; default = \(defaultPort)".bold) }
+    static var dbLogin: ArgumentHelp { ArgumentHelp("login for mysql server; default = \(defaultLogin)".bold) }
+    static var dbPassword: ArgumentHelp { ArgumentHelp("password for mysql server; default = <empty>".bold) }
+    static var mailLogin: ArgumentHelp { ArgumentHelp("login for gmail account for sending emails to users".bold) }
+    static var mailPassword: ArgumentHelp { ArgumentHelp("password for gmail account".bold) }
     static var database: ArgumentHelp { ArgumentHelp("database name. default = \(defaultDatabase)".bold) }
 
     static var command: ArgumentHelp { ArgumentHelp(
@@ -64,20 +66,26 @@ struct CommandLineApp: ParsableCommand {
 
     // MARK: - CLI Options
 
-    @Option(help: .host)
-    var host: String?
+    @Option(help: .dbHost)
+    var dbHost: String?
 
-    @Option(help: .port)
-    var port: Int?
+    @Option(help: .dbPort)
+    var dbPort: Int?
 
-    @Option(help: .login)
-    var login: String?
+    @Option(help: .dbLogin)
+    var dbLogin: String?
 
-    @Option(help: .password)
-    var password: String?
+    @Option(help: .dbPassword)
+    var dbPassword: String?
 
     @Option(help: .database)
     var database: String?
+
+    @Option(help: .mailLogin)
+    var mailLogin: String
+
+    @Option(help: .mailPassword)
+    var mailPassword: String
 
     @Argument(help: .command)
     var command: String?
@@ -96,12 +104,15 @@ struct CommandLineApp: ParsableCommand {
     // MARK: - ParsableCommand
 
     func run() throws {
-        let storage = MySQLDataStorage(host: self.host ?? defaultHost,
-                                       port: self.port ?? defaultPort,
-                                       login: self.login ?? defaultLogin,
-                                       password: self.password ?? defaultPassword,
+        let storage = MySQLDataStorage(host: self.dbHost ?? defaultHost,
+                                       port: self.dbPort ?? defaultPort,
+                                       login: self.dbLogin ?? defaultLogin,
+                                       password: self.dbPassword ?? defaultPassword,
                                        database: self.database ?? defaultDatabase)
         CommandLineApp.processor.storage = storage
+
+        let mailingService = SMTPMailingService(email: mailLogin, password: mailPassword)
+        CommandLineApp.processor.mailingService = mailingService
 
         let command = Command(rawValue: self.command ?? "") ?? Command.start
         switch command {

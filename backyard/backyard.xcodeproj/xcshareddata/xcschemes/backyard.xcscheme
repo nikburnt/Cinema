@@ -52,11 +52,23 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "--password cinemagic"
+            argument = "--db-password cinemagic"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "list"
+            argument = "--mail-login nikburnt.cinema@gmail.com"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--mail-password cinemagic"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "add"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "daspisch@gmail.com"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

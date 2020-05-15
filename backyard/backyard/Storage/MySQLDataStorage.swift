@@ -8,6 +8,7 @@
 
 import MySQL
 import PromiseKit
+import SwiftyBeaver
 
 
 // MARK: - MySQLDataStorage
@@ -45,25 +46,38 @@ struct MySQLDataStorage: DataStorage {
         Promise { seal in
             database
                 .newConnection(on: worker.next())
-                .do { connection in
+                .then { connection -> EventLoopFuture<[User]> in
                     User.entity = "staff_users"
-                    connection
-                        .raw("SELECT * FROM staff_users")
-                        .all(decoding: User.self)
-                        .do { seal.fulfill($0) }
-                        .catch { seal.reject($0) }
-                        .always { User.entity = "users" }
+                    return connection.raw("SELECT * FROM staff_users").all(decoding: User.self)
                 }
+                .do { seal.fulfill($0) }
+                .catch { seal.reject($0) }
+                .always { User.entity = "users" }
+        }
+    }
+
+    func addStaff(email: String, password: String) -> PromiseKit.Promise<User> {
+        var passwordHash: String = ""
+        do {
+            passwordHash = try password.soiledHash()
+        } catch {
+            SwiftyBeaver.error("Password hashing error: \(error.localizedDescription)", context: error)
+            return .init(error: error)
+        }
+
+        let user = User(role: .staff, email: email, birthday: Date(timeIntervalSince1970: 0), firstName: nil, lastName: nil, avatar: nil)
+        return Promise { seal in
+            database
+                .newConnection(on: worker.next())
+                .then { $0.raw("CALL AddStaff('\(email)', '\(passwordHash)');").all() }
+                .do { _ in seal.fulfill(user) }
                 .catch { seal.reject($0) }
         }
     }
 
-    func addStaff(email: String) -> PromiseKit.Promise<Void> {
-        .value
-    }
-
-    func removeStaff(email: String) -> PromiseKit.Promise<Void> {
-        .value
+    func removeStaff(email: String) -> PromiseKit.Promise<User> {
+        let user = User(role: .staff, email: email, birthday: Date(timeIntervalSince1970: 0), firstName: nil, lastName: nil, avatar: nil)
+        return .value(user)
     }
 
 }

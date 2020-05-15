@@ -11,6 +11,7 @@
 protocol CommandsProcessor {
 
     var storage: DataStorage? { get set }
+    var mailingService: MailingService? { get set }
 
     init(_ output: OutputProcessor)
 
