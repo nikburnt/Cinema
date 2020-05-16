@@ -20,7 +20,7 @@ extension String {
 
     // MARK: - Public Methods
 
-    func soiledHash() throws -> String  {
+    func soiledHash() throws -> String {
         let key = try PBKDF.deriveKey(fromPassword: self, salt: salt, prf: .sha256, rounds: 1, derivedKeyLength: UInt(Cryptor.Algorithm.aes.defaultKeySize))
         let result = CryptoUtils.hexString(from: key)
         return result
