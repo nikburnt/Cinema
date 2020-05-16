@@ -14,9 +14,9 @@ do {
     SwiftyBeaver.configure()
 
     let output = BackyardOutput()
-    output.appExitRequired = { CommandLineApp.exit(withError: $0) }
-
     let input = Backyard(output)
+    input.appExitRequired = { CommandLineApp.exit(withError: $0) }
+    
     try CommandLineApp.run(using: input)
 } catch {
     CommandLineApp.exit(withError: error)

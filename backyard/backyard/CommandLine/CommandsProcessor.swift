@@ -13,6 +13,8 @@ protocol CommandsProcessor {
     var storage: DataStorage? { get set }
     var mailingService: MailingService? { get set }
 
+    var appExitRequired: ((_ error: Error?) -> Void)? { get set }
+
     init(_ output: OutputProcessor)
 
     func start()

@@ -63,14 +63,6 @@
             argument = "--mail-password cinemagic"
             isEnabled = "YES">
          </CommandLineArgument>
-         <CommandLineArgument
-            argument = "add"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "daspisch@gmail.com"
-            isEnabled = "YES">
-         </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
    <ProfileAction

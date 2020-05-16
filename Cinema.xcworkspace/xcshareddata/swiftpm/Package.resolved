@@ -245,15 +245,6 @@
         }
       },
       {
-        "package": "SwiftyBeaverProvider",
-        "repositoryURL": "https://github.com/vapor-community/swiftybeaver-provider.git",
-        "state": {
-          "branch": null,
-          "revision": "ccba0f40b6300a25abaa7993dfe2871571dc023e",
-          "version": "3.1.1"
-        }
-      },
-      {
         "package": "TemplateKit",
         "repositoryURL": "https://github.com/vapor/template-kit.git",
         "state": {

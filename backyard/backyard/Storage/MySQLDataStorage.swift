@@ -6,6 +6,7 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
+import FluentMySQL
 import MySQL
 import PromiseKit
 import SwiftyBeaver
@@ -38,8 +39,16 @@ struct MySQLDataStorage: DataStorage {
 
     // MARK: - DataStorage
 
-    func register(on services: Services) {
-        // register on vapoor services
+    func register(on services: inout Services) throws {
+        try services.register(MySQLProvider())
+        try services.register(FluentMySQLProvider())
+
+        var databases = DatabasesConfig()
+        databases.enableLogging(on: DatabaseIdentifier<MySQLDatabase>.mysql)
+        databases.add(database: database, as: .mysql)
+        services.register(databases)
+
+        registerModels()
     }
 
     func listOfStaff() -> PromiseKit.Promise<[User]> {
@@ -82,6 +91,14 @@ struct MySQLDataStorage: DataStorage {
                 .do { _ in seal.fulfill_() }
                 .catch { seal.reject($0) }
         }
+    }
+
+
+    // MARK: - Private Methods
+
+    private func registerModels() {
+        User.defaultDatabase = .mysql
+        Password.defaultDatabase = .mysql
     }
 
 }
