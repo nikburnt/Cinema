@@ -42,7 +42,22 @@ class Backyard: CommandsProcessor {
 
     func start() {
         SwiftyBeaver.debug("Server startup requested...")
-        // start vapor server, log workflow to console(using logger, not print)
+
+        guard let storage = storage else {
+            SwiftyBeaver.error("Storage required but not set up. Check if the storage variable set up before this call.")
+            appExitRequired?(BackyardErrors.storageNotSpecified)
+            return
+        }
+
+        do {
+            output.defaultOutput("Starting started.")
+            let vapor = try BackyardVapor(storage)
+            try vapor.start()
+            output.defaultOutput("Vapor started.")
+        } catch {
+            SwiftyBeaver.error("Vapoor initialization error: \(error.localizedDescription)", context: error)
+            appExitRequired?(error)
+        }
     }
 
     func staffList() {

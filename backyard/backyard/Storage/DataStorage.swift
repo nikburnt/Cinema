@@ -18,7 +18,7 @@ protocol DataStorage {
     // swiftlint:disable function_parameter_count
     init(host: String, port: Int, login: String, password: String, database: String)
 
-    func register(on services: Services)
+    func register(on services: inout Services) throws
 
     func listOfStaff() -> PromiseKit.Promise<[User]>
     func addStaff(email: String, password: String) -> PromiseKit.Promise<Void>
