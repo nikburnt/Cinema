@@ -30,5 +30,5 @@ struct Password: MySQLModel {
 
     var userId: Int
     var hash: String
-    
+
 }

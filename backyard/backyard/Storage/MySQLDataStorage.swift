@@ -56,7 +56,7 @@ struct MySQLDataStorage: DataStorage {
         }
     }
 
-    func addStaff(email: String, password: String) -> PromiseKit.Promise<User> {
+    func addStaff(email: String, password: String) -> PromiseKit.Promise<Void> {
         var passwordHash: String = ""
         do {
             passwordHash = try password.soiledHash()
@@ -65,19 +65,23 @@ struct MySQLDataStorage: DataStorage {
             return .init(error: error)
         }
 
-        let user = User(role: .staff, email: email, birthday: Date(timeIntervalSince1970: 0), firstName: nil, lastName: nil, avatar: nil)
         return Promise { seal in
             database
                 .newConnection(on: worker.next())
                 .then { $0.raw("CALL AddStaff('\(email)', '\(passwordHash)');").all() }
-                .do { _ in seal.fulfill(user) }
+                .do { _ in seal.fulfill_() }
                 .catch { seal.reject($0) }
         }
     }
 
-    func removeStaff(email: String) -> PromiseKit.Promise<User> {
-        let user = User(role: .staff, email: email, birthday: Date(timeIntervalSince1970: 0), firstName: nil, lastName: nil, avatar: nil)
-        return .value(user)
+    func removeStaff(email: String) -> PromiseKit.Promise<Void> {
+        Promise { seal in
+            database
+                .newConnection(on: worker.next())
+                .then { $0.raw("CALL RemoveStaff('\(email)');").all() }
+                .do { _ in seal.fulfill_() }
+                .catch { seal.reject($0) }
+        }
     }
 
 }

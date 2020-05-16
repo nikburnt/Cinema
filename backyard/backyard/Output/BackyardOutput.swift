@@ -44,22 +44,28 @@ class BackyardOutput: OutputProcessor {
         }
     }
 
-    func addStaff(_ result: Result<User, Error>) {
+    func addStaff(_ result: Result<Void, Error>) {
         switch result {
-        case .success(let user):
-            print("Staff user registered:".underline.bold.white)
-            printUser(user)
+        case .success:
+            print("Staff user registered.".bold.white)
             appExitRequired?(nil)
 
         case .failure(let error):
             print("An error occurred during adding staff!".lightRed.underline)
-            print(error.localizedDescription.bold.lightWhite)
             appExitRequired?(error)
         }
     }
 
-    func removeStaff(_ result: Result<User, Error>) {
-        // process remove staff result
+    func removeStaff(_ result: Result<Void, Error>) {
+        switch result {
+        case .success:
+            print("Staff user removed.".bold.white)
+            appExitRequired?(nil)
+
+        case .failure(let error):
+            print("An error occurred during removing staff!".lightRed.underline)
+            appExitRequired?(error)
+        }
     }
 
 

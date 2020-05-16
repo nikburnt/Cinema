@@ -49,10 +49,10 @@ extension ArgumentHelp {
     static var command: ArgumentHelp { ArgumentHelp(
         "command to execute; default = \(defaultCommand.rawValue)".bold,
         discussion: "Execute one of the following commands:\n"
-            + "\t  \(Command.start.rawValue.underline) - starts backyard server with specified parameters\n"
-            + "\t \(Command.listStaff.rawValue.underline) - display the staff list\n"
-            + "  \(Command.addStaff.rawValue.underline) - add staff user with specified email; the password will be sent by email\n"
-            + "  \(Command.removeStaf.rawValue.underline) - remove staff user with specified email"
+            + "\t  \(Command.start.rawValue.underline)   starts backyard server with specified parameters\n"
+            + "\t  \(Command.listStaff.rawValue.underline)    display the staff list\n"
+            + "  \(Command.addStaff.rawValue.underline)     add staff user with specified email; the password will be sent by email\n"
+            + "  \(Command.removeStaf.rawValue.underline)  remove staff user with specified email"
     ) }
 
     static var email: ArgumentHelp { ArgumentHelp("user email; used as login".bold) }

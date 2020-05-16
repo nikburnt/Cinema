@@ -78,12 +78,12 @@ class Backyard: CommandsProcessor {
         let password = PasswordGenerator.generatePassword()
         storage
             .addStaff(email: email, password: password)
-            .done { user in
+            .done {
                 mailingService
                     .send(initialPassword: password, to: email)
                     .done {
                         SwiftyBeaver.debug("Staff user registered.", context: email)
-                        self.output.addStaff(.success(user))
+                        self.output.addStaff(.success(()))
                     }
                     .catch { error in
                         SwiftyBeaver.error("Error occured during email with password transmition. Send temp password \(password) to user.", context: error)
@@ -98,8 +98,22 @@ class Backyard: CommandsProcessor {
 
     func removeStaff(with email: String) {
         SwiftyBeaver.debug("Deletion staff with email \(email) requested...")
-        // remove staff user using database provider
-        // print result to console
+
+        guard let storage = storage else {
+            SwiftyBeaver.error("Storage required but not set up. Check if the storage variable set up before this call.")
+            return
+        }
+
+        storage
+            .removeStaff(email: email)
+            .done {
+                SwiftyBeaver.debug("Staff user removed.", context: email)
+                self.output.removeStaff(.success(()))
+            }
+            .catch { error in
+                SwiftyBeaver.error("Error occured during staff removing.", context: error)
+                self.output.removeStaff(.failure(error))
+            }
     }
 
 }
