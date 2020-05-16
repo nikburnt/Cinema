@@ -9,8 +9,9 @@
 import SwiftyBeaver
 
 
-enum TestError: Error {
-    case aaa
+enum BackyardErrors: Error {
+    case storageNotSpecified
+    case mailServiceNotSpecified
 }
 
 // MARK: - Backyard
@@ -21,6 +22,8 @@ class Backyard: CommandsProcessor {
 
     var storage: DataStorage?
     var mailingService: MailingService?
+
+    var appExitRequired: ((_ error: Error?) -> Void)?
 
 
     // MARK: - Private Variables
@@ -47,6 +50,7 @@ class Backyard: CommandsProcessor {
 
         guard let storage = storage else {
             SwiftyBeaver.error("Storage required but not set up. Check if the storage variable set up before this call.")
+            appExitRequired?(BackyardErrors.storageNotSpecified)
             return
         }
 
@@ -55,10 +59,12 @@ class Backyard: CommandsProcessor {
             .done { users in
                 SwiftyBeaver.debug("Staff list obtained.", context: users)
                 self.output.staffList(.success(users))
+                self.appExitRequired?(nil)
             }
             .catch { error in
                 SwiftyBeaver.error("Error occured during staff list aquiring: \(error.localizedDescription)", context: error)
                 self.output.staffList(.failure(error))
+                self.appExitRequired?(error)
             }
     }
 
@@ -67,11 +73,13 @@ class Backyard: CommandsProcessor {
 
         guard let storage = storage else {
             SwiftyBeaver.error("Storage required but not set up. Check if the storage variable set up before this call.")
+            appExitRequired?(BackyardErrors.storageNotSpecified)
             return
         }
 
         guard let mailingService = mailingService else {
             SwiftyBeaver.error("Mailing service required but not set up. Check if the mailingService variable set up before this call.")
+            appExitRequired?(BackyardErrors.mailServiceNotSpecified)
             return
         }
 
@@ -84,15 +92,18 @@ class Backyard: CommandsProcessor {
                     .done {
                         SwiftyBeaver.debug("Staff user registered.", context: email)
                         self.output.addStaff(.success(()))
+                        self.appExitRequired?(nil)
                     }
                     .catch { error in
                         SwiftyBeaver.error("Error occured during email with password transmition. Send temp password \(password) to user.", context: error)
                         self.output.addStaff(.failure(error))
+                        self.appExitRequired?(error)
                     }
             }
             .catch { error in
                 SwiftyBeaver.error("Error occured during staff registration.", context: error)
                 self.output.addStaff(.failure(error))
+                self.appExitRequired?(error)
             }
     }
 
@@ -101,6 +112,7 @@ class Backyard: CommandsProcessor {
 
         guard let storage = storage else {
             SwiftyBeaver.error("Storage required but not set up. Check if the storage variable set up before this call.")
+            appExitRequired?(BackyardErrors.storageNotSpecified)
             return
         }
 
@@ -109,10 +121,12 @@ class Backyard: CommandsProcessor {
             .done {
                 SwiftyBeaver.debug("Staff user removed.", context: email)
                 self.output.removeStaff(.success(()))
+                self.appExitRequired?(nil)
             }
             .catch { error in
                 SwiftyBeaver.error("Error occured during staff removing.", context: error)
                 self.output.removeStaff(.failure(error))
+                self.appExitRequired?(error)
             }
     }
 

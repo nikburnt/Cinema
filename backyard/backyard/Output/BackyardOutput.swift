@@ -15,11 +15,6 @@ import Rainbow
 
 class BackyardOutput: OutputProcessor {
 
-    // MARK: - OutputProcessor Variables
-
-    var appExitRequired: ((_ error: Error?) -> Void)?
-
-
     // MARK: - Private Calculated Variables
 
     private var dateFormatter: DateFormatter = {
@@ -35,12 +30,9 @@ class BackyardOutput: OutputProcessor {
         switch result {
         case .success(let users):
             printTable(of: users)
-            appExitRequired?(nil)
 
-        case .failure(let error):
+        case .failure(_):
             print("An error occurred during obtaining staff list!".lightRed.underline)
-            print(error.localizedDescription.bold.lightWhite)
-            appExitRequired?(error)
         }
     }
 
@@ -48,11 +40,9 @@ class BackyardOutput: OutputProcessor {
         switch result {
         case .success:
             print("Staff user registered.".bold.white)
-            appExitRequired?(nil)
 
-        case .failure(let error):
+        case .failure(_):
             print("An error occurred during adding staff!".lightRed.underline)
-            appExitRequired?(error)
         }
     }
 
@@ -60,12 +50,14 @@ class BackyardOutput: OutputProcessor {
         switch result {
         case .success:
             print("Staff user removed.".bold.white)
-            appExitRequired?(nil)
 
-        case .failure(let error):
+        case .failure(_):
             print("An error occurred during removing staff!".lightRed.underline)
-            appExitRequired?(error)
         }
+    }
+
+    func defaultOutput(_ text: String) {
+        print(text)
     }
 
 

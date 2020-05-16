@@ -10,10 +10,9 @@
 
 protocol OutputProcessor {
 
-    var appExitRequired: ((_ error: Error?) -> Void)? { get set }
-
     func staffList(_ result: Result<[User], Error>)
     func addStaff(_ result: Result<Void, Error>)
     func removeStaff(_ result: Result<Void, Error>)
 
+    func defaultOutput(_ text: String)
 }
