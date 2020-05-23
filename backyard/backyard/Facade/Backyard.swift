@@ -9,10 +9,13 @@
 import SwiftyBeaver
 
 
+// MARK: - BackyardErrors
+
 enum BackyardErrors: Error {
     case storageNotSpecified
     case mailServiceNotSpecified
 }
+
 
 // MARK: - Backyard
 
@@ -49,9 +52,15 @@ class Backyard: CommandsProcessor {
             return
         }
 
+        guard let mailingService = mailingService else {
+            SwiftyBeaver.error("Mailing service required but not set up. Check if the mailingService variable set up before this call.")
+            appExitRequired?(BackyardErrors.mailServiceNotSpecified)
+            return
+        }
+
         do {
             output.defaultOutput("Starting started.")
-            let vapor = try BackyardVapor(storage)
+            let vapor = try BackyardVapor(storage, mailingService: mailingService)
             try vapor.start()
             output.defaultOutput("Vapor started.")
         } catch {
@@ -71,7 +80,7 @@ class Backyard: CommandsProcessor {
 
         storage
             .listOfStaff()
-            .done { users in
+            .do { users in
                 SwiftyBeaver.debug("Staff list obtained.", context: users)
                 self.output.staffList(.success(users))
                 self.appExitRequired?(nil)
@@ -101,19 +110,11 @@ class Backyard: CommandsProcessor {
         let password = PasswordGenerator.generatePassword()
         storage
             .addStaff(email: email, password: password)
-            .done {
-                mailingService
-                    .send(initialPassword: password, to: email)
-                    .done {
-                        SwiftyBeaver.debug("Staff user registered.", context: email)
-                        self.output.addStaff(.success(()))
-                        self.appExitRequired?(nil)
-                    }
-                    .catch { error in
-                        SwiftyBeaver.error("Error occured during email with password transmition. Send temp password \(password) to user.", context: error)
-                        self.output.addStaff(.failure(error))
-                        self.appExitRequired?(error)
-                    }
+            .then { mailingService.send(initialPassword: password, to: email) }
+            .do {
+                SwiftyBeaver.debug("Staff user registered.", context: email)
+                self.output.addStaff(.success(()))
+                self.appExitRequired?(nil)
             }
             .catch { error in
                 SwiftyBeaver.error("Error occured during staff registration.", context: error)
@@ -133,7 +134,7 @@ class Backyard: CommandsProcessor {
 
         storage
             .removeStaff(email: email)
-            .done {
+            .do {
                 SwiftyBeaver.debug("Staff user removed.", context: email)
                 self.output.removeStaff(.success(()))
                 self.appExitRequired?(nil)

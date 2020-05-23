@@ -1,26 +1,27 @@
 //
-//  Password.swift
+//  Token.swift
 //  backyard
 //
 //  Created by Nik Burnt on 5/15/20.
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
+import Authentication
 import FluentMySQL
 
 
-// MARK: - User
+// MARK: - Token
 
-struct Password: MySQLModel {
+struct Token: MySQLModel {
 
     // MARK: - MySQLModel
 
-    static var entity: String = "passwords"
+    static var entity: String = "tokens"
 
     enum CodingKeys: String, CodingKey {
         case id
         case userId = "user_id"
-        case hash
+        case token
     }
 
 
@@ -29,6 +30,6 @@ struct Password: MySQLModel {
     var id: Int?
 
     var userId: Int
-    var hash: String
+    var token: String
 
 }

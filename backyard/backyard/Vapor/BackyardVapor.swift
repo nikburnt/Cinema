@@ -8,6 +8,7 @@
 
 import Foundation
 
+import Authentication
 import Vapor
 
 
@@ -19,11 +20,14 @@ class BackyardVapor {
 
     private let vaporApplication: Application
     private let router: Router
+    private let mailingService: MailingService
 
 
     // MARK: - Lifecycle
 
-    init(_ dataStorage: DataStorage) throws {
+    init(_ dataStorage: DataStorage, mailingService: MailingService) throws {
+        self.mailingService = mailingService
+
         // Config
 
         var config: Config = .default()
@@ -44,6 +48,8 @@ class BackyardVapor {
 
         services.register(SwiftyBeaverService(), as: Logger.self)
 
+        try services.register(AuthenticationProvider())
+
         try dataStorage.register(on: &services)
 
         let router = EngineRouter.default()
@@ -59,7 +65,7 @@ class BackyardVapor {
 
         self.vaporApplication = try Application(config: config, environment: environment, services: services)
 
-        self.initRoutes(for: self.router)
+        try initRoutes(for: self.router)
     }
 
 
@@ -72,20 +78,11 @@ class BackyardVapor {
 
     // MARK: - Private Methods
 
-    private func initRoutes(for router: Router) {
-        // Basic "It works" example
-        router.get { _ in
-            "It works!"
-        }
+    private func initRoutes(for router: Router) throws {
+        let v1Route = router.grouped("v1")
 
-        // Basic "Hello, world!" example
-        router.get("hello") { _ in
-            "Hello, world!"
-        }
-
-//        router.get("users") { req in
-//            return User.query(on: req).all()
-//        }
+        let usersControllerV1 = UsersControllerV1(mailingService: mailingService)
+        try v1Route.register(collection: usersControllerV1)
     }
 
 }

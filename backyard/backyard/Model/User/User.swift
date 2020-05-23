@@ -26,8 +26,9 @@ struct User: MySQLModel {
     enum CodingKeys: String, CodingKey {
         case id
         case role
-        case email
         case birthday
+        case email
+        case password
         case firstName = "first_name"
         case lastName = "last_name"
         case avatar
@@ -44,18 +45,14 @@ struct User: MySQLModel {
     var id: Int?
 
     var role: Role
-    var email: String
-    var birthday: Date
 
+    var email: String
+    var password: String
+
+    var birthday: Date?
     var firstName: String?
     var lastName: String?
 
     var avatar: String?
-
-    // MARK: - Foreign Keys
-
-    var password: Children<User, Password> {
-        children(\.userId)
-    }
 
 }
