@@ -78,7 +78,12 @@ class BackyardOutput: OutputProcessor {
         }
 
         let email = user.email
-        let birthday = dateFormatter.string(from: user.birthday)
+        let birthday: String
+        if let date = user.birthday {
+            birthday = dateFormatter.string(from: date)
+        } else {
+            birthday = "-"
+        }
 
         print("\(email)".bold.white)
         print("  name: ".lightWhite.bold + "\(userName.isEmpty ? "-" : userName)".clearColor)

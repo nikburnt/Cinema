@@ -6,8 +6,6 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
-import Foundation
-
 import ArgumentParser
 import Rainbow
 
@@ -116,7 +114,7 @@ struct CommandLineApp: ParsableCommand {
         let mailingService = SMTPMailingService(email: mailLogin, password: mailPassword)
         CommandLineApp.processor.mailingService = mailingService
 
-        // Clearing arguments
+        // Clearing arguments, because vapor uses command line options
         CommandLine.arguments = CommandLine.arguments.dropLast(CommandLine.arguments.count - 1)
 
         let command = Command(rawValue: self.command ?? "") ?? Command.start

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0ECF762477B7E200D5A597 /* Token+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF752477B7E100D5A597 /* Token+Public.swift */; };
+		1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF772477C8F400D5A597 /* User+Update.swift */; };
+		1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF792477CA5100D5A597 /* User+Registration.swift */; };
+		1C0ECF7C2477D1F200D5A597 /* User+Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF7B2477D1F200D5A597 /* User+Password.swift */; };
+		1C0ECF7E2478036D00D5A597 /* User+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */; };
+		1C0F1466247671B500598671 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F1465247671B500598671 /* PasswordStrength.swift */; };
+		1C0F14692476745E00598671 /* PasswordStrengts+Enough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F14682476745E00598671 /* PasswordStrengts+Enough.swift */; };
 		1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC570246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift */; };
 		1C0FC573246C44EA002E0EA4 /* BaseDestination+FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC572246C44EA002E0EA4 /* BaseDestination+FileDestination.swift */; };
 		1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC574246C4504002E0EA4 /* SwiftyBeaver+Configure.swift */; };
@@ -23,18 +30,16 @@
 		1C0FC599246DCD74002E0EA4 /* SMTPMailingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC598246DCD74002E0EA4 /* SMTPMailingService.swift */; };
 		1C0FC59C246DD372002E0EA4 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC59B246DD372002E0EA4 /* PasswordGenerator.swift */; };
 		1C0FC59E246E8B72002E0EA4 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC59D246E8B72002E0EA4 /* Token.swift */; };
-		1C0FC5A0246E8B79002E0EA4 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC59F246E8B79002E0EA4 /* Password.swift */; };
-		1C0FC5A3246E8DD8002E0EA4 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC5A2246E8DD8002E0EA4 /* String+Crypto.swift */; };
 		1C577B28246FE2640047B87A /* BackyardVapor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B27246FE2640047B87A /* BackyardVapor.swift */; };
-		1C577B2A246FE7390047B87A /* BackyardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B29246FE7390047B87A /* BackyardRouter.swift */; };
 		1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */; };
+		1C577B2F24700ED40047B87A /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 1C577B2E24700ED40047B87A /* Authentication */; };
+		1C577B3224713A180047B87A /* UsersControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B3124713A180047B87A /* UsersControllerV1.swift */; };
 		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
 		1C7F66F62466A1FC00781406 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* Vapor */; };
 		1C7F66F92466A22400781406 /* FluentMySQL in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F82466A22400781406 /* FluentMySQL */; };
 		1C7F66FF2466A29200781406 /* CrudRouter in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66FE2466A29200781406 /* CrudRouter */; };
 		1C7F67022466A2B100781406 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67012466A2B100781406 /* SwiftyBeaver */; };
-		1C7F67082466A32200781406 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F67072466A32200781406 /* PromiseKit */; };
 		1C7F670E2466A36C00781406 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F670D2466A36C00781406 /* ArgumentParser */; };
 		1C8020342467F1CB004031A1 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = 1C8020332467F1CB004031A1 /* Rainbow */; };
 		1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8020352468020D004031A1 /* CommandsProcessor.swift */; };
@@ -43,12 +48,21 @@
 		1C80203C24680A28004031A1 /* FluentMySQL in Frameworks */ = {isa = PBXBuildFile; productRef = 1C80203B24680A28004031A1 /* FluentMySQL */; };
 		1C80204024680A28004031A1 /* CrudRouter in Frameworks */ = {isa = PBXBuildFile; productRef = 1C80203F24680A28004031A1 /* CrudRouter */; };
 		1C80204224680A28004031A1 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 1C80204124680A28004031A1 /* SwiftyBeaver */; };
-		1C80204624680A28004031A1 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C80204524680A28004031A1 /* PromiseKit */; };
 		1C80204824680A28004031A1 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 1C80204724680A28004031A1 /* ArgumentParser */; };
 		1C80204A24680A28004031A1 /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = 1C80204924680A28004031A1 /* Rainbow */; };
 		1C80204C24680CEE004031A1 /* CommandLineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAF1752466C2E500CEF646 /* CommandLineApp.swift */; };
 		1C80204D24680CEE004031A1 /* CommandsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8020352468020D004031A1 /* CommandsProcessor.swift */; };
 		1C802052246993B0004031A1 /* MySQL in Frameworks */ = {isa = PBXBuildFile; productRef = 1C802051246993B0004031A1 /* MySQL */; };
+		1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315CD2471608B004B9D0C /* User+TokenAuthenticatable.swift */; };
+		1C8315D024716093004B9D0C /* User+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315CF24716093004B9D0C /* User+Public.swift */; };
+		1C8315D224716521004B9D0C /* User+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D124716521004B9D0C /* User+Content.swift */; };
+		1C8315D42471667D004B9D0C /* User+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D32471667D004B9D0C /* User+Parameter.swift */; };
+		1C8315D72471689D004B9D0C /* Token+BearerAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D62471689D004B9D0C /* Token+BearerAuthenticatable.swift */; };
+		1C8315D9247168B0004B9D0C /* Token+AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D8247168B0004B9D0C /* Token+AuthenticationToken.swift */; };
+		1C8315DB24716991004B9D0C /* Token+Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315DA24716991004B9D0C /* Token+Generation.swift */; };
+		1C8315DD24716B28004B9D0C /* User+BasicAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315DC24716B28004B9D0C /* User+BasicAuthenticatable.swift */; };
+		1C8315DF24716CE0004B9D0C /* Token+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315DE24716CE0004B9D0C /* Token+Content.swift */; };
+		1C8315E124717648004B9D0C /* User+PasswordAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315E024717648004B9D0C /* User+PasswordAuthenticatable.swift */; };
 		1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAF1752466C2E500CEF646 /* CommandLineApp.swift */; };
 		C46E562210D6D593D87373A4 /* libPods-backyardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5A1C393E6A2B3FDCBA0B94 /* libPods-backyardTests.a */; };
 /* End PBXBuildFile section */
@@ -66,6 +80,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C0ECF752477B7E100D5A597 /* Token+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+Public.swift"; sourceTree = "<group>"; };
+		1C0ECF772477C8F400D5A597 /* User+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Update.swift"; sourceTree = "<group>"; };
+		1C0ECF792477CA5100D5A597 /* User+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Registration.swift"; sourceTree = "<group>"; };
+		1C0ECF7B2477D1F200D5A597 /* User+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Password.swift"; sourceTree = "<group>"; };
+		1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Avatar.swift"; sourceTree = "<group>"; };
+		1C0F1465247671B500598671 /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
+		1C0F14682476745E00598671 /* PasswordStrengts+Enough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordStrengts+Enough.swift"; sourceTree = "<group>"; };
 		1C0FC570246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDestination+ConsoleDestination.swift"; sourceTree = "<group>"; };
 		1C0FC572246C44EA002E0EA4 /* BaseDestination+FileDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDestination+FileDestination.swift"; sourceTree = "<group>"; };
 		1C0FC574246C4504002E0EA4 /* SwiftyBeaver+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyBeaver+Configure.swift"; sourceTree = "<group>"; };
@@ -80,11 +101,9 @@
 		1C0FC598246DCD74002E0EA4 /* SMTPMailingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMTPMailingService.swift; sourceTree = "<group>"; };
 		1C0FC59B246DD372002E0EA4 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		1C0FC59D246E8B72002E0EA4 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		1C0FC59F246E8B79002E0EA4 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
-		1C0FC5A2246E8DD8002E0EA4 /* String+Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		1C577B27246FE2640047B87A /* BackyardVapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackyardVapor.swift; sourceTree = "<group>"; };
-		1C577B29246FE7390047B87A /* BackyardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackyardRouter.swift; sourceTree = "<group>"; };
 		1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaverService.swift; sourceTree = "<group>"; };
+		1C577B3124713A180047B87A /* UsersControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersControllerV1.swift; sourceTree = "<group>"; };
 		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F66E12465AB5300781406 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -93,6 +112,16 @@
 		1C7F670F2466A39A00781406 /* backyard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = backyard.entitlements; sourceTree = "<group>"; };
 		1C8020352468020D004031A1 /* CommandsProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsProcessor.swift; sourceTree = "<group>"; };
 		1C80203724680777004031A1 /* ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTests.swift; sourceTree = "<group>"; };
+		1C8315CD2471608B004B9D0C /* User+TokenAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+TokenAuthenticatable.swift"; sourceTree = "<group>"; };
+		1C8315CF24716093004B9D0C /* User+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Public.swift"; sourceTree = "<group>"; };
+		1C8315D124716521004B9D0C /* User+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Content.swift"; sourceTree = "<group>"; };
+		1C8315D32471667D004B9D0C /* User+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Parameter.swift"; sourceTree = "<group>"; };
+		1C8315D62471689D004B9D0C /* Token+BearerAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+BearerAuthenticatable.swift"; sourceTree = "<group>"; };
+		1C8315D8247168B0004B9D0C /* Token+AuthenticationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+AuthenticationToken.swift"; sourceTree = "<group>"; };
+		1C8315DA24716991004B9D0C /* Token+Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+Generation.swift"; sourceTree = "<group>"; };
+		1C8315DC24716B28004B9D0C /* User+BasicAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+BasicAuthenticatable.swift"; sourceTree = "<group>"; };
+		1C8315DE24716CE0004B9D0C /* Token+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+Content.swift"; sourceTree = "<group>"; };
+		1C8315E024717648004B9D0C /* User+PasswordAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+PasswordAuthenticatable.swift"; sourceTree = "<group>"; };
 		1CCAF1752466C2E500CEF646 /* CommandLineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineApp.swift; sourceTree = "<group>"; };
 		1D5A1C393E6A2B3FDCBA0B94 /* libPods-backyardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-backyardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9432C17CA99213945AC015B6 /* Pods-backyardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backyardTests.release.xcconfig"; path = "Target Support Files/Pods-backyardTests/Pods-backyardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +140,9 @@
 				1C802052246993B0004031A1 /* MySQL in Frameworks */,
 				1C7F66F62466A1FC00781406 /* Vapor in Frameworks */,
 				1C8020342467F1CB004031A1 /* Rainbow in Frameworks */,
-				1C7F67082466A32200781406 /* PromiseKit in Frameworks */,
 				1C7F66F92466A22400781406 /* FluentMySQL in Frameworks */,
 				1C0FC591246DCC18002E0EA4 /* LoggerAPI in Frameworks */,
+				1C577B2F24700ED40047B87A /* Authentication in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C80204624680A28004031A1 /* PromiseKit in Frameworks */,
 				1C80203C24680A28004031A1 /* FluentMySQL in Frameworks */,
 				1C80204824680A28004031A1 /* ArgumentParser in Frameworks */,
 				C46E562210D6D593D87373A4 /* libPods-backyardTests.a in Frameworks */,
@@ -135,6 +163,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C0F14622476717D00598671 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F14672476744300598671 /* Extensions */,
+				1C0F14642476719A00598671 /* Enums */,
+				1C0F14632476719000598671 /* Model */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1C0F14632476719000598671 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C0F14642476719A00598671 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F1465247671B500598671 /* PasswordStrength.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		1C0F14672476744300598671 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F14682476745E00598671 /* PasswordStrengts+Enough.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1C0FC56F246C3FCA002E0EA4 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,9 +221,8 @@
 		1C0FC581246C8C4A002E0EA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1C0FC582246C8C5E002E0EA4 /* User.swift */,
-				1C0FC59D246E8B72002E0EA4 /* Token.swift */,
-				1C0FC59F246E8B79002E0EA4 /* Password.swift */,
+				1C8315D52471685F004B9D0C /* Token */,
+				1C8315CC24716047004B9D0C /* User */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,21 +253,21 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		1C0FC5A1246E8DC8002E0EA4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1C0FC5A2246E8DD8002E0EA4 /* String+Crypto.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		1C577B26246FE21C0047B87A /* Vapor */ = {
 			isa = PBXGroup;
 			children = (
+				1C577B30247138EE0047B87A /* Controllers */,
 				1C577B27246FE2640047B87A /* BackyardVapor.swift */,
-				1C577B29246FE7390047B87A /* BackyardRouter.swift */,
 			);
 			path = Vapor;
+			sourceTree = "<group>";
+		};
+		1C577B30247138EE0047B87A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C577B3124713A180047B87A /* UsersControllerV1.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1C7D0BF9246B4DAB00139D45 /* Facade */ = {
@@ -221,6 +281,7 @@
 		1C7F66D52465AB5300781406 = {
 			isa = PBXGroup;
 			children = (
+				1C0F14622476717D00598671 /* Common */,
 				1C7F66E02465AB5300781406 /* backyard */,
 				1C7F66ED2465AC9300781406 /* backyardTests */,
 				1C7F66DF2465AB5300781406 /* Products */,
@@ -243,7 +304,6 @@
 			children = (
 				1CCAF1732466C28B00CEF646 /* CommandLine */,
 				1C0FC59A246DD34C002E0EA4 /* Common */,
-				1C0FC5A1246E8DC8002E0EA4 /* Extensions */,
 				1C7D0BF9246B4DAB00139D45 /* Facade */,
 				1C0FC56F246C3FCA002E0EA4 /* Logging */,
 				1C0FC595246DCC68002E0EA4 /* Mailing */,
@@ -264,6 +324,37 @@
 				1C7F66F02465AC9300781406 /* Info.plist */,
 			);
 			path = backyardTests;
+			sourceTree = "<group>";
+		};
+		1C8315CC24716047004B9D0C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1C0FC582246C8C5E002E0EA4 /* User.swift */,
+				1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */,
+				1C8315DC24716B28004B9D0C /* User+BasicAuthenticatable.swift */,
+				1C8315D124716521004B9D0C /* User+Content.swift */,
+				1C8315D32471667D004B9D0C /* User+Parameter.swift */,
+				1C0ECF7B2477D1F200D5A597 /* User+Password.swift */,
+				1C8315E024717648004B9D0C /* User+PasswordAuthenticatable.swift */,
+				1C8315CF24716093004B9D0C /* User+Public.swift */,
+				1C0ECF792477CA5100D5A597 /* User+Registration.swift */,
+				1C8315CD2471608B004B9D0C /* User+TokenAuthenticatable.swift */,
+				1C0ECF772477C8F400D5A597 /* User+Update.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1C8315D52471685F004B9D0C /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				1C0FC59D246E8B72002E0EA4 /* Token.swift */,
+				1C8315D8247168B0004B9D0C /* Token+AuthenticationToken.swift */,
+				1C8315D62471689D004B9D0C /* Token+BearerAuthenticatable.swift */,
+				1C8315DE24716CE0004B9D0C /* Token+Content.swift */,
+				1C8315DA24716991004B9D0C /* Token+Generation.swift */,
+				1C0ECF752477B7E100D5A597 /* Token+Public.swift */,
+			);
+			path = Token;
 			sourceTree = "<group>";
 		};
 		1CCAF1732466C28B00CEF646 /* CommandLine */ = {
@@ -315,12 +406,12 @@
 				1C7F66F82466A22400781406 /* FluentMySQL */,
 				1C7F66FE2466A29200781406 /* CrudRouter */,
 				1C7F67012466A2B100781406 /* SwiftyBeaver */,
-				1C7F67072466A32200781406 /* PromiseKit */,
 				1C7F670D2466A36C00781406 /* ArgumentParser */,
 				1C8020332467F1CB004031A1 /* Rainbow */,
 				1C802051246993B0004031A1 /* MySQL */,
 				1C0FC590246DCC18002E0EA4 /* LoggerAPI */,
 				1C0FC593246DCC5E002E0EA4 /* SwiftSMTP */,
+				1C577B2E24700ED40047B87A /* Authentication */,
 			);
 			productName = backyard;
 			productReference = 1C7F66DE2465AB5300781406 /* backyard */;
@@ -345,7 +436,6 @@
 				1C80203B24680A28004031A1 /* FluentMySQL */,
 				1C80203F24680A28004031A1 /* CrudRouter */,
 				1C80204124680A28004031A1 /* SwiftyBeaver */,
-				1C80204524680A28004031A1 /* PromiseKit */,
 				1C80204724680A28004031A1 /* ArgumentParser */,
 				1C80204924680A28004031A1 /* Rainbow */,
 			);
@@ -385,12 +475,12 @@
 				1C7F66F72466A22400781406 /* XCRemoteSwiftPackageReference "fluent-mysql-driver" */,
 				1C7F66FD2466A29200781406 /* XCRemoteSwiftPackageReference "VaporCRUDRouter" */,
 				1C7F67002466A2B100781406 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
-				1C7F67062466A32200781406 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				1C7F670C2466A36C00781406 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				1C8020322467F1CA004031A1 /* XCRemoteSwiftPackageReference "Rainbow" */,
 				1C802050246993B0004031A1 /* XCRemoteSwiftPackageReference "mysql" */,
 				1C0FC58F246DCC18002E0EA4 /* XCRemoteSwiftPackageReference "LoggerAPI" */,
 				1C0FC592246DCC5E002E0EA4 /* XCRemoteSwiftPackageReference "Swift-SMTP" */,
+				1C577B2D24700ED40047B87A /* XCRemoteSwiftPackageReference "auth" */,
 			);
 			productRefGroup = 1C7F66DF2465AB5300781406 /* Products */;
 			projectDirPath = "";
@@ -461,27 +551,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
+				1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */,
 				1C0FC59C246DD372002E0EA4 /* PasswordGenerator.swift in Sources */,
 				1C7F66E22465AB5300781406 /* main.swift in Sources */,
 				1C0FC597246DCD00002E0EA4 /* MailingService.swift in Sources */,
 				1C0FC577246C457D002E0EA4 /* BaseDestination+DefaultConfig.swift in Sources */,
-				1C0FC5A3246E8DD8002E0EA4 /* String+Crypto.swift in Sources */,
 				1C0FC579246C483B002E0EA4 /* BaseDestination+SBPlatformDestination.swift in Sources */,
 				1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */,
-				1C0FC5A0246E8B79002E0EA4 /* Password.swift in Sources */,
+				1C8315E124717648004B9D0C /* User+PasswordAuthenticatable.swift in Sources */,
+				1C8315DB24716991004B9D0C /* Token+Generation.swift in Sources */,
+				1C8315D72471689D004B9D0C /* Token+BearerAuthenticatable.swift in Sources */,
+				1C0ECF7C2477D1F200D5A597 /* User+Password.swift in Sources */,
+				1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */,
+				1C8315D224716521004B9D0C /* User+Content.swift in Sources */,
 				1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */,
 				1C0FC580246C8B25002E0EA4 /* OutputProcessor.swift in Sources */,
+				1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */,
+				1C0ECF762477B7E200D5A597 /* Token+Public.swift in Sources */,
 				1C0FC573246C44EA002E0EA4 /* BaseDestination+FileDestination.swift in Sources */,
 				1C0FC59E246E8B72002E0EA4 /* Token.swift in Sources */,
+				1C8315D9247168B0004B9D0C /* Token+AuthenticationToken.swift in Sources */,
 				1C0FC57E246C8B17002E0EA4 /* BackyardOutput.swift in Sources */,
+				1C8315DD24716B28004B9D0C /* User+BasicAuthenticatable.swift in Sources */,
+				1C577B3224713A180047B87A /* UsersControllerV1.swift in Sources */,
+				1C8315D42471667D004B9D0C /* User+Parameter.swift in Sources */,
 				1C0FC599246DCD74002E0EA4 /* SMTPMailingService.swift in Sources */,
 				1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */,
-				1C577B2A246FE7390047B87A /* BackyardRouter.swift in Sources */,
 				1C0FC583246C8C5E002E0EA4 /* User.swift in Sources */,
+				1C8315DF24716CE0004B9D0C /* Token+Content.swift in Sources */,
 				1C0FC586246D2C01002E0EA4 /* DataStorage.swift in Sources */,
+				1C8315D024716093004B9D0C /* User+Public.swift in Sources */,
+				1C0F14692476745E00598671 /* PasswordStrengts+Enough.swift in Sources */,
+				1C0ECF7E2478036D00D5A597 /* User+Avatar.swift in Sources */,
 				1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */,
 				1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */,
 				1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */,
+				1C0F1466247671B500598671 /* PasswordStrength.swift in Sources */,
 				1C577B28246FE2640047B87A /* BackyardVapor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,6 +830,14 @@
 				minimumVersion = 5.1.2;
 			};
 		};
+		1C577B2D24700ED40047B87A /* XCRemoteSwiftPackageReference "auth" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/auth";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.4;
+			};
+		};
 		1C7F66F42466A1FB00781406 /* XCRemoteSwiftPackageReference "vapor" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vapor/vapor.git";
@@ -755,14 +868,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.9.1;
-			};
-		};
-		1C7F67062466A32200781406 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.13.1;
 			};
 		};
 		1C7F670C2466A36C00781406 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
@@ -802,6 +907,11 @@
 			package = 1C0FC592246DCC5E002E0EA4 /* XCRemoteSwiftPackageReference "Swift-SMTP" */;
 			productName = SwiftSMTP;
 		};
+		1C577B2E24700ED40047B87A /* Authentication */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C577B2D24700ED40047B87A /* XCRemoteSwiftPackageReference "auth" */;
+			productName = Authentication;
+		};
 		1C7F66F52466A1FC00781406 /* Vapor */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1C7F66F42466A1FB00781406 /* XCRemoteSwiftPackageReference "vapor" */;
@@ -821,11 +931,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C7F67002466A2B100781406 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
 			productName = SwiftyBeaver;
-		};
-		1C7F67072466A32200781406 /* PromiseKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1C7F67062466A32200781406 /* XCRemoteSwiftPackageReference "PromiseKit" */;
-			productName = PromiseKit;
 		};
 		1C7F670D2466A36C00781406 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -856,11 +961,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C7F67002466A2B100781406 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
 			productName = SwiftyBeaver;
-		};
-		1C80204524680A28004031A1 /* PromiseKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1C7F67062466A32200781406 /* XCRemoteSwiftPackageReference "PromiseKit" */;
-			productName = PromiseKit;
 		};
 		1C80204724680A28004031A1 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;

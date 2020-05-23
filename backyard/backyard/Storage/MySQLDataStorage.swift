@@ -6,9 +6,10 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
+import Async
+import Crypto
 import FluentMySQL
 import MySQL
-import PromiseKit
 import SwiftyBeaver
 
 
@@ -19,7 +20,8 @@ struct MySQLDataStorage: DataStorage {
     // MARK: - Private Variables
 
     private let database: MySQLDatabase
-    private let worker = MultiThreadedEventLoopGroup(numberOfThreads: 10)
+
+    private let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: 10)
 
 
     // MARK: - Lifecycle
@@ -51,46 +53,36 @@ struct MySQLDataStorage: DataStorage {
         registerModels()
     }
 
-    func listOfStaff() -> PromiseKit.Promise<[User]> {
-        Promise { seal in
-            database
-                .newConnection(on: worker.next())
-                .then { connection -> EventLoopFuture<[User]> in
-                    User.entity = "staff_users"
-                    return connection.raw("SELECT * FROM staff_users").all(decoding: User.self)
-                }
-                .do { seal.fulfill($0) }
-                .catch { seal.reject($0) }
-                .always { User.entity = "users" }
-        }
+    func listOfStaff() -> Future<[User]> {
+        database
+            .newConnection(on: eventLoopGroup.next())
+            .then { connection -> EventLoopFuture<[User]> in
+                User.entity = "staff_users"
+                return connection.raw("SELECT * FROM staff_users").all(decoding: User.self)
+            }
+            .always { User.entity = "users" }
     }
 
-    func addStaff(email: String, password: String) -> PromiseKit.Promise<Void> {
+    func addStaff(email: String, password: String) -> Future<Void> {
         var passwordHash: String = ""
         do {
-            passwordHash = try password.soiledHash()
+            passwordHash = try BCrypt.hash(password)
         } catch {
             SwiftyBeaver.error("Password hashing error: \(error.localizedDescription)", context: error)
-            return .init(error: error)
+            return eventLoopGroup.next().newFailedFuture(error: error)
         }
 
-        return Promise { seal in
-            database
-                .newConnection(on: worker.next())
-                .then { $0.raw("CALL AddStaff('\(email)', '\(passwordHash)');").all() }
-                .do { _ in seal.fulfill_() }
-                .catch { seal.reject($0) }
-        }
+        return database
+            .newConnection(on: eventLoopGroup.next())
+            .then { $0.raw("CALL AddStaff('\(email)', '\(passwordHash)');").all() }
+            .then { _ in self.eventLoopGroup.future() }
     }
 
-    func removeStaff(email: String) -> PromiseKit.Promise<Void> {
-        Promise { seal in
-            database
-                .newConnection(on: worker.next())
-                .then { $0.raw("CALL RemoveStaff('\(email)');").all() }
-                .do { _ in seal.fulfill_() }
-                .catch { seal.reject($0) }
-        }
+    func removeStaff(email: String) -> Future<Void> {
+        database
+            .newConnection(on: eventLoopGroup.next())
+            .then { $0.raw("CALL RemoveStaff('\(email)');").all() }
+            .then { _ in self.eventLoopGroup.future() }
     }
 
 
@@ -98,7 +90,7 @@ struct MySQLDataStorage: DataStorage {
 
     private func registerModels() {
         User.defaultDatabase = .mysql
-        Password.defaultDatabase = .mysql
+        Token.defaultDatabase = .mysql
     }
 
 }

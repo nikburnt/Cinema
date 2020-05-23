@@ -9,7 +9,7 @@
 import SwiftyBeaver
 
 
-// MARK: - SwiftyBeaver
+// MARK: - SwiftyBeaver+Configure
 
 extension SwiftyBeaver {
 

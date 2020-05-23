@@ -6,8 +6,8 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
+import Async
 import Fluent
-import PromiseKit
 
 
 // MARK: - DataStorage
@@ -20,8 +20,8 @@ protocol DataStorage {
 
     func register(on services: inout Services) throws
 
-    func listOfStaff() -> PromiseKit.Promise<[User]>
-    func addStaff(email: String, password: String) -> PromiseKit.Promise<Void>
-    func removeStaff(email: String) -> PromiseKit.Promise<Void>
+    func listOfStaff() -> Future<[User]>
+    func addStaff(email: String, password: String) -> Future<Void>
+    func removeStaff(email: String) -> Future<Void>
 
 }

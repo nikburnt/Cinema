@@ -16,7 +16,7 @@ do {
     let output = BackyardOutput()
     let input = Backyard(output)
     input.appExitRequired = { CommandLineApp.exit(withError: $0) }
-    
+
     try CommandLineApp.run(using: input)
 } catch {
     CommandLineApp.exit(withError: error)
