@@ -6,6 +6,8 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
+import Foundation
+
 import SwiftyBeaver
 
 
@@ -15,6 +17,12 @@ enum BackyardErrors: Error {
     case storageNotSpecified
     case mailServiceNotSpecified
 }
+
+
+// MARK: - Private Constants
+
+private let expirationTimerDelay: TimeInterval = 60 * 60 * 24
+private let tokensExpireAfterDays: UInt = 7
 
 
 // MARK: - Backyard
@@ -31,7 +39,9 @@ class Backyard: CommandsProcessor {
 
     // MARK: - Private Variables
 
-    var output: OutputProcessor
+    private var output: OutputProcessor
+
+    private var expirationTokenCleanTimer: Timer?
 
 
     // MARK: - Lifecycle
@@ -59,7 +69,11 @@ class Backyard: CommandsProcessor {
         }
 
         do {
-            output.defaultOutput("Starting started.")
+            output.defaultOutput("Starting vapor.")
+
+            removeExpiredTokens()
+            self.expirationTokenCleanTimer = Timer.scheduledTimer(withTimeInterval: expirationTimerDelay, repeats: true) { _ in self.removeExpiredTokens() }
+
             let vapor = try BackyardVapor(storage, mailingService: mailingService)
             try vapor.start()
             output.defaultOutput("Vapor started.")
@@ -144,6 +158,21 @@ class Backyard: CommandsProcessor {
                 self.output.removeStaff(.failure(error))
                 self.appExitRequired?(error)
             }
+    }
+
+    // MARK: - Private Methods
+
+    private func removeExpiredTokens() {
+        guard let storage = storage else {
+            SwiftyBeaver.error("Storage required but not set up. Check if the storage variable set up before this call.")
+            appExitRequired?(BackyardErrors.storageNotSpecified)
+            return
+        }
+
+        storage
+            .removeExpiredTokens(olderThan: tokensExpireAfterDays)
+            .do { SwiftyBeaver.debug("Tokens older than \(tokensExpireAfterDays) day(s) removed.") }
+            .catch { SwiftyBeaver.error("Expired tokens removal error: \($0.localizedDescription)", context: $0) }
     }
 
 }
