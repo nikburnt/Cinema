@@ -24,4 +24,6 @@ protocol DataStorage {
     func addStaff(email: String, password: String) -> Future<Void>
     func removeStaff(email: String) -> Future<Void>
 
+    func removeExpiredTokens(olderThan days: UInt) -> Future<Void>
+
 }
