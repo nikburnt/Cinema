@@ -64,7 +64,7 @@ class BackyardVapor {
         middlewares.use(ErrorMiddleware.self)
         services.register(middlewares)
 
-        
+
         // Application
 
         self.vaporApplication = try Application(config: config, environment: environment, services: services)
@@ -87,6 +87,7 @@ class BackyardVapor {
 
         try v1Route.register(collection: UsersControllerV1(mailingService: mailingService))
         try v1Route.register(collection: TheatersControllerV1())
+        try v1Route.register(collection: AuditoriumsControllerV1())
     }
 
 }

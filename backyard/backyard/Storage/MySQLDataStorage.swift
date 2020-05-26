@@ -99,6 +99,7 @@ struct MySQLDataStorage: DataStorage {
         User.defaultDatabase = .mysql
         Token.defaultDatabase = .mysql
         Theater.defaultDatabase = .mysql
+        Auditorium.defaultDatabase = .mysql
     }
 
 }

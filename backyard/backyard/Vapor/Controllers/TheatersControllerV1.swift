@@ -19,7 +19,7 @@ struct TheatersControllerV1: RouteCollection {
         // Root Route
         let theatersRoute = router.grouped("theaters")
 
-        
+
         // Bearer Authentication for requests
 
         let tokenAuthMiddleware = User.tokenAuthMiddleware()
@@ -53,29 +53,45 @@ struct TheatersControllerV1: RouteCollection {
     }
 
     private func addHandler(_ request: Request, data: Theater.CreateData) throws -> Future<Theater> {
+        guard try request.authenticated(User.self)?.role == .staff else {
+            throw Abort(.forbidden, reason: "You are not allowed to add theater.")
+        }
+
         try data.validate()
 
         return try Theater(with: data).create(on: request)
     }
 
     private func updateHandler(_ request: Request) throws -> Future<Theater> {
-        try flatMap(to: Theater.self,
-                    request.parameters.next(Theater.self),
-                    request.content.decode(Theater.UpdateData.self)) { theater, updateData in
+        guard try request.authenticated(User.self)?.role == .staff else {
+            throw Abort(.forbidden, reason: "You are not allowed to update theater.")
+        }
+
+        return try flatMap(to: Theater.self,
+                           request.parameters.next(Theater.self),
+                           request.content.decode(Theater.UpdateData.self)) { theater, updateData in
             theater.updated(with: updateData).save(on: request)
         }
     }
 
     private func addPictureHandler(_ request: Request) throws -> Future<Theater> {
-        try flatMap(to: Theater.self,
-                    request.parameters.next(Theater.self),
-                    request.http.body.consumeData(on: request)) { theater, imageData in
+        guard try request.authenticated(User.self)?.role == .staff else {
+            throw Abort(.forbidden, reason: "You are not allowed to add picture to theater.")
+        }
+
+        return try flatMap(to: Theater.self,
+                           request.parameters.next(Theater.self),
+                           request.http.body.consumeData(on: request)) { theater, imageData in
             try theater.updated(with: imageData).save(on: request)
         }
     }
 
     private func deleteHandler(_ request: Request) throws -> Future<Theater> {
-        try request.parameters.next(Theater.self).delete(on: request)
+        guard try request.authenticated(User.self)?.role == .staff else {
+            throw Abort(.forbidden, reason: "You are not allowed to remove theater.")
+        }
+
+        return try request.parameters.next(Theater.self).delete(on: request)
     }
 
 }

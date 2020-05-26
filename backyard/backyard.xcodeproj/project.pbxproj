@@ -41,6 +41,13 @@
 		1C6727DC247A5918005E4BF7 /* Theater+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6727DB247A5918005E4BF7 /* Theater+Update.swift */; };
 		1C6727DE247A5DA3005E4BF7 /* Theater+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */; };
 		1C7B955A247BBA90009710B1 /* Theater+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9559247BBA90009710B1 /* Theater+Picture.swift */; };
+		1C7B955D247CFF1A009710B1 /* Auditorium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B955C247CFF1A009710B1 /* Auditorium.swift */; };
+		1C7B955F247CFF2A009710B1 /* Auditorium+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B955E247CFF2A009710B1 /* Auditorium+Content.swift */; };
+		1C7B9561247CFF33009710B1 /* Auditorium+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9560247CFF33009710B1 /* Auditorium+Create.swift */; };
+		1C7B9563247CFF3E009710B1 /* Auditorium+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */; };
+		1C7B9565247CFF4A009710B1 /* Auditorium+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */; };
+		1C7B9567247CFF55009710B1 /* Auditorium+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */; };
+		1C7B9569247D02E7009710B1 /* AuditoriumsControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9568247D02E7009710B1 /* AuditoriumsControllerV1.swift */; };
 		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
 		1C7F66F62466A1FC00781406 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* Vapor */; };
@@ -117,6 +124,13 @@
 		1C6727DB247A5918005E4BF7 /* Theater+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Update.swift"; sourceTree = "<group>"; };
 		1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Create.swift"; sourceTree = "<group>"; };
 		1C7B9559247BBA90009710B1 /* Theater+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Picture.swift"; sourceTree = "<group>"; };
+		1C7B955C247CFF1A009710B1 /* Auditorium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auditorium.swift; sourceTree = "<group>"; };
+		1C7B955E247CFF2A009710B1 /* Auditorium+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Content.swift"; sourceTree = "<group>"; };
+		1C7B9560247CFF33009710B1 /* Auditorium+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Create.swift"; sourceTree = "<group>"; };
+		1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Parameter.swift"; sourceTree = "<group>"; };
+		1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Picture.swift"; sourceTree = "<group>"; };
+		1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Update.swift"; sourceTree = "<group>"; };
+		1C7B9568247D02E7009710B1 /* AuditoriumsControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumsControllerV1.swift; sourceTree = "<group>"; };
 		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F66E12465AB5300781406 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -246,6 +260,7 @@
 		1C0FC581246C8C4A002E0EA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C7B955B247CFF0A009710B1 /* Auditorium */,
 				1C0ECF7F2479487300D5A597 /* Theater */,
 				1C8315D52471685F004B9D0C /* Token */,
 				1C8315CC24716047004B9D0C /* User */,
@@ -291,10 +306,24 @@
 		1C577B30247138EE0047B87A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1C7B9568247D02E7009710B1 /* AuditoriumsControllerV1.swift */,
 				1C0ECF842479493500D5A597 /* TheatersControllerV1.swift */,
 				1C577B3124713A180047B87A /* UsersControllerV1.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1C7B955B247CFF0A009710B1 /* Auditorium */ = {
+			isa = PBXGroup;
+			children = (
+				1C7B955C247CFF1A009710B1 /* Auditorium.swift */,
+				1C7B955E247CFF2A009710B1 /* Auditorium+Content.swift */,
+				1C7B9560247CFF33009710B1 /* Auditorium+Create.swift */,
+				1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */,
+				1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */,
+				1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */,
+			);
+			path = Auditorium;
 			sourceTree = "<group>";
 		};
 		1C7D0BF9246B4DAB00139D45 /* Facade */ = {
@@ -577,11 +606,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
+				1C7B955D247CFF1A009710B1 /* Auditorium.swift in Sources */,
 				1C0ECF852479493500D5A597 /* TheatersControllerV1.swift in Sources */,
 				1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */,
+				1C7B9563247CFF3E009710B1 /* Auditorium+Parameter.swift in Sources */,
 				1C0FC59C246DD372002E0EA4 /* PasswordGenerator.swift in Sources */,
 				1C0ECF832479491100D5A597 /* Theater+Content.swift in Sources */,
+				1C7B9561247CFF33009710B1 /* Auditorium+Create.swift in Sources */,
 				1C7F66E22465AB5300781406 /* main.swift in Sources */,
+				1C7B9567247CFF55009710B1 /* Auditorium+Update.swift in Sources */,
 				1C0FC597246DCD00002E0EA4 /* MailingService.swift in Sources */,
 				1C0ECF8724794A9000D5A597 /* Theater+Parameter.swift in Sources */,
 				1C7B955A247BBA90009710B1 /* Theater+Picture.swift in Sources */,
@@ -611,6 +644,8 @@
 				1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */,
 				1C0FC583246C8C5E002E0EA4 /* User.swift in Sources */,
 				1C8315DF24716CE0004B9D0C /* Token+Content.swift in Sources */,
+				1C7B955F247CFF2A009710B1 /* Auditorium+Content.swift in Sources */,
+				1C7B9569247D02E7009710B1 /* AuditoriumsControllerV1.swift in Sources */,
 				1C0FC586246D2C01002E0EA4 /* DataStorage.swift in Sources */,
 				1C8315D024716093004B9D0C /* User+Public.swift in Sources */,
 				1C0F14692476745E00598671 /* PasswordStrengts+Enough.swift in Sources */,
@@ -620,6 +655,7 @@
 				1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */,
 				1C0F1466247671B500598671 /* PasswordStrength.swift in Sources */,
 				1C577B28246FE2640047B87A /* BackyardVapor.swift in Sources */,
+				1C7B9565247CFF4A009710B1 /* Auditorium+Picture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -83,7 +83,7 @@ struct UsersControllerV1: RouteCollection {
     // swiftlint:disable first_where
     private func resetPasswordHandler(_ request: Request, data: User.ResetPasswordData) throws -> Future<User.Public> {
         guard request.http.headers.bearerAuthorization == nil else {
-            throw Abort(.badRequest, reason: "User should not be logged in to reset password.")
+            throw Abort(.forbidden, reason: "User should not be logged in to reset password.")
         }
 
         try data.validate()
@@ -104,7 +104,7 @@ struct UsersControllerV1: RouteCollection {
 
     private func registerHandler(_ request: Request, data: User.RegistrationData) throws -> Future<Token.Public> {
         guard request.http.headers.bearerAuthorization == nil else {
-            throw Abort(.badRequest, reason: "User should not be logged in to register.")
+            throw Abort(.forbidden, reason: "User should not be logged in to register.")
         }
 
         try data.validate()
