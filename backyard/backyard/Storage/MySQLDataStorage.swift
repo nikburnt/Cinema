@@ -98,6 +98,7 @@ struct MySQLDataStorage: DataStorage {
     private func registerModels() {
         User.defaultDatabase = .mysql
         Token.defaultDatabase = .mysql
+        Theater.defaultDatabase = .mysql
     }
 
 }

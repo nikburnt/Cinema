@@ -6,11 +6,12 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
+import Authentication
 import Crypto
 import Vapor
 
 
-// MARK: - UsersController
+// MARK: - UsersControllerV1
 
 struct UsersControllerV1: RouteCollection {
 
@@ -23,7 +24,6 @@ struct UsersControllerV1: RouteCollection {
 
     func boot(router: Router) throws {
         // Root Route
-
         let usersRoute = router.grouped("users")
 
 
@@ -38,18 +38,19 @@ struct UsersControllerV1: RouteCollection {
 
         let tokenAuthMiddleware = User.tokenAuthMiddleware()
         let guardAuthMiddleware = User.guardAuthMiddleware()
-        let authenticatetRoute = usersRoute.grouped(tokenAuthMiddleware, guardAuthMiddleware)
+        let authenticatedRoute = usersRoute.grouped(tokenAuthMiddleware, guardAuthMiddleware)
 
-        // UsersActions
 
-        let currentUserRoute = authenticatetRoute.grouped("current")
+        // Users Actions
+
+        let currentUserRoute = authenticatedRoute.grouped("current")
         currentUserRoute.get(use: getCurrentHandler)
-        currentUserRoute.post(User.UpdateData.self, use: updateCurrentHandler)
-        currentUserRoute.post(User.ChangePasswordData.self, at: "change-password", use: updateCurrentPasswordHandler)
-        currentUserRoute.post(User.ResetPasswordData.self, at: "reset-password", use: resetCurrentPasswordHandler)
-        currentUserRoute.post("upload-avatar", use: addAvatarHandler)
+        currentUserRoute.put(User.UpdateData.self, use: updateCurrentHandler)
+        currentUserRoute.patch(User.ChangePasswordData.self, at: "change-password", use: updateCurrentPasswordHandler)
+        currentUserRoute.patch("upload-avatar", use: addAvatarHandler)
 
         usersRoute.post(User.RegistrationData.self, at: "register", use: registerHandler)
+        usersRoute.patch(User.ResetPasswordData.self, at: "reset-password", use: resetPasswordHandler)
     }
 
 
@@ -62,49 +63,47 @@ struct UsersControllerV1: RouteCollection {
     }
 
     private func getCurrentHandler(_ request: Request) throws -> Future<User.Public> {
-        guard let loggedInUser = try request.authenticated(User.self) else {
-            throw Abort(.unauthorized)
-        }
+        let loggedInUser: User = try request.requireAuthenticated()
         return request.future(loggedInUser.public)
     }
 
     private func updateCurrentHandler(_ request: Request, data: User.UpdateData) throws -> Future<User.Public> {
-        guard let loggedInUser = try request.authenticated(User.self) else {
-            throw Abort(.unauthorized)
-        }
-
+        let loggedInUser: User = try request.requireAuthenticated()
         return loggedInUser.updated(with: data).update(on: request).public
     }
 
     private func updateCurrentPasswordHandler(_ request: Request, data: User.ChangePasswordData) throws -> Future<User.Public> {
-        guard let loggedInUser = try request.authenticated(User.self) else {
-            throw Abort(.unauthorized)
-        }
-
         try data.validate()
 
+        let loggedInUser: User = try request.requireAuthenticated()
         return try loggedInUser.updated(with: data).update(on: request).public
     }
 
-    private func resetCurrentPasswordHandler(_ request: Request, data: User.ResetPasswordData) throws -> Future<User.Public> {
-        guard let loggedInUser = try request.authenticated(User.self) else {
-            throw Abort(.unauthorized)
+    // Async didnt have a first where method
+    // swiftlint:disable first_where
+    private func resetPasswordHandler(_ request: Request, data: User.ResetPasswordData) throws -> Future<User.Public> {
+        guard request.http.headers.bearerAuthorization == nil else {
+            throw Abort(.badRequest, reason: "User should not be logged in to reset password.")
         }
 
         try data.validate()
 
         let newPassword = PasswordGenerator.generatePassword()
         let dataWithNewPassword = User.ResetPasswordData(email: data.email, newPassword: newPassword)
-        return try loggedInUser
-            .updated(with: dataWithNewPassword)
+        return User.query(on: request)
+            .filter(\.email, .equal, data.email)
+            .first()
+            .unwrap(or: Abort(.badRequest, reason: "User should not be logged in to register."))
+            .map { try $0.updated(with: dataWithNewPassword) }
             .update(on: request)
-            .then { _ in self.mailingService.send(resetPassword: newPassword, to: data.email) }
-            .map { _ in loggedInUser.public }
+            .and(mailingService.send(resetPassword: newPassword, to: data.email))
+            .map { $0.0 }
+            .public
     }
 
 
     private func registerHandler(_ request: Request, data: User.RegistrationData) throws -> Future<Token.Public> {
-        guard try request.authenticated(User.self) == nil else {
+        guard request.http.headers.bearerAuthorization == nil else {
             throw Abort(.badRequest, reason: "User should not be logged in to register.")
         }
 
@@ -123,10 +122,7 @@ struct UsersControllerV1: RouteCollection {
 
 
     private func addAvatarHandler(_ request: Request) throws -> Future<User.Public> {
-        guard let loggedInUser = try request.authenticated(User.self) else {
-            throw Abort(.unauthorized)
-        }
-
+        let loggedInUser: User = try request.requireAuthenticated()
         return request.http.body
             .consumeData(on: request)
             .thenThrowing { try loggedInUser.updated(with: $0) }

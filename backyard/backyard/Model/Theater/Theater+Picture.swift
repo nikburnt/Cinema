@@ -1,8 +1,8 @@
 //
-//  User+Avatar.swift
+//  Theater+Picture.swift
 //  backyard
 //
-//  Created by Nik Burnt on 5/22/20.
+//  Created by Nik Burnt on 5/25/20.
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
@@ -12,31 +12,31 @@ import Vapor
 // MARK: - Private Variables
 
 private let publicFolder = "Public"
-private let avatarsFolder = "avatars"
+private let theatersPicturesFolder = "theaters"
 private let imageExtension = "image"
 
 
 // MARK: - User+Avatar
 
-extension User {
+extension Theater {
 
     // MARK: - Public Methods
 
-    func updated(with data: Data) throws -> User {
+    func updated(with data: Data) throws -> Theater {
         let relativePath = URL(fileURLWithPath: "/")
-            .appendingPathComponent(avatarsFolder)
+            .appendingPathComponent(theatersPicturesFolder)
             .appendingPathComponent(UUID().uuidString)
             .appendingPathExtension(imageExtension)
         let filePath = URL(fileURLWithPath: publicFolder).appendingPathComponent(relativePath.path)
 
-        let avatarsFolder = filePath.deletingLastPathComponent()
-        if !FileManager.default.fileExists(atPath: avatarsFolder.absoluteString) {
-            try FileManager.default.createDirectory(at: avatarsFolder, withIntermediateDirectories: true)
+        let picturesFolder = filePath.deletingLastPathComponent()
+        if !FileManager.default.fileExists(atPath: picturesFolder.absoluteString) {
+            try FileManager.default.createDirectory(at: picturesFolder, withIntermediateDirectories: true)
         }
         try data.write(to: filePath)
 
         var copy = self
-        copy.avatar = relativePath.path
+        copy.picture = relativePath.path
         return copy
     }
 
