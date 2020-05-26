@@ -12,6 +12,10 @@
 		1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF792477CA5100D5A597 /* User+Registration.swift */; };
 		1C0ECF7C2477D1F200D5A597 /* User+Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF7B2477D1F200D5A597 /* User+Password.swift */; };
 		1C0ECF7E2478036D00D5A597 /* User+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */; };
+		1C0ECF812479488300D5A597 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF802479488300D5A597 /* Theater.swift */; };
+		1C0ECF832479491100D5A597 /* Theater+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF822479491100D5A597 /* Theater+Content.swift */; };
+		1C0ECF852479493500D5A597 /* TheatersControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF842479493500D5A597 /* TheatersControllerV1.swift */; };
+		1C0ECF8724794A9000D5A597 /* Theater+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */; };
 		1C0F1466247671B500598671 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F1465247671B500598671 /* PasswordStrength.swift */; };
 		1C0F14692476745E00598671 /* PasswordStrengts+Enough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F14682476745E00598671 /* PasswordStrengts+Enough.swift */; };
 		1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC570246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift */; };
@@ -34,6 +38,9 @@
 		1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */; };
 		1C577B2F24700ED40047B87A /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 1C577B2E24700ED40047B87A /* Authentication */; };
 		1C577B3224713A180047B87A /* UsersControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B3124713A180047B87A /* UsersControllerV1.swift */; };
+		1C6727DC247A5918005E4BF7 /* Theater+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6727DB247A5918005E4BF7 /* Theater+Update.swift */; };
+		1C6727DE247A5DA3005E4BF7 /* Theater+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */; };
+		1C7B955A247BBA90009710B1 /* Theater+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9559247BBA90009710B1 /* Theater+Picture.swift */; };
 		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
 		1C7F66F62466A1FC00781406 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* Vapor */; };
@@ -56,7 +63,6 @@
 		1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315CD2471608B004B9D0C /* User+TokenAuthenticatable.swift */; };
 		1C8315D024716093004B9D0C /* User+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315CF24716093004B9D0C /* User+Public.swift */; };
 		1C8315D224716521004B9D0C /* User+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D124716521004B9D0C /* User+Content.swift */; };
-		1C8315D42471667D004B9D0C /* User+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D32471667D004B9D0C /* User+Parameter.swift */; };
 		1C8315D72471689D004B9D0C /* Token+BearerAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D62471689D004B9D0C /* Token+BearerAuthenticatable.swift */; };
 		1C8315D9247168B0004B9D0C /* Token+AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315D8247168B0004B9D0C /* Token+AuthenticationToken.swift */; };
 		1C8315DB24716991004B9D0C /* Token+Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315DA24716991004B9D0C /* Token+Generation.swift */; };
@@ -85,6 +91,10 @@
 		1C0ECF792477CA5100D5A597 /* User+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Registration.swift"; sourceTree = "<group>"; };
 		1C0ECF7B2477D1F200D5A597 /* User+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Password.swift"; sourceTree = "<group>"; };
 		1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Avatar.swift"; sourceTree = "<group>"; };
+		1C0ECF802479488300D5A597 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
+		1C0ECF822479491100D5A597 /* Theater+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Content.swift"; sourceTree = "<group>"; };
+		1C0ECF842479493500D5A597 /* TheatersControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatersControllerV1.swift; sourceTree = "<group>"; };
+		1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Parameter.swift"; sourceTree = "<group>"; };
 		1C0F1465247671B500598671 /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		1C0F14682476745E00598671 /* PasswordStrengts+Enough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordStrengts+Enough.swift"; sourceTree = "<group>"; };
 		1C0FC570246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDestination+ConsoleDestination.swift"; sourceTree = "<group>"; };
@@ -104,6 +114,9 @@
 		1C577B27246FE2640047B87A /* BackyardVapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackyardVapor.swift; sourceTree = "<group>"; };
 		1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaverService.swift; sourceTree = "<group>"; };
 		1C577B3124713A180047B87A /* UsersControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersControllerV1.swift; sourceTree = "<group>"; };
+		1C6727DB247A5918005E4BF7 /* Theater+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Update.swift"; sourceTree = "<group>"; };
+		1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Create.swift"; sourceTree = "<group>"; };
+		1C7B9559247BBA90009710B1 /* Theater+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Picture.swift"; sourceTree = "<group>"; };
 		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F66E12465AB5300781406 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -115,7 +128,6 @@
 		1C8315CD2471608B004B9D0C /* User+TokenAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+TokenAuthenticatable.swift"; sourceTree = "<group>"; };
 		1C8315CF24716093004B9D0C /* User+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Public.swift"; sourceTree = "<group>"; };
 		1C8315D124716521004B9D0C /* User+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Content.swift"; sourceTree = "<group>"; };
-		1C8315D32471667D004B9D0C /* User+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Parameter.swift"; sourceTree = "<group>"; };
 		1C8315D62471689D004B9D0C /* Token+BearerAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+BearerAuthenticatable.swift"; sourceTree = "<group>"; };
 		1C8315D8247168B0004B9D0C /* Token+AuthenticationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+AuthenticationToken.swift"; sourceTree = "<group>"; };
 		1C8315DA24716991004B9D0C /* Token+Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+Generation.swift"; sourceTree = "<group>"; };
@@ -163,6 +175,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C0ECF7F2479487300D5A597 /* Theater */ = {
+			isa = PBXGroup;
+			children = (
+				1C0ECF802479488300D5A597 /* Theater.swift */,
+				1C0ECF822479491100D5A597 /* Theater+Content.swift */,
+				1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */,
+				1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */,
+				1C7B9559247BBA90009710B1 /* Theater+Picture.swift */,
+				1C6727DB247A5918005E4BF7 /* Theater+Update.swift */,
+			);
+			path = Theater;
+			sourceTree = "<group>";
+		};
 		1C0F14622476717D00598671 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +246,7 @@
 		1C0FC581246C8C4A002E0EA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C0ECF7F2479487300D5A597 /* Theater */,
 				1C8315D52471685F004B9D0C /* Token */,
 				1C8315CC24716047004B9D0C /* User */,
 			);
@@ -265,6 +291,7 @@
 		1C577B30247138EE0047B87A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1C0ECF842479493500D5A597 /* TheatersControllerV1.swift */,
 				1C577B3124713A180047B87A /* UsersControllerV1.swift */,
 			);
 			path = Controllers;
@@ -333,7 +360,6 @@
 				1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */,
 				1C8315DC24716B28004B9D0C /* User+BasicAuthenticatable.swift */,
 				1C8315D124716521004B9D0C /* User+Content.swift */,
-				1C8315D32471667D004B9D0C /* User+Parameter.swift */,
 				1C0ECF7B2477D1F200D5A597 /* User+Password.swift */,
 				1C8315E024717648004B9D0C /* User+PasswordAuthenticatable.swift */,
 				1C8315CF24716093004B9D0C /* User+Public.swift */,
@@ -551,10 +577,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
+				1C0ECF852479493500D5A597 /* TheatersControllerV1.swift in Sources */,
 				1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */,
 				1C0FC59C246DD372002E0EA4 /* PasswordGenerator.swift in Sources */,
+				1C0ECF832479491100D5A597 /* Theater+Content.swift in Sources */,
 				1C7F66E22465AB5300781406 /* main.swift in Sources */,
 				1C0FC597246DCD00002E0EA4 /* MailingService.swift in Sources */,
+				1C0ECF8724794A9000D5A597 /* Theater+Parameter.swift in Sources */,
+				1C7B955A247BBA90009710B1 /* Theater+Picture.swift in Sources */,
 				1C0FC577246C457D002E0EA4 /* BaseDestination+DefaultConfig.swift in Sources */,
 				1C0FC579246C483B002E0EA4 /* BaseDestination+SBPlatformDestination.swift in Sources */,
 				1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */,
@@ -565,6 +595,7 @@
 				1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */,
 				1C8315D224716521004B9D0C /* User+Content.swift in Sources */,
 				1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */,
+				1C0ECF812479488300D5A597 /* Theater.swift in Sources */,
 				1C0FC580246C8B25002E0EA4 /* OutputProcessor.swift in Sources */,
 				1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */,
 				1C0ECF762477B7E200D5A597 /* Token+Public.swift in Sources */,
@@ -572,9 +603,10 @@
 				1C0FC59E246E8B72002E0EA4 /* Token.swift in Sources */,
 				1C8315D9247168B0004B9D0C /* Token+AuthenticationToken.swift in Sources */,
 				1C0FC57E246C8B17002E0EA4 /* BackyardOutput.swift in Sources */,
+				1C6727DE247A5DA3005E4BF7 /* Theater+Create.swift in Sources */,
 				1C8315DD24716B28004B9D0C /* User+BasicAuthenticatable.swift in Sources */,
 				1C577B3224713A180047B87A /* UsersControllerV1.swift in Sources */,
-				1C8315D42471667D004B9D0C /* User+Parameter.swift in Sources */,
+				1C6727DC247A5918005E4BF7 /* Theater+Update.swift in Sources */,
 				1C0FC599246DCD74002E0EA4 /* SMTPMailingService.swift in Sources */,
 				1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */,
 				1C0FC583246C8C5E002E0EA4 /* User.swift in Sources */,

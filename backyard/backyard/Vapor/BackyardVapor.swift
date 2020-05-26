@@ -28,10 +28,12 @@ class BackyardVapor {
     init(_ dataStorage: DataStorage, mailingService: MailingService) throws {
         self.mailingService = mailingService
 
+
         // Config
 
         var config: Config = .default()
         config.prefer(SwiftyBeaverService.self, for: Logger.self)
+
 
         // Environment
 
@@ -41,6 +43,7 @@ class BackyardVapor {
         #else
         environment = .production
         #endif
+
 
         // Services
 
@@ -61,6 +64,7 @@ class BackyardVapor {
         middlewares.use(ErrorMiddleware.self)
         services.register(middlewares)
 
+        
         // Application
 
         self.vaporApplication = try Application(config: config, environment: environment, services: services)
@@ -81,8 +85,8 @@ class BackyardVapor {
     private func initRoutes(for router: Router) throws {
         let v1Route = router.grouped("v1")
 
-        let usersControllerV1 = UsersControllerV1(mailingService: mailingService)
-        try v1Route.register(collection: usersControllerV1)
+        try v1Route.register(collection: UsersControllerV1(mailingService: mailingService))
+        try v1Route.register(collection: TheatersControllerV1())
     }
 
 }
