@@ -14,7 +14,6 @@
 		1C0ECF7E2478036D00D5A597 /* User+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */; };
 		1C0ECF812479488300D5A597 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF802479488300D5A597 /* Theater.swift */; };
 		1C0ECF832479491100D5A597 /* Theater+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF822479491100D5A597 /* Theater+Content.swift */; };
-		1C0ECF852479493500D5A597 /* TheatersControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF842479493500D5A597 /* TheatersControllerV1.swift */; };
 		1C0ECF8724794A9000D5A597 /* Theater+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */; };
 		1C0F1466247671B500598671 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F1465247671B500598671 /* PasswordStrength.swift */; };
 		1C0F14692476745E00598671 /* PasswordStrengts+Enough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F14682476745E00598671 /* PasswordStrengts+Enough.swift */; };
@@ -47,7 +46,7 @@
 		1C7B9563247CFF3E009710B1 /* Auditorium+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */; };
 		1C7B9565247CFF4A009710B1 /* Auditorium+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */; };
 		1C7B9567247CFF55009710B1 /* Auditorium+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */; };
-		1C7B9569247D02E7009710B1 /* AuditoriumsControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9568247D02E7009710B1 /* AuditoriumsControllerV1.swift */; };
+		1C7B956B247D106F009710B1 /* CommonCRUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B956A247D106F009710B1 /* CommonCRUDController.swift */; };
 		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
 		1C7F66F62466A1FC00781406 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7F66F52466A1FC00781406 /* Vapor */; };
@@ -100,7 +99,6 @@
 		1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Avatar.swift"; sourceTree = "<group>"; };
 		1C0ECF802479488300D5A597 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
 		1C0ECF822479491100D5A597 /* Theater+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Content.swift"; sourceTree = "<group>"; };
-		1C0ECF842479493500D5A597 /* TheatersControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatersControllerV1.swift; sourceTree = "<group>"; };
 		1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Parameter.swift"; sourceTree = "<group>"; };
 		1C0F1465247671B500598671 /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		1C0F14682476745E00598671 /* PasswordStrengts+Enough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordStrengts+Enough.swift"; sourceTree = "<group>"; };
@@ -130,7 +128,7 @@
 		1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Parameter.swift"; sourceTree = "<group>"; };
 		1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Picture.swift"; sourceTree = "<group>"; };
 		1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Update.swift"; sourceTree = "<group>"; };
-		1C7B9568247D02E7009710B1 /* AuditoriumsControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumsControllerV1.swift; sourceTree = "<group>"; };
+		1C7B956A247D106F009710B1 /* CommonCRUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCRUDController.swift; sourceTree = "<group>"; };
 		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F66E12465AB5300781406 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -306,8 +304,7 @@
 		1C577B30247138EE0047B87A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1C7B9568247D02E7009710B1 /* AuditoriumsControllerV1.swift */,
-				1C0ECF842479493500D5A597 /* TheatersControllerV1.swift */,
+				1C7B956A247D106F009710B1 /* CommonCRUDController.swift */,
 				1C577B3124713A180047B87A /* UsersControllerV1.swift */,
 			);
 			path = Controllers;
@@ -607,7 +604,6 @@
 			files = (
 				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
 				1C7B955D247CFF1A009710B1 /* Auditorium.swift in Sources */,
-				1C0ECF852479493500D5A597 /* TheatersControllerV1.swift in Sources */,
 				1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */,
 				1C7B9563247CFF3E009710B1 /* Auditorium+Parameter.swift in Sources */,
 				1C0FC59C246DD372002E0EA4 /* PasswordGenerator.swift in Sources */,
@@ -645,7 +641,6 @@
 				1C0FC583246C8C5E002E0EA4 /* User.swift in Sources */,
 				1C8315DF24716CE0004B9D0C /* Token+Content.swift in Sources */,
 				1C7B955F247CFF2A009710B1 /* Auditorium+Content.swift in Sources */,
-				1C7B9569247D02E7009710B1 /* AuditoriumsControllerV1.swift in Sources */,
 				1C0FC586246D2C01002E0EA4 /* DataStorage.swift in Sources */,
 				1C8315D024716093004B9D0C /* User+Public.swift in Sources */,
 				1C0F14692476745E00598671 /* PasswordStrengts+Enough.swift in Sources */,
@@ -653,6 +648,7 @@
 				1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */,
 				1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */,
 				1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */,
+				1C7B956B247D106F009710B1 /* CommonCRUDController.swift in Sources */,
 				1C0F1466247671B500598671 /* PasswordStrength.swift in Sources */,
 				1C577B28246FE2640047B87A /* BackyardVapor.swift in Sources */,
 				1C7B9565247CFF4A009710B1 /* Auditorium+Picture.swift in Sources */,

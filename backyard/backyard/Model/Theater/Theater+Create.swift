@@ -11,7 +11,7 @@ import Vapor
 
 // MARK: - Theater+Create
 
-extension Theater {
+extension Theater: CommonCreate {
 
     // MARK: - Public Structures
 

@@ -11,7 +11,7 @@ import Vapor
 
 // MARK: - Theater+Update
 
-extension Theater {
+extension Theater: CommonUpdate {
 
     typealias UpdateData = CreateData
 

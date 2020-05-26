@@ -11,7 +11,7 @@ import Vapor
 
 // MARK: - Auditorium+Update
 
-extension Auditorium {
+extension Auditorium: CommonUpdate {
 
     typealias UpdateData = CreateData
 

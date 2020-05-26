@@ -86,8 +86,9 @@ class BackyardVapor {
         let v1Route = router.grouped("v1")
 
         try v1Route.register(collection: UsersControllerV1(mailingService: mailingService))
-        try v1Route.register(collection: TheatersControllerV1())
-        try v1Route.register(collection: AuditoriumsControllerV1())
+
+        try v1Route.register(collection: CommonCRUDController<Theater>(route: "theaters"))
+        try v1Route.register(collection: CommonCRUDController<Auditorium>(route: "auditoriums"))
     }
 
 }

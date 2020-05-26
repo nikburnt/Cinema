@@ -18,7 +18,7 @@ private let imageExtension = "image"
 
 // MARK: - Auditorium+Avatar
 
-extension Auditorium {
+extension Auditorium: PictureUpdate {
 
     // MARK: - Public Methods
 

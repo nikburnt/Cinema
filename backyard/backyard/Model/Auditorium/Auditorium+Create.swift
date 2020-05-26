@@ -11,7 +11,7 @@ import Vapor
 
 // MARK: - Auditorium+Create
 
-extension Auditorium {
+extension Auditorium: CommonCreate {
 
     // MARK: - Public Structures
 

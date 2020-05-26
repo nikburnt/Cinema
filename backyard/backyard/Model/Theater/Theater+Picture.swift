@@ -18,7 +18,7 @@ private let imageExtension = "image"
 
 // MARK: - User+Avatar
 
-extension Theater {
+extension Theater: PictureUpdate {
 
     // MARK: - Public Methods
 
