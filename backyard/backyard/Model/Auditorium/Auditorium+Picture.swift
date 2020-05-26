@@ -1,8 +1,8 @@
 //
-//  Theater+Picture.swift
+//  Auditorium+Picture.swift
 //  backyard
 //
-//  Created by Nik Burnt on 5/25/20.
+//  Created by Nik Burnt on 5/26/20.
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
@@ -12,19 +12,19 @@ import Vapor
 // MARK: - Private Variables
 
 private let publicFolder = "Public"
-private let theatersPicturesFolder = "theaters"
+private let auditoriumsPicturesFolder = "auditoriums"
 private let imageExtension = "image"
 
 
-// MARK: - User+Avatar
+// MARK: - Auditorium+Avatar
 
-extension Theater: PictureUpdate {
+extension Auditorium: PictureUpdate {
 
     // MARK: - Public Methods
 
-    func updated(with data: Data) throws -> Theater {
+    func updated(with data: Data) throws -> Auditorium {
         let relativePath = URL(fileURLWithPath: "/")
-            .appendingPathComponent(theatersPicturesFolder)
+            .appendingPathComponent(auditoriumsPicturesFolder)
             .appendingPathComponent(UUID().uuidString)
             .appendingPathExtension(imageExtension)
         let filePath = URL(fileURLWithPath: publicFolder).appendingPathComponent(relativePath.path)

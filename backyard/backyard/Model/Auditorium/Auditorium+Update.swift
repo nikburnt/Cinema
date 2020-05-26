@@ -1,27 +1,27 @@
 //
-//  Theater+Update.swift
+//  Auditorium+Update.swift
 //  backyard
 //
-//  Created by Nik Burnt on 5/24/20.
+//  Created by Nik Burnt on 5/26/20.
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
 import Vapor
 
 
-// MARK: - Theater+Update
+// MARK: - Auditorium+Update
 
-extension Theater: CommonUpdate {
+extension Auditorium: CommonUpdate {
 
     typealias UpdateData = CreateData
 
 
     // MARK: - Public Methods
 
-    func updated(with data: UpdateData) -> Theater {
+    func updated(with data: UpdateData) -> Auditorium {
         var copy = self
+        copy.theaterId = data.theaterId
         copy.name = data.name
-        copy.location = data.location
         copy.description = data.description
         return copy
     }
