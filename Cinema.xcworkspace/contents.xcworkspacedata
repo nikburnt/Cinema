@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:Common"
+      name = "Common">
+      <Group
+         location = "group:Enums"
+         name = "Enums">
+         <FileRef
+            location = "group:PasswordStrength.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Extensions"
+         name = "Extensions">
+         <FileRef
+            location = "group:PasswordStrengts+Enough.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Model"
+         name = "Model">
+      </Group>
+   </Group>
    <FileRef
       location = "group:backyard/backyard.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Cinemagic/Cinemagic.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
