@@ -8,3 +8,11 @@ target 'backyardTests' do
   pod 'Quick'
   pod 'Nimble'
 end
+
+target 'Cinemagic' do
+  platform :ios, '13.0'
+  project 'Cinemagic/Cinemagic.xcodeproj'
+
+  pod 'ARSLineProgress'
+  pod 'GradientAnimator'
+end

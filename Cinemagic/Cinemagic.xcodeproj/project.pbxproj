@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C1DB22824804B920019CA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB22724804B920019CA92 /* AppDelegate.swift */; };
+		1C1DB22A24804B920019CA92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB22924804B920019CA92 /* SceneDelegate.swift */; };
+		1C1DB22C24804B920019CA92 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB22B24804B920019CA92 /* LoadingViewController.swift */; };
+		1C1DB22F24804B920019CA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DB22D24804B920019CA92 /* Main.storyboard */; };
+		1C1DB23124804B930019CA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DB23024804B930019CA92 /* Assets.xcassets */; };
+		1C1DB23424804B930019CA92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DB23224804B930019CA92 /* LaunchScreen.storyboard */; };
+		1C1DB23F24804B930019CA92 /* CinemagicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB23E24804B930019CA92 /* CinemagicTests.swift */; };
+		1C1DB24A24804B930019CA92 /* CinemagicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB24924804B930019CA92 /* CinemagicUITests.swift */; };
+		DFA1525D226935D41A7DBA6B /* libPods-Cinemagic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2D65AD45B81649B96F7C9D /* libPods-Cinemagic.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C1DB23B24804B930019CA92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C1DB21C24804B920019CA92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C1DB22324804B920019CA92;
+			remoteInfo = Cinemagic;
+		};
+		1C1DB24624804B930019CA92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C1DB21C24804B920019CA92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C1DB22324804B920019CA92;
+			remoteInfo = Cinemagic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		062C57294A54443060D8E559 /* Pods-Cinemagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemagic.debug.xcconfig"; path = "Target Support Files/Pods-Cinemagic/Pods-Cinemagic.debug.xcconfig"; sourceTree = "<group>"; };
+		1C1DB22424804B920019CA92 /* Cinemagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1DB22724804B920019CA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1C1DB22924804B920019CA92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1C1DB22B24804B920019CA92 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		1C1DB22E24804B920019CA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1C1DB23024804B930019CA92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C1DB23324804B930019CA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C1DB23524804B930019CA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1DB23A24804B930019CA92 /* CinemagicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemagicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1DB23E24804B930019CA92 /* CinemagicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemagicTests.swift; sourceTree = "<group>"; };
+		1C1DB24024804B930019CA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1DB24524804B930019CA92 /* CinemagicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemagicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1DB24924804B930019CA92 /* CinemagicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemagicUITests.swift; sourceTree = "<group>"; };
+		1C1DB24B24804B930019CA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1E4CFD957756E4999E52B6 /* Pods-Cinemagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemagic.release.xcconfig"; path = "Target Support Files/Pods-Cinemagic/Pods-Cinemagic.release.xcconfig"; sourceTree = "<group>"; };
+		9A2D65AD45B81649B96F7C9D /* libPods-Cinemagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cinemagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C1DB22124804B920019CA92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFA1525D226935D41A7DBA6B /* libPods-Cinemagic.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1DB23724804B930019CA92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1DB24224804B930019CA92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A786BE46DDA3F10C1B93BFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A2D65AD45B81649B96F7C9D /* libPods-Cinemagic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C1DB21B24804B920019CA92 = {
+			isa = PBXGroup;
+			children = (
+				1C1DB22624804B920019CA92 /* Cinemagic */,
+				1C1DB23D24804B930019CA92 /* CinemagicTests */,
+				1C1DB24824804B930019CA92 /* CinemagicUITests */,
+				1C1DB22524804B920019CA92 /* Products */,
+				6B57029DFEEE91C13D63DEB5 /* Pods */,
+				1A786BE46DDA3F10C1B93BFB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1C1DB22524804B920019CA92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB22424804B920019CA92 /* Cinemagic.app */,
+				1C1DB23A24804B930019CA92 /* CinemagicTests.xctest */,
+				1C1DB24524804B930019CA92 /* CinemagicUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C1DB22624804B920019CA92 /* Cinemagic */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB25A24804BEE0019CA92 /* Resources */,
+				1C1DB25924804BE60019CA92 /* System */,
+				1C1DB25724804BD40019CA92 /* UI */,
+			);
+			path = Cinemagic;
+			sourceTree = "<group>";
+		};
+		1C1DB23D24804B930019CA92 /* CinemagicTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB23E24804B930019CA92 /* CinemagicTests.swift */,
+				1C1DB24024804B930019CA92 /* Info.plist */,
+			);
+			path = CinemagicTests;
+			sourceTree = "<group>";
+		};
+		1C1DB24824804B930019CA92 /* CinemagicUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB24924804B930019CA92 /* CinemagicUITests.swift */,
+				1C1DB24B24804B930019CA92 /* Info.plist */,
+			);
+			path = CinemagicUITests;
+			sourceTree = "<group>";
+		};
+		1C1DB25724804BD40019CA92 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB25824804BDB0019CA92 /* Views */,
+				1C1DB25B24804C020019CA92 /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1C1DB25824804BDB0019CA92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C1DB25924804BE60019CA92 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB22724804B920019CA92 /* AppDelegate.swift */,
+				1C1DB22924804B920019CA92 /* SceneDelegate.swift */,
+				1C1DB23524804B930019CA92 /* Info.plist */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		1C1DB25A24804BEE0019CA92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB23024804B930019CA92 /* Assets.xcassets */,
+				1C1DB23224804B930019CA92 /* LaunchScreen.storyboard */,
+				1C1DB22D24804B920019CA92 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1C1DB25B24804C020019CA92 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DB22B24804B920019CA92 /* LoadingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6B57029DFEEE91C13D63DEB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				062C57294A54443060D8E559 /* Pods-Cinemagic.debug.xcconfig */,
+				1F1E4CFD957756E4999E52B6 /* Pods-Cinemagic.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C1DB22324804B920019CA92 /* Cinemagic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C1DB24E24804B930019CA92 /* Build configuration list for PBXNativeTarget "Cinemagic" */;
+			buildPhases = (
+				A5FB93670FCAB5C25299743F /* [CP] Check Pods Manifest.lock */,
+				1C1DB22024804B920019CA92 /* Sources */,
+				1C1DB22124804B920019CA92 /* Frameworks */,
+				1C1DB22224804B920019CA92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cinemagic;
+			productName = Cinemagic;
+			productReference = 1C1DB22424804B920019CA92 /* Cinemagic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1C1DB23924804B930019CA92 /* CinemagicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C1DB25124804B930019CA92 /* Build configuration list for PBXNativeTarget "CinemagicTests" */;
+			buildPhases = (
+				1C1DB23624804B930019CA92 /* Sources */,
+				1C1DB23724804B930019CA92 /* Frameworks */,
+				1C1DB23824804B930019CA92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C1DB23C24804B930019CA92 /* PBXTargetDependency */,
+			);
+			name = CinemagicTests;
+			productName = CinemagicTests;
+			productReference = 1C1DB23A24804B930019CA92 /* CinemagicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1C1DB24424804B930019CA92 /* CinemagicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C1DB25424804B930019CA92 /* Build configuration list for PBXNativeTarget "CinemagicUITests" */;
+			buildPhases = (
+				1C1DB24124804B930019CA92 /* Sources */,
+				1C1DB24224804B930019CA92 /* Frameworks */,
+				1C1DB24324804B930019CA92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C1DB24724804B930019CA92 /* PBXTargetDependency */,
+			);
+			name = CinemagicUITests;
+			productName = CinemagicUITests;
+			productReference = 1C1DB24524804B930019CA92 /* CinemagicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C1DB21C24804B920019CA92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Nik Burnt Inc.";
+				TargetAttributes = {
+					1C1DB22324804B920019CA92 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					1C1DB23924804B930019CA92 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1C1DB22324804B920019CA92;
+					};
+					1C1DB24424804B930019CA92 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1C1DB22324804B920019CA92;
+					};
+				};
+			};
+			buildConfigurationList = 1C1DB21F24804B920019CA92 /* Build configuration list for PBXProject "Cinemagic" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1C1DB21B24804B920019CA92;
+			productRefGroup = 1C1DB22524804B920019CA92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C1DB22324804B920019CA92 /* Cinemagic */,
+				1C1DB23924804B930019CA92 /* CinemagicTests */,
+				1C1DB24424804B930019CA92 /* CinemagicUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C1DB22224804B920019CA92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1DB23424804B930019CA92 /* LaunchScreen.storyboard in Resources */,
+				1C1DB23124804B930019CA92 /* Assets.xcassets in Resources */,
+				1C1DB22F24804B920019CA92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1DB23824804B930019CA92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1DB24324804B930019CA92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A5FB93670FCAB5C25299743F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cinemagic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C1DB22024804B920019CA92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1DB22C24804B920019CA92 /* LoadingViewController.swift in Sources */,
+				1C1DB22824804B920019CA92 /* AppDelegate.swift in Sources */,
+				1C1DB22A24804B920019CA92 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1DB23624804B930019CA92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1DB23F24804B930019CA92 /* CinemagicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1DB24124804B930019CA92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1DB24A24804B930019CA92 /* CinemagicUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C1DB23C24804B930019CA92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C1DB22324804B920019CA92 /* Cinemagic */;
+			targetProxy = 1C1DB23B24804B930019CA92 /* PBXContainerItemProxy */;
+		};
+		1C1DB24724804B930019CA92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C1DB22324804B920019CA92 /* Cinemagic */;
+			targetProxy = 1C1DB24624804B930019CA92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1C1DB22D24804B920019CA92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C1DB22E24804B920019CA92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1C1DB23224804B930019CA92 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C1DB23324804B930019CA92 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C1DB24C24804B930019CA92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1C1DB24D24804B930019CA92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C1DB24F24804B930019CA92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 062C57294A54443060D8E559 /* Pods-Cinemagic.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU5W4Y3YA6;
+				INFOPLIST_FILE = Cinemagic/System/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikburnt.bntu.cinema.Cinemagic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1C1DB25024804B930019CA92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F1E4CFD957756E4999E52B6 /* Pods-Cinemagic.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU5W4Y3YA6;
+				INFOPLIST_FILE = Cinemagic/System/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikburnt.bntu.cinema.Cinemagic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1C1DB25224804B930019CA92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU5W4Y3YA6;
+				INFOPLIST_FILE = CinemagicTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikburnt.bntu.cinema.CinemagicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemagic.app/Cinemagic";
+			};
+			name = Debug;
+		};
+		1C1DB25324804B930019CA92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU5W4Y3YA6;
+				INFOPLIST_FILE = CinemagicTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikburnt.bntu.cinema.CinemagicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cinemagic.app/Cinemagic";
+			};
+			name = Release;
+		};
+		1C1DB25524804B930019CA92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU5W4Y3YA6;
+				INFOPLIST_FILE = CinemagicUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikburnt.bntu.cinema.CinemagicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cinemagic;
+			};
+			name = Debug;
+		};
+		1C1DB25624804B930019CA92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU5W4Y3YA6;
+				INFOPLIST_FILE = CinemagicUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikburnt.bntu.cinema.CinemagicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cinemagic;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C1DB21F24804B920019CA92 /* Build configuration list for PBXProject "Cinemagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1DB24C24804B930019CA92 /* Debug */,
+				1C1DB24D24804B930019CA92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C1DB24E24804B930019CA92 /* Build configuration list for PBXNativeTarget "Cinemagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1DB24F24804B930019CA92 /* Debug */,
+				1C1DB25024804B930019CA92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C1DB25124804B930019CA92 /* Build configuration list for PBXNativeTarget "CinemagicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1DB25224804B930019CA92 /* Debug */,
+				1C1DB25324804B930019CA92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C1DB25424804B930019CA92 /* Build configuration list for PBXNativeTarget "CinemagicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1DB25524804B930019CA92 /* Debug */,
+				1C1DB25624804B930019CA92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C1DB21C24804B920019CA92 /* Project object */;
+}

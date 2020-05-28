@@ -1,20 +1,28 @@
 PODS:
+  - ARSLineProgress (3.1.0)
+  - GradientAnimator (1.3.1)
   - Nimble (8.0.7)
   - Quick (2.2.0)
 
 DEPENDENCIES:
+  - ARSLineProgress
+  - GradientAnimator
   - Nimble
   - Quick
 
 SPEC REPOS:
   trunk:
+    - ARSLineProgress
+    - GradientAnimator
     - Nimble
     - Quick
 
 SPEC CHECKSUMS:
+  ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
+  GradientAnimator: 30c054568a68b5b03ae26586fdfca21036f6ad92
   Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
-PODFILE CHECKSUM: c98f71351238779478842499ac8934ddd202f12d
+PODFILE CHECKSUM: 08ee32d70b18a52cc91e581348cda898be71b9cc
 
 COCOAPODS: 1.8.4
