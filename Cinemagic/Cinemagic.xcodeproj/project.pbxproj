@@ -3,19 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1D193B248FF77B00EEC254 /* CinemaDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D193A248FF77B00EEC254 /* CinemaDataProvider.swift */; };
+		1C1D193D248FFFA500EEC254 /* CinemaKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D193C248FFFA500EEC254 /* CinemaKeychain.swift */; };
+		1C1D193F2490913400EEC254 /* JSONDecoder+Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D193E2490913400EEC254 /* JSONDecoder+Cinema.swift */; };
 		1C1DB22824804B920019CA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB22724804B920019CA92 /* AppDelegate.swift */; };
-		1C1DB22A24804B920019CA92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB22924804B920019CA92 /* SceneDelegate.swift */; };
 		1C1DB22C24804B920019CA92 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB22B24804B920019CA92 /* LoadingViewController.swift */; };
 		1C1DB22F24804B920019CA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DB22D24804B920019CA92 /* Main.storyboard */; };
 		1C1DB23124804B930019CA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DB23024804B930019CA92 /* Assets.xcassets */; };
 		1C1DB23424804B930019CA92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DB23224804B930019CA92 /* LaunchScreen.storyboard */; };
 		1C1DB23F24804B930019CA92 /* CinemagicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB23E24804B930019CA92 /* CinemagicTests.swift */; };
 		1C1DB24A24804B930019CA92 /* CinemagicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB24924804B930019CA92 /* CinemagicUITests.swift */; };
-		DFA1525D226935D41A7DBA6B /* libPods-Cinemagic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2D65AD45B81649B96F7C9D /* libPods-Cinemagic.a */; };
+		1C2F56B624814235002CC459 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C2F56B524814235002CC459 /* LoginView.xib */; };
+		1C2F56B82481424E002CC459 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2F56B72481424E002CC459 /* LoginView.swift */; };
+		1C77FE5A248971CE00B0730E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C77FE59248971CE00B0730E /* FontAwesome.ttf */; };
+		1C77FE5C2489757B00B0730E /* EKAttributes+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C77FE5B2489757B00B0730E /* EKAttributes+Custom.swift */; };
+		1C77FE5E248978EF00B0730E /* UIView+SwiftEntryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C77FE5D248978EF00B0730E /* UIView+SwiftEntryKit.swift */; };
+		1C7AFDE7248B90D6003D1093 /* PasswordFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDE5248B90D6003D1093 /* PasswordFieldDataSource.swift */; };
+		1C7AFDE8248B90D6003D1093 /* EmailFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDE6248B90D6003D1093 /* EmailFieldDataSource.swift */; };
+		1C7AFDEF248B90FE003D1093 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDEB248B90FE003D1093 /* PasswordStrength.swift */; };
+		1C7AFDF0248B90FE003D1093 /* PasswordStrengts+Enough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDED248B90FE003D1093 /* PasswordStrengts+Enough.swift */; };
+		1C7AFDF4248B9506003D1093 /* CinemaNetworkingV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDF3248B9506003D1093 /* CinemaNetworkingV1.swift */; };
+		1C7DEE1B248BFAC800384AE8 /* URL+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE1A248BFAC800384AE8 /* URL+String.swift */; };
+		1C7DEE1D248BFC0600384AE8 /* URL+Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE1C248BFC0600384AE8 /* URL+Routes.swift */; };
+		1C7DEE1F248C024600384AE8 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE1E248C024600384AE8 /* TokenResponse.swift */; };
+		1C7DEE23248E97B600384AE8 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE22248E97B600384AE8 /* String+Base64.swift */; };
+		1C7DEE25248F886600384AE8 /* URLRequest+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */; };
+		1CBC25D02483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC25CF2483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift */; };
+		1CBC25D22483BECD00CDE30E /* AnimatedField+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC25D12483BECD00CDE30E /* AnimatedField+Types.swift */; };
+		1CF445C5248254D500152C8C /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF445C2248254D500152C8C /* UIView+Nib.swift */; };
+		79520C23DEFD420E2BCD4855 /* Pods_Cinemagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923A1C9E1E576F623EFD015 /* Pods_Cinemagic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +57,11 @@
 
 /* Begin PBXFileReference section */
 		062C57294A54443060D8E559 /* Pods-Cinemagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemagic.debug.xcconfig"; path = "Target Support Files/Pods-Cinemagic/Pods-Cinemagic.debug.xcconfig"; sourceTree = "<group>"; };
+		1C1D193A248FF77B00EEC254 /* CinemaDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaDataProvider.swift; sourceTree = "<group>"; };
+		1C1D193C248FFFA500EEC254 /* CinemaKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaKeychain.swift; sourceTree = "<group>"; };
+		1C1D193E2490913400EEC254 /* JSONDecoder+Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Cinema.swift"; sourceTree = "<group>"; };
 		1C1DB22424804B920019CA92 /* Cinemagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1DB22724804B920019CA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C1DB22924804B920019CA92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1C1DB22B24804B920019CA92 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		1C1DB22E24804B920019CA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C1DB23024804B930019CA92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,8 +73,26 @@
 		1C1DB24524804B930019CA92 /* CinemagicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemagicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1DB24924804B930019CA92 /* CinemagicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemagicUITests.swift; sourceTree = "<group>"; };
 		1C1DB24B24804B930019CA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C2F56B524814235002CC459 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		1C2F56B72481424E002CC459 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1C77FE59248971CE00B0730E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = ../../../Pods/LGButton/LGButton/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		1C77FE5B2489757B00B0730E /* EKAttributes+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKAttributes+Custom.swift"; sourceTree = "<group>"; };
+		1C77FE5D248978EF00B0730E /* UIView+SwiftEntryKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SwiftEntryKit.swift"; sourceTree = "<group>"; };
+		1C7AFDE5248B90D6003D1093 /* PasswordFieldDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordFieldDataSource.swift; sourceTree = "<group>"; };
+		1C7AFDE6248B90D6003D1093 /* EmailFieldDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFieldDataSource.swift; sourceTree = "<group>"; };
+		1C7AFDEB248B90FE003D1093 /* PasswordStrength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
+		1C7AFDED248B90FE003D1093 /* PasswordStrengts+Enough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PasswordStrengts+Enough.swift"; sourceTree = "<group>"; };
+		1C7AFDF3248B9506003D1093 /* CinemaNetworkingV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaNetworkingV1.swift; sourceTree = "<group>"; };
+		1C7DEE1A248BFAC800384AE8 /* URL+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+String.swift"; sourceTree = "<group>"; };
+		1C7DEE1C248BFC0600384AE8 /* URL+Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Routes.swift"; sourceTree = "<group>"; };
+		1C7DEE1E248C024600384AE8 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		1C7DEE22248E97B600384AE8 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
+		1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Networking.swift"; sourceTree = "<group>"; };
+		1CBC25CF2483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimatedFieldFormat+Styles.swift"; sourceTree = "<group>"; };
+		1CBC25D12483BECD00CDE30E /* AnimatedField+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimatedField+Types.swift"; sourceTree = "<group>"; };
+		1CF445C2248254D500152C8C /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		1F1E4CFD957756E4999E52B6 /* Pods-Cinemagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemagic.release.xcconfig"; path = "Target Support Files/Pods-Cinemagic/Pods-Cinemagic.release.xcconfig"; sourceTree = "<group>"; };
-		9A2D65AD45B81649B96F7C9D /* libPods-Cinemagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cinemagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A923A1C9E1E576F623EFD015 /* Pods_Cinemagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinemagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFA1525D226935D41A7DBA6B /* libPods-Cinemagic.a in Frameworks */,
+				79520C23DEFD420E2BCD4855 /* Pods_Cinemagic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +124,18 @@
 		1A786BE46DDA3F10C1B93BFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A2D65AD45B81649B96F7C9D /* libPods-Cinemagic.a */,
+				A923A1C9E1E576F623EFD015 /* Pods_Cinemagic.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C1D1935248FC87C00EEC254 /* ApplicationData */ = {
+			isa = PBXGroup;
+			children = (
+				1C1D193A248FF77B00EEC254 /* CinemaDataProvider.swift */,
+				1C1D193C248FFFA500EEC254 /* CinemaKeychain.swift */,
+			);
+			path = ApplicationData;
 			sourceTree = "<group>";
 		};
 		1C1DB21B24804B920019CA92 = {
@@ -114,6 +163,11 @@
 		1C1DB22624804B920019CA92 /* Cinemagic */ = {
 			isa = PBXGroup;
 			children = (
+				1C1D1935248FC87C00EEC254 /* ApplicationData */,
+				1C7AFDE9248B90FE003D1093 /* Common */,
+				1C7AFDE3248B86EB003D1093 /* Networking */,
+				1C77FE5F248982EB00B0730E /* Model */,
+				1C2F56BF248144C5002CC459 /* Extensions */,
 				1C1DB25A24804BEE0019CA92 /* Resources */,
 				1C1DB25924804BE60019CA92 /* System */,
 				1C1DB25724804BD40019CA92 /* UI */,
@@ -151,6 +205,7 @@
 		1C1DB25824804BDB0019CA92 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C7AFDE4248B9092003D1093 /* Login */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				1C1DB22724804B920019CA92 /* AppDelegate.swift */,
-				1C1DB22924804B920019CA92 /* SceneDelegate.swift */,
 				1C1DB23524804B930019CA92 /* Info.plist */,
 			);
 			path = System;
@@ -169,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1DB23024804B930019CA92 /* Assets.xcassets */,
+				1C77FE59248971CE00B0730E /* FontAwesome.ttf */,
 				1C1DB23224804B930019CA92 /* LaunchScreen.storyboard */,
 				1C1DB22D24804B920019CA92 /* Main.storyboard */,
 			);
@@ -181,6 +236,84 @@
 				1C1DB22B24804B920019CA92 /* LoadingViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1C2F56BF248144C5002CC459 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1CBC25D12483BECD00CDE30E /* AnimatedField+Types.swift */,
+				1CBC25CF2483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift */,
+				1C77FE5B2489757B00B0730E /* EKAttributes+Custom.swift */,
+				1C7DEE22248E97B600384AE8 /* String+Base64.swift */,
+				1CF445C2248254D500152C8C /* UIView+Nib.swift */,
+				1C77FE5D248978EF00B0730E /* UIView+SwiftEntryKit.swift */,
+				1C7DEE1A248BFAC800384AE8 /* URL+String.swift */,
+				1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */,
+				1C1D193E2490913400EEC254 /* JSONDecoder+Cinema.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1C77FE5F248982EB00B0730E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C7DEE1E248C024600384AE8 /* TokenResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C7AFDE3248B86EB003D1093 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1C7AFDF3248B9506003D1093 /* CinemaNetworkingV1.swift */,
+				1C7DEE1C248BFC0600384AE8 /* URL+Routes.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1C7AFDE4248B9092003D1093 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1C2F56B72481424E002CC459 /* LoginView.swift */,
+				1C2F56B524814235002CC459 /* LoginView.xib */,
+				1C7AFDE6248B90D6003D1093 /* EmailFieldDataSource.swift */,
+				1C7AFDE5248B90D6003D1093 /* PasswordFieldDataSource.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1C7AFDE9248B90FE003D1093 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1C7AFDEA248B90FE003D1093 /* Enums */,
+				1C7AFDEC248B90FE003D1093 /* Extensions */,
+				1C7AFDEE248B90FE003D1093 /* Model */,
+			);
+			name = Common;
+			path = ../../Common;
+			sourceTree = "<group>";
+		};
+		1C7AFDEA248B90FE003D1093 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				1C7AFDEB248B90FE003D1093 /* PasswordStrength.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		1C7AFDEC248B90FE003D1093 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1C7AFDED248B90FE003D1093 /* PasswordStrengts+Enough.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1C7AFDEE248B90FE003D1093 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6B57029DFEEE91C13D63DEB5 /* Pods */ = {
@@ -204,6 +337,8 @@
 				1C1DB22024804B920019CA92 /* Sources */,
 				1C1DB22124804B920019CA92 /* Frameworks */,
 				1C1DB22224804B920019CA92 /* Resources */,
+				1CF445C124823B5F00152C8C /* SwiftLint */,
+				6FA0D07FDBFF49EEE5C62CCE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,7 +435,9 @@
 			files = (
 				1C1DB23424804B930019CA92 /* LaunchScreen.storyboard in Resources */,
 				1C1DB23124804B930019CA92 /* Assets.xcassets in Resources */,
+				1C2F56B624814235002CC459 /* LoginView.xib in Resources */,
 				1C1DB22F24804B920019CA92 /* Main.storyboard in Resources */,
+				1C77FE5A248971CE00B0730E /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +458,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1CF445C124823B5F00152C8C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		6FA0D07FDBFF49EEE5C62CCE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cinemagic/Pods-Cinemagic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cinemagic/Pods-Cinemagic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cinemagic/Pods-Cinemagic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A5FB93670FCAB5C25299743F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,9 +522,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C7AFDE8248B90D6003D1093 /* EmailFieldDataSource.swift in Sources */,
+				1C7AFDEF248B90FE003D1093 /* PasswordStrength.swift in Sources */,
+				1C7DEE1D248BFC0600384AE8 /* URL+Routes.swift in Sources */,
 				1C1DB22C24804B920019CA92 /* LoadingViewController.swift in Sources */,
+				1C77FE5C2489757B00B0730E /* EKAttributes+Custom.swift in Sources */,
+				1C7DEE1B248BFAC800384AE8 /* URL+String.swift in Sources */,
+				1C1D193B248FF77B00EEC254 /* CinemaDataProvider.swift in Sources */,
 				1C1DB22824804B920019CA92 /* AppDelegate.swift in Sources */,
-				1C1DB22A24804B920019CA92 /* SceneDelegate.swift in Sources */,
+				1C7AFDE7248B90D6003D1093 /* PasswordFieldDataSource.swift in Sources */,
+				1C7DEE23248E97B600384AE8 /* String+Base64.swift in Sources */,
+				1C7AFDF0248B90FE003D1093 /* PasswordStrengts+Enough.swift in Sources */,
+				1CBC25D02483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift in Sources */,
+				1C7DEE25248F886600384AE8 /* URLRequest+Networking.swift in Sources */,
+				1CBC25D22483BECD00CDE30E /* AnimatedField+Types.swift in Sources */,
+				1C7AFDF4248B9506003D1093 /* CinemaNetworkingV1.swift in Sources */,
+				1C2F56B82481424E002CC459 /* LoginView.swift in Sources */,
+				1CF445C5248254D500152C8C /* UIView+Nib.swift in Sources */,
+				1C7DEE1F248C024600384AE8 /* TokenResponse.swift in Sources */,
+				1C1D193F2490913400EEC254 /* JSONDecoder+Cinema.swift in Sources */,
+				1C77FE5E248978EF00B0730E /* UIView+SwiftEntryKit.swift in Sources */,
+				1C1D193D248FFFA500EEC254 /* CinemaKeychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +719,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU5W4Y3YA6;
 				INFOPLIST_FILE = Cinemagic/System/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,7 +739,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU5W4Y3YA6;
 				INFOPLIST_FILE = Cinemagic/System/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -11,8 +11,16 @@ end
 
 target 'Cinemagic' do
   platform :ios, '13.0'
+  use_frameworks!
   project 'Cinemagic/Cinemagic.xcodeproj'
 
-  pod 'ARSLineProgress'
+  pod 'AnimatedField'
+  pod 'GeometricLoaders', :git => 'https://github.com/nikburnt/GeometricLoaders', :branch => 'develop'
   pod 'GradientAnimator'
+  pod 'KeychainAccess'
+  pod 'SwiftEntryKit'
+  pod 'LGButton'
+  pod 'PromiseKit'
+  pod 'PromiseKit/Alamofire'
+  pod 'Require'
 end

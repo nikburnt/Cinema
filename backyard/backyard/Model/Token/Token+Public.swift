@@ -16,13 +16,22 @@ extension Token {
     // MARK: - Public Structure
 
     struct Public: Content {
+
         var token: String
+        var expirationDate: Date
+
+        // swiftlint:disable nesting
+        enum CodingKeys: String, CodingKey {
+            case token
+            case expirationDate = "expiration_date"
+        }
+
     }
 
 
     // MARK: - Public Variables
 
-    var `public`: Public { Public(token: token) }
+    var `public`: Public { Public(token: token, expirationDate: expirationDate ?? Date(timeIntervalSince1970: 0)) }
 
 }
 

@@ -8,6 +8,7 @@
 
 import ArgumentParser
 import Rainbow
+import NetUtils
 
 
 // MARK: - Comamnds
@@ -120,6 +121,8 @@ struct CommandLineApp: ParsableCommand {
         let command = Command(rawValue: self.command ?? "") ?? Command.start
         switch command {
         case .start:
+            let hostname = Interface.allInterfaces().first(where: { $0.name == "en0" })?.address ?? "localhost"
+            CommandLine.arguments += ["serve", "--hostname", hostname]
             CommandLineApp.processor.start()
 
         case .listStaff:

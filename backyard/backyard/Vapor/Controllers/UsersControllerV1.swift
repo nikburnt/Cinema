@@ -11,6 +11,13 @@ import Crypto
 import Vapor
 
 
+// MARK: - UsersControllerErrors
+
+enum UsersControllerErrors: Error {
+    case tokenCreationError
+}
+
+
 // MARK: - UsersControllerV1
 
 struct UsersControllerV1: RouteCollection {
@@ -59,7 +66,11 @@ struct UsersControllerV1: RouteCollection {
     private func loginHandler(_ request: Request) throws -> Future<Token.Public> {
         let user = try request.requireAuthenticated(User.self)
         let token = try Token.generate(for: user)
-        return token.save(on: request).public
+        return token
+            .save(on: request)
+            .thenThrowing { Token.find(try $0.requireID(), on: request) }
+            .flatMap { $0.unwrap(or: UsersControllerErrors.tokenCreationError) }
+            .public
     }
 
     private func getCurrentHandler(_ request: Request) throws -> Future<User.Public> {
@@ -81,7 +92,7 @@ struct UsersControllerV1: RouteCollection {
 
     // Async didnt have a first where method
     // swiftlint:disable first_where
-    private func resetPasswordHandler(_ request: Request, data: User.ResetPasswordData) throws -> Future<User.Public> {
+    private func resetPasswordHandler(_ request: Request, data: User.ResetPasswordData) throws -> Future<HTTPStatus> {
         guard request.http.headers.bearerAuthorization == nil else {
             throw Abort(.forbidden, reason: "User should not be logged in to reset password.")
         }
@@ -93,12 +104,11 @@ struct UsersControllerV1: RouteCollection {
         return User.query(on: request)
             .filter(\.email, .equal, data.email)
             .first()
-            .unwrap(or: Abort(.badRequest, reason: "User should not be logged in to register."))
+            .unwrap(or: Abort(.notFound, reason: "User with this email not found."))
             .map { try $0.updated(with: dataWithNewPassword) }
             .update(on: request)
             .and(mailingService.send(resetPassword: newPassword, to: data.email))
-            .map { $0.0 }
-            .public
+            .map { _ in .ok }
     }
 
 
@@ -107,7 +117,11 @@ struct UsersControllerV1: RouteCollection {
             throw Abort(.forbidden, reason: "User should not be logged in to register.")
         }
 
-        try data.validate()
+        do {
+            try data.validate()
+        } catch {
+            throw Abort(.expectationFailed, reason: "Password is too weak.")
+        }
 
         let user = try User(with: data)
         return user
@@ -118,6 +132,7 @@ struct UsersControllerV1: RouteCollection {
                 return token
             }
             .then { $0.save(on: request).public }
+            .catchMap { _ in throw Abort(.conflict, reason: "User with this email already exists.") }
     }
 
 

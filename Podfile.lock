@@ -1,28 +1,81 @@
 PODS:
-  - ARSLineProgress (3.1.0)
+  - Alamofire (4.9.1)
+  - AnimatedField (2.4.4)
+  - GeometricLoaders (1.1.1)
   - GradientAnimator (1.3.1)
+  - KeychainAccess (4.2.0)
+  - LGButton (1.1.6)
   - Nimble (8.0.7)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/Alamofire (6.13.1):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - Quick (2.2.0)
+  - QuickLayout (3.0.0)
+  - Require (2.0.0)
+  - SwiftEntryKit (1.2.3):
+    - QuickLayout (= 3.0.0)
 
 DEPENDENCIES:
-  - ARSLineProgress
+  - Alamofire
+  - AnimatedField
+  - GeometricLoaders (from `https://github.com/nikburnt/GeometricLoaders`, branch `develop`)
   - GradientAnimator
+  - KeychainAccess
+  - LGButton
   - Nimble
+  - PromiseKit
+  - PromiseKit/Alamofire
   - Quick
+  - Require
+  - SwiftEntryKit
 
 SPEC REPOS:
   trunk:
-    - ARSLineProgress
+    - Alamofire
+    - AnimatedField
     - GradientAnimator
+    - KeychainAccess
+    - LGButton
     - Nimble
+    - PromiseKit
     - Quick
+    - QuickLayout
+    - Require
+    - SwiftEntryKit
+
+EXTERNAL SOURCES:
+  GeometricLoaders:
+    :branch: develop
+    :git: https://github.com/nikburnt/GeometricLoaders
+
+CHECKOUT OPTIONS:
+  GeometricLoaders:
+    :commit: fc54d1d92dd72b5cc9c20740ee3ff8e4d6ed061e
+    :git: https://github.com/nikburnt/GeometricLoaders
 
 SPEC CHECKSUMS:
-  ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AnimatedField: af48a2d59a50b33b30446267f7f2af274296203c
+  GeometricLoaders: 4fbbeb569cf0ea647c620a9ffb87c9e63812e743
   GradientAnimator: 30c054568a68b5b03ae26586fdfca21036f6ad92
+  KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
+  LGButton: 9f0a7f9d3030e3f504108342f6b66d64a429371b
   Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  Require: f93abc18dda985f665465cf027cea7166455fb28
+  SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
 
-PODFILE CHECKSUM: 08ee32d70b18a52cc91e581348cda898be71b9cc
+PODFILE CHECKSUM: ddbf73b2d1f8804fcf9e52df5734b3019751d639
 
 COCOAPODS: 1.8.4

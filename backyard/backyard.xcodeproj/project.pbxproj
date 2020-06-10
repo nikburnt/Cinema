@@ -31,6 +31,7 @@
 		1C0FC599246DCD74002E0EA4 /* SMTPMailingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC598246DCD74002E0EA4 /* SMTPMailingService.swift */; };
 		1C0FC59C246DD372002E0EA4 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC59B246DD372002E0EA4 /* PasswordGenerator.swift */; };
 		1C0FC59E246E8B72002E0EA4 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC59D246E8B72002E0EA4 /* Token.swift */; };
+		1C1D19422490A21200EEC254 /* NetUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 1C1D19412490A21200EEC254 /* NetUtils */; };
 		1C1DB21924804B480019CA92 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB21524804B480019CA92 /* PasswordStrength.swift */; };
 		1C1DB21A24804B480019CA92 /* PasswordStrengts+Enough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB21724804B480019CA92 /* PasswordStrengts+Enough.swift */; };
 		1C577B28246FE2640047B87A /* BackyardVapor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B27246FE2640047B87A /* BackyardVapor.swift */; };
@@ -161,6 +162,7 @@
 				1C0FC594246DCC5E002E0EA4 /* SwiftSMTP in Frameworks */,
 				1C7F670E2466A36C00781406 /* ArgumentParser in Frameworks */,
 				1C7F67022466A2B100781406 /* SwiftyBeaver in Frameworks */,
+				1C1D19422490A21200EEC254 /* NetUtils in Frameworks */,
 				1C802052246993B0004031A1 /* MySQL in Frameworks */,
 				1C7F66F62466A1FC00781406 /* Vapor in Frameworks */,
 				1C8020342467F1CB004031A1 /* Rainbow in Frameworks */,
@@ -465,6 +467,7 @@
 				1C0FC590246DCC18002E0EA4 /* LoggerAPI */,
 				1C0FC593246DCC5E002E0EA4 /* SwiftSMTP */,
 				1C577B2E24700ED40047B87A /* Authentication */,
+				1C1D19412490A21200EEC254 /* NetUtils */,
 			);
 			productName = backyard;
 			productReference = 1C7F66DE2465AB5300781406 /* backyard */;
@@ -534,6 +537,7 @@
 				1C0FC58F246DCC18002E0EA4 /* XCRemoteSwiftPackageReference "LoggerAPI" */,
 				1C0FC592246DCC5E002E0EA4 /* XCRemoteSwiftPackageReference "Swift-SMTP" */,
 				1C577B2D24700ED40047B87A /* XCRemoteSwiftPackageReference "auth" */,
+				1C1D19402490A21200EEC254 /* XCRemoteSwiftPackageReference "swift-netutils" */,
 			);
 			productRefGroup = 1C7F66DF2465AB5300781406 /* Products */;
 			projectDirPath = "";
@@ -895,6 +899,14 @@
 				minimumVersion = 5.1.2;
 			};
 		};
+		1C1D19402490A21200EEC254 /* XCRemoteSwiftPackageReference "swift-netutils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/svdo/swift-netutils";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 		1C577B2D24700ED40047B87A /* XCRemoteSwiftPackageReference "auth" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vapor/auth";
@@ -971,6 +983,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C0FC592246DCC5E002E0EA4 /* XCRemoteSwiftPackageReference "Swift-SMTP" */;
 			productName = SwiftSMTP;
+		};
+		1C1D19412490A21200EEC254 /* NetUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C1D19402490A21200EEC254 /* XCRemoteSwiftPackageReference "swift-netutils" */;
+			productName = NetUtils;
 		};
 		1C577B2E24700ED40047B87A /* Authentication */ = {
 			isa = XCSwiftPackageProductDependency;
