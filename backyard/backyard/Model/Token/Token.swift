@@ -22,7 +22,7 @@ struct Token: MySQLModel {
         case id
         case userId = "user_id"
         case token
-        case creationDate = "creation_date"
+        case expirationDate = "expiration_date"
     }
 
 
@@ -33,6 +33,6 @@ struct Token: MySQLModel {
     var userId: Int
     var token: String
 
-    var creationDate: Date?
+    var expirationDate: Date?
 
 }

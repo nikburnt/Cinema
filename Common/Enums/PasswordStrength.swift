@@ -6,17 +6,19 @@
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
-// MARK: - Private Constants
-
-let upperCaseRegex = "^(?=.*[A-Z]).*$"
-let lowerCaseRegex = "^(?=.*[a-z]).*$"
-let numbersRegex = "^(?=.*[0-9]).*$"
-let symbolsRegex = "^(?=.*[!@#%&-_=:;\"'<>,`~\\*\\?\\+\\[\\]\\(\\)\\{\\}\\^\\$\\|\\\\\\.\\/]).*$"
+import Foundation
 
 
 // MARK: - PasswordStrength
 
-enum PasswordStrength: Int, Comparable {
+public enum PasswordStrength: Int, Comparable {
+
+    // MARK: - Public Constants
+
+    public static let weakPasswordRegex = "^(?=.*?[A-Z])(?=.*?[a-z]).{6,}$"
+    public static let averagePasswordRegex = "^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$"
+    public static let strongPasswordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+
 
     // MARK: - Cases
 
@@ -28,53 +30,22 @@ enum PasswordStrength: Int, Comparable {
 
     // MARK: - Lifecycle
 
-    init(password: String) {
-        guard password.count > 0 else {
+    public init(password: String) {
+        if NSPredicate(format:"SELF MATCHES %@", PasswordStrength.strongPasswordRegex).evaluate(with: password) {
+            self = .strong
+        } else if NSPredicate(format:"SELF MATCHES %@", PasswordStrength.averagePasswordRegex).evaluate(with: password) {
+            self = .average
+        } else if NSPredicate(format:"SELF MATCHES %@", PasswordStrength.weakPasswordRegex).evaluate(with: password) {
+            self = .weak
+        } else {
             self = .none
-            return
-        }
-
-        var strength: Int = 0
-
-        
-        // Chacking password length
-
-        switch password.count {
-        case 1...4: strength += 1
-        case 5...8: strength += 2
-        default: strength += 3
-        }
-
-
-        // Checking for password symbols
-
-        if password.range(of: upperCaseRegex, options: .regularExpression) != nil {
-            strength += 1 // password has at least one upercase symbol
-        }
-
-        if password.range(of: lowerCaseRegex, options: .regularExpression) != nil {
-            strength += 1 // password has at least one lowercase symbol
-        }
-
-        if password.range(of: numbersRegex, options: .regularExpression) != nil {
-            strength += 1 // password has at least one number
-        }
-
-        if password.range(of: symbolsRegex, options: .regularExpression) != nil {
-            strength += 1 // password has at least one special symbol
-        }
-
-        switch strength {
-        case 1...3: self = .weak
-        case 4...5: self = .average
-        default: self = .strong
         }
     }
 
 
     // MARK: - Comparable
 
-    static func < (lhs: PasswordStrength, rhs: PasswordStrength) -> Bool {
+    public static func < (lhs: PasswordStrength, rhs: PasswordStrength) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
 

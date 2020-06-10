@@ -88,7 +88,7 @@ struct MySQLDataStorage: DataStorage {
     func removeExpiredTokens(olderThan days: UInt) -> Future<Void> {
         database
             .newConnection(on: eventLoopGroup.next())
-            .then { $0.raw("CALL RemoveExpiredTokens('\(days)');").all() }
+            .then { $0.raw("CALL RemoveExpiredTokens();").all() }
             .then { _ in self.eventLoopGroup.future() }
     }
 
