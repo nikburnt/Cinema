@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C09D1502492336F00319BEC /* PublicUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D14E2492336F00319BEC /* PublicUser.swift */; };
+		1C09D1512492336F00319BEC /* PublicToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D14F2492336F00319BEC /* PublicToken.swift */; };
 		1C1D193B248FF77B00EEC254 /* CinemaDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D193A248FF77B00EEC254 /* CinemaDataProvider.swift */; };
 		1C1D193D248FFFA500EEC254 /* CinemaKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D193C248FFFA500EEC254 /* CinemaKeychain.swift */; };
 		1C1D193F2490913400EEC254 /* JSONDecoder+Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D193E2490913400EEC254 /* JSONDecoder+Cinema.swift */; };
@@ -29,7 +31,6 @@
 		1C7AFDF4248B9506003D1093 /* CinemaNetworkingV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDF3248B9506003D1093 /* CinemaNetworkingV1.swift */; };
 		1C7DEE1B248BFAC800384AE8 /* URL+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE1A248BFAC800384AE8 /* URL+String.swift */; };
 		1C7DEE1D248BFC0600384AE8 /* URL+Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE1C248BFC0600384AE8 /* URL+Routes.swift */; };
-		1C7DEE1F248C024600384AE8 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE1E248C024600384AE8 /* TokenResponse.swift */; };
 		1C7DEE23248E97B600384AE8 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE22248E97B600384AE8 /* String+Base64.swift */; };
 		1C7DEE25248F886600384AE8 /* URLRequest+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */; };
 		1CBC25D02483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC25CF2483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift */; };
@@ -57,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		062C57294A54443060D8E559 /* Pods-Cinemagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemagic.debug.xcconfig"; path = "Target Support Files/Pods-Cinemagic/Pods-Cinemagic.debug.xcconfig"; sourceTree = "<group>"; };
+		1C09D14E2492336F00319BEC /* PublicUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicUser.swift; sourceTree = "<group>"; };
+		1C09D14F2492336F00319BEC /* PublicToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicToken.swift; sourceTree = "<group>"; };
 		1C1D193A248FF77B00EEC254 /* CinemaDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaDataProvider.swift; sourceTree = "<group>"; };
 		1C1D193C248FFFA500EEC254 /* CinemaKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaKeychain.swift; sourceTree = "<group>"; };
 		1C1D193E2490913400EEC254 /* JSONDecoder+Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Cinema.swift"; sourceTree = "<group>"; };
@@ -85,7 +88,6 @@
 		1C7AFDF3248B9506003D1093 /* CinemaNetworkingV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaNetworkingV1.swift; sourceTree = "<group>"; };
 		1C7DEE1A248BFAC800384AE8 /* URL+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+String.swift"; sourceTree = "<group>"; };
 		1C7DEE1C248BFC0600384AE8 /* URL+Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Routes.swift"; sourceTree = "<group>"; };
-		1C7DEE1E248C024600384AE8 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		1C7DEE22248E97B600384AE8 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Networking.swift"; sourceTree = "<group>"; };
 		1CBC25CF2483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimatedFieldFormat+Styles.swift"; sourceTree = "<group>"; };
@@ -257,7 +259,6 @@
 		1C77FE5F248982EB00B0730E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1C7DEE1E248C024600384AE8 /* TokenResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +313,8 @@
 		1C7AFDEE248B90FE003D1093 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C09D14F2492336F00319BEC /* PublicToken.swift */,
+				1C09D14E2492336F00319BEC /* PublicUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				1C1DB22824804B920019CA92 /* AppDelegate.swift in Sources */,
 				1C7AFDE7248B90D6003D1093 /* PasswordFieldDataSource.swift in Sources */,
 				1C7DEE23248E97B600384AE8 /* String+Base64.swift in Sources */,
+				1C09D1502492336F00319BEC /* PublicUser.swift in Sources */,
 				1C7AFDF0248B90FE003D1093 /* PasswordStrengts+Enough.swift in Sources */,
 				1CBC25D02483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift in Sources */,
 				1C7DEE25248F886600384AE8 /* URLRequest+Networking.swift in Sources */,
@@ -539,7 +543,7 @@
 				1C7AFDF4248B9506003D1093 /* CinemaNetworkingV1.swift in Sources */,
 				1C2F56B82481424E002CC459 /* LoginView.swift in Sources */,
 				1CF445C5248254D500152C8C /* UIView+Nib.swift in Sources */,
-				1C7DEE1F248C024600384AE8 /* TokenResponse.swift in Sources */,
+				1C09D1512492336F00319BEC /* PublicToken.swift in Sources */,
 				1C1D193F2490913400EEC254 /* JSONDecoder+Cinema.swift in Sources */,
 				1C77FE5E248978EF00B0730E /* UIView+SwiftEntryKit.swift in Sources */,
 				1C1D193D248FFFA500EEC254 /* CinemaKeychain.swift in Sources */,

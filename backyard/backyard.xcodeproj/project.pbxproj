@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C09D14C2491375E00319BEC /* PublicUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D14A2491375E00319BEC /* PublicUser.swift */; };
+		1C09D14D2491375E00319BEC /* PublicToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D14B2491375E00319BEC /* PublicToken.swift */; };
 		1C0ECF762477B7E200D5A597 /* Token+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF752477B7E100D5A597 /* Token+Public.swift */; };
 		1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF772477C8F400D5A597 /* User+Update.swift */; };
 		1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF792477CA5100D5A597 /* User+Registration.swift */; };
@@ -93,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C09D14A2491375E00319BEC /* PublicUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicUser.swift; sourceTree = "<group>"; };
+		1C09D14B2491375E00319BEC /* PublicToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicToken.swift; sourceTree = "<group>"; };
 		1C0ECF752477B7E100D5A597 /* Token+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+Public.swift"; sourceTree = "<group>"; };
 		1C0ECF772477C8F400D5A597 /* User+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Update.swift"; sourceTree = "<group>"; };
 		1C0ECF792477CA5100D5A597 /* User+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Registration.swift"; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 		1C1DB21824804B480019CA92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C09D14B2491375E00319BEC /* PublicToken.swift */,
+				1C09D14A2491375E00319BEC /* PublicUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C09D14D2491375E00319BEC /* PublicToken.swift in Sources */,
 				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
 				1C7B955D247CFF1A009710B1 /* Auditorium.swift in Sources */,
 				1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */,
@@ -617,6 +624,7 @@
 				1C7B9561247CFF33009710B1 /* Auditorium+Create.swift in Sources */,
 				1C7F66E22465AB5300781406 /* main.swift in Sources */,
 				1C7B9567247CFF55009710B1 /* Auditorium+Update.swift in Sources */,
+				1C09D14C2491375E00319BEC /* PublicUser.swift in Sources */,
 				1C0FC597246DCD00002E0EA4 /* MailingService.swift in Sources */,
 				1C0ECF8724794A9000D5A597 /* Theater+Parameter.swift in Sources */,
 				1C7B955A247BBA90009710B1 /* Theater+Picture.swift in Sources */,

@@ -7,8 +7,8 @@
 //
 
 import ArgumentParser
-import Rainbow
 import NetUtils
+import Rainbow
 
 
 // MARK: - Comamnds

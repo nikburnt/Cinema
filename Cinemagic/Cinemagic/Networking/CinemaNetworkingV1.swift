@@ -41,23 +41,25 @@ enum HTTPResponseStatus: Int {
 
 class CinemaNetworkingV1 {
 
-    func login(email: String, password: String) -> Promise<TokenResponse> {
+    // MARK: - Authentication
+
+    func login(email: String, password: String) -> Promise<PublicToken> {
         firstly { Promise<URLRequest>.value(try URLRequest.login(email: email, password: password)) }
             .then { Alamofire.request($0).responseData() }
             .map { try JSONDecoder.decode($0.data) }
     }
 
-    func register(email: String, password: String) -> Promise<TokenResponse> {
+    func register(email: String, password: String) -> Promise<PublicToken> {
         firstly { Promise<URLRequest>.value(try URLRequest.register(email: email, password: password)) }
             .then { Alamofire.request($0).responseData() }
-            .map { alamofireDataResponse -> TokenResponse in
+            .map { alamofireDataResponse -> PublicToken in
                 guard let statusCodeInteger = alamofireDataResponse.response.response?.statusCode else { throw NetworkingErrors.unexpectedError }
                 guard let statusCode = HTTPResponseStatus(rawValue: statusCodeInteger) else { throw NetworkingErrors.unknownError(statusCodeInteger) }
 
                 guard statusCode != .conflict else { throw NetworkingErrors.userAlreadyExists }
                 guard statusCode == .ok else { throw NetworkingErrors.unknownError(statusCodeInteger) }
 
-                let tokenResponse: TokenResponse = try JSONDecoder.decode(alamofireDataResponse.data)
+                let tokenResponse: PublicToken = try JSONDecoder.decode(alamofireDataResponse.data)
                 return tokenResponse
             }
     }
@@ -74,6 +76,14 @@ class CinemaNetworkingV1 {
 
                 return ()
             }
+    }
+
+
+    // MARK: - Users
+
+    func currentUser(_ bearer: String) -> Promise<PublicUser> {
+        firstly { Promise<URLRequest>.value(try URLRequest.currentUser(bearer: bearer)) }
+            .then { Alamofire.request($0).responseDecodable(PublicUser.self) }
     }
 
 }

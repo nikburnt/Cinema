@@ -40,12 +40,41 @@
                     </view>
                     <connections>
                         <outlet property="activityContainer" destination="DE9-EH-C9Q" id="s6u-qo-yiL"/>
-                        <segue destination="PQX-Bu-2u8" kind="presentation" identifier="goToMain" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="o8m-Z2-82F"/>
+                        <segue destination="PQX-Bu-2u8" kind="presentation" identifier="goToMainStaff" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="o8m-Z2-82F"/>
+                        <segue destination="8Jo-ft-Xcu" kind="presentation" identifier="goToMainCustomer" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bX7-UE-TKK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141" y="139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jAD-j4-QXD">
+            <objects>
+                <viewController id="8Jo-ft-Xcu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edR-be-d1a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oM-HJ-PGS">
+                                <rect key="frame" x="161" y="437.5" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4oM-HJ-PGS" firstAttribute="centerX" secondItem="edR-be-d1a" secondAttribute="centerX" id="2zX-Ez-mtH"/>
+                            <constraint firstItem="4oM-HJ-PGS" firstAttribute="centerY" secondItem="edR-be-d1a" secondAttribute="centerY" id="oqs-H2-q4n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4jP-3O-z3B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GT5-IX-akx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEs-W1-QZY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="506"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eJV-7Y-iGL">
@@ -55,8 +84,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TBD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-6e-cyR">
-                                <rect key="frame" x="190" y="437.5" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STAFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-6e-cyR">
+                                <rect key="frame" x="182" y="437.5" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GqZ-DS-zn8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058" y="139"/>
+            <point key="canvasLocation" x="1077" y="-193"/>
         </scene>
     </scenes>
     <resources>

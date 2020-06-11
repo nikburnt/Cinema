@@ -63,7 +63,7 @@ struct UsersControllerV1: RouteCollection {
 
     // MARK: - Private Methods
 
-    private func loginHandler(_ request: Request) throws -> Future<Token.Public> {
+    private func loginHandler(_ request: Request) throws -> Future<PublicToken> {
         let user = try request.requireAuthenticated(User.self)
         let token = try Token.generate(for: user)
         return token
@@ -73,17 +73,17 @@ struct UsersControllerV1: RouteCollection {
             .public
     }
 
-    private func getCurrentHandler(_ request: Request) throws -> Future<User.Public> {
+    private func getCurrentHandler(_ request: Request) throws -> Future<PublicUser> {
         let loggedInUser: User = try request.requireAuthenticated()
         return request.future(loggedInUser.public)
     }
 
-    private func updateCurrentHandler(_ request: Request, data: User.UpdateData) throws -> Future<User.Public> {
+    private func updateCurrentHandler(_ request: Request, data: User.UpdateData) throws -> Future<PublicUser> {
         let loggedInUser: User = try request.requireAuthenticated()
         return loggedInUser.updated(with: data).update(on: request).public
     }
 
-    private func updateCurrentPasswordHandler(_ request: Request, data: User.ChangePasswordData) throws -> Future<User.Public> {
+    private func updateCurrentPasswordHandler(_ request: Request, data: User.ChangePasswordData) throws -> Future<PublicUser> {
         try data.validate()
 
         let loggedInUser: User = try request.requireAuthenticated()
@@ -112,7 +112,7 @@ struct UsersControllerV1: RouteCollection {
     }
 
 
-    private func registerHandler(_ request: Request, data: User.RegistrationData) throws -> Future<Token.Public> {
+    private func registerHandler(_ request: Request, data: User.RegistrationData) throws -> Future<PublicToken> {
         guard request.http.headers.bearerAuthorization == nil else {
             throw Abort(.forbidden, reason: "User should not be logged in to register.")
         }
@@ -136,7 +136,7 @@ struct UsersControllerV1: RouteCollection {
     }
 
 
-    private func addAvatarHandler(_ request: Request) throws -> Future<User.Public> {
+    private func addAvatarHandler(_ request: Request) throws -> Future<PublicUser> {
         let loggedInUser: User = try request.requireAuthenticated()
         return request.http.body
             .consumeData(on: request)
