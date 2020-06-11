@@ -21,6 +21,12 @@
       <Group
          location = "group:Model"
          name = "Model">
+         <FileRef
+            location = "group:PublicToken.swift">
+         </FileRef>
+         <FileRef
+            location = "group:PublicUser.swift">
+         </FileRef>
       </Group>
    </Group>
    <FileRef

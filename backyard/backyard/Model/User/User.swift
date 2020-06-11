@@ -13,13 +13,6 @@ import FluentMySQL
 
 struct User: MySQLModel {
 
-    // MARK: - Public Enums
-
-    enum Role: Int, Codable {
-        case customer
-        case staff
-    }
-
 
     // MARK: - Codable Enum
 
@@ -44,7 +37,7 @@ struct User: MySQLModel {
 
     var id: Int?
 
-    var role: Role
+    var role: UserRole
 
     var email: String
     var password: String

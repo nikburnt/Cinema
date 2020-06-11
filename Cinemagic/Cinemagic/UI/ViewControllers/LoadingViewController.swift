@@ -18,7 +18,8 @@ import SwiftEntryKit
 
 // MARK: - Private Constants
 
-private let goToMainSegue = "goToMain"
+private let goToMainStaffSegue = "goToMainStaff"
+private let goToMainCustomerSegue = "goToMainCustomer"
 
 
 // MARK: - LoadingViewController
@@ -57,11 +58,7 @@ class LoadingViewController: UIViewController {
 
         EKAttributes.Precedence.QueueingHeuristic.value = .chronological
 
-        switch CinemaDataProvider.shared.userState {
-        case .loggedIn: goToMain()
-        case .tokenExpired: processExpiredToken()
-        case .notLoggedIn: showLogin()
-        }
+        goToMain()
     }
 
 
@@ -69,7 +66,11 @@ class LoadingViewController: UIViewController {
 
     private func goToMain() {
         SwiftEntryKit.dismiss()
-        performSegue(withIdentifier: goToMainSegue, sender: nil)
+
+        CinemaDataProvider.shared
+            .currentUser()
+            .done { self.performSegue(withIdentifier: $0.role == .staff ? goToMainStaffSegue : goToMainCustomerSegue, sender: nil) }
+            .catch { _ in self.showLogin() }
     }
 
     private func showLogin() {

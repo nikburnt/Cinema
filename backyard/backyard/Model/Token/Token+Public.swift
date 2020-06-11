@@ -13,27 +13,13 @@ import Vapor
 
 extension Token {
 
-    // MARK: - Public Structure
-
-    struct Public: Content {
-
-        var token: String
-        var expirationDate: Date
-
-        // swiftlint:disable nesting
-        enum CodingKeys: String, CodingKey {
-            case token
-            case expirationDate = "expiration_date"
-        }
-
-    }
-
-
     // MARK: - Public Variables
 
-    var `public`: Public { Public(token: token, expirationDate: expirationDate ?? Date(timeIntervalSince1970: 0)) }
+    var `public`: PublicToken { PublicToken(token: token, expirationDate: expirationDate ?? Date(timeIntervalSince1970: 0)) }
 
 }
+
+extension PublicToken: Content { }
 
 
 // MARK: - Future+User+Public
@@ -42,6 +28,6 @@ extension EventLoopFuture where T == Token {
 
     // MARK: - Public Variables
 
-    var `public`: Future<Token.Public> { map(to: Token.Public.self) { $0.public } }
+    var `public`: Future<PublicToken> { map(to: PublicToken.self) { $0.public } }
 
 }

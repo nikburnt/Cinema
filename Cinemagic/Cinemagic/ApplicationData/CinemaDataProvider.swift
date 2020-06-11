@@ -62,7 +62,8 @@ class CinemaDataProvider {
         self.keychainProvider = CinemaKeychain()
     }
 
-    // MARK: - DataProvider Methods
+
+    // MARK: - Authentication
 
     func refreshToken() -> Promise<Void> {
         userState == .tokenExpired ? login(email: keychainProvider.email.require(), password: keychainProvider.password.require())
@@ -97,4 +98,19 @@ class CinemaDataProvider {
         networkProvider.resetPassword(email: email)
     }
 
+
+    // MARK: - Users
+
+    func currentUser() -> Promise<PublicUser> {
+        let result: Promise<PublicUser>
+        switch userState {
+        case .loggedIn:
+            result = networkProvider.currentUser(keychainProvider.token.require())
+        case .tokenExpired:
+            result = refreshToken().then { self.networkProvider.currentUser(self.keychainProvider.token.require()) }
+        case .notLoggedIn:
+            result = .init(error: CinemaErrors.notLoggedIn)
+        }
+        return result
+    }
 }
