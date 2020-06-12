@@ -14,6 +14,7 @@ target 'Cinemagic' do
   use_frameworks!
   project 'Cinemagic/Cinemagic.xcodeproj'
 
+  pod 'AlamofireImage'
   pod 'AnimatedField'
   pod 'GeometricLoaders', :git => 'https://github.com/nikburnt/GeometricLoaders', :branch => 'develop'
   pod 'GradientAnimator'

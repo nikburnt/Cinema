@@ -98,6 +98,13 @@ class CinemaDataProvider {
         networkProvider.resetPassword(email: email)
     }
 
+    func logout() {
+        keychainProvider.email = nil
+        keychainProvider.password = nil
+        keychainProvider.token = nil
+        keychainProvider.tokenExpirationDate = nil
+    }
+
 
     // MARK: - Users
 
@@ -113,4 +120,11 @@ class CinemaDataProvider {
         }
         return result
     }
+
+    // MARK: - Movies
+
+    func moviesList() -> Promise<[PublicMovie]> {
+        networkProvider.allMovies()
+    }
+
 }

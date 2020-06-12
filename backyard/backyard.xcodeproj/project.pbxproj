@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		1C09D14C2491375E00319BEC /* PublicUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D14A2491375E00319BEC /* PublicUser.swift */; };
 		1C09D14D2491375E00319BEC /* PublicToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D14B2491375E00319BEC /* PublicToken.swift */; };
+		1C09D1542492572600319BEC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D1532492572600319BEC /* Movie.swift */; };
+		1C09D1562492586600319BEC /* Movie+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D1552492586600319BEC /* Movie+Content.swift */; };
+		1C09D158249258A000319BEC /* Movie+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D157249258A000319BEC /* Movie+Create.swift */; };
+		1C09D15A24925A6F00319BEC /* Movie+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D15924925A6F00319BEC /* Movie+Parameter.swift */; };
+		1C09D15C24925A8200319BEC /* Movie+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D15B24925A8200319BEC /* Movie+Picture.swift */; };
+		1C09D15E24925AD500319BEC /* Movie+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D15D24925AD500319BEC /* Movie+Update.swift */; };
+		1C09D16024926F6800319BEC /* PublicMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09D15F24926F6800319BEC /* PublicMovie.swift */; };
 		1C0ECF762477B7E200D5A597 /* Token+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF752477B7E100D5A597 /* Token+Public.swift */; };
 		1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF772477C8F400D5A597 /* User+Update.swift */; };
 		1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF792477CA5100D5A597 /* User+Registration.swift */; };
 		1C0ECF7C2477D1F200D5A597 /* User+Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF7B2477D1F200D5A597 /* User+Password.swift */; };
 		1C0ECF7E2478036D00D5A597 /* User+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */; };
-		1C0ECF812479488300D5A597 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF802479488300D5A597 /* Theater.swift */; };
-		1C0ECF832479491100D5A597 /* Theater+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF822479491100D5A597 /* Theater+Content.swift */; };
-		1C0ECF8724794A9000D5A597 /* Theater+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */; };
 		1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC570246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift */; };
 		1C0FC573246C44EA002E0EA4 /* BaseDestination+FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC572246C44EA002E0EA4 /* BaseDestination+FileDestination.swift */; };
 		1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC574246C4504002E0EA4 /* SwiftyBeaver+Configure.swift */; };
@@ -40,15 +44,6 @@
 		1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */; };
 		1C577B2F24700ED40047B87A /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 1C577B2E24700ED40047B87A /* Authentication */; };
 		1C577B3224713A180047B87A /* UsersControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B3124713A180047B87A /* UsersControllerV1.swift */; };
-		1C6727DC247A5918005E4BF7 /* Theater+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6727DB247A5918005E4BF7 /* Theater+Update.swift */; };
-		1C6727DE247A5DA3005E4BF7 /* Theater+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */; };
-		1C7B955A247BBA90009710B1 /* Theater+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9559247BBA90009710B1 /* Theater+Picture.swift */; };
-		1C7B955D247CFF1A009710B1 /* Auditorium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B955C247CFF1A009710B1 /* Auditorium.swift */; };
-		1C7B955F247CFF2A009710B1 /* Auditorium+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B955E247CFF2A009710B1 /* Auditorium+Content.swift */; };
-		1C7B9561247CFF33009710B1 /* Auditorium+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9560247CFF33009710B1 /* Auditorium+Create.swift */; };
-		1C7B9563247CFF3E009710B1 /* Auditorium+Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */; };
-		1C7B9565247CFF4A009710B1 /* Auditorium+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */; };
-		1C7B9567247CFF55009710B1 /* Auditorium+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */; };
 		1C7B956B247D106F009710B1 /* CommonCRUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B956A247D106F009710B1 /* CommonCRUDController.swift */; };
 		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
@@ -97,14 +92,18 @@
 /* Begin PBXFileReference section */
 		1C09D14A2491375E00319BEC /* PublicUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicUser.swift; sourceTree = "<group>"; };
 		1C09D14B2491375E00319BEC /* PublicToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicToken.swift; sourceTree = "<group>"; };
+		1C09D1532492572600319BEC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		1C09D1552492586600319BEC /* Movie+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Content.swift"; sourceTree = "<group>"; };
+		1C09D157249258A000319BEC /* Movie+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Create.swift"; sourceTree = "<group>"; };
+		1C09D15924925A6F00319BEC /* Movie+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Parameter.swift"; sourceTree = "<group>"; };
+		1C09D15B24925A8200319BEC /* Movie+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Picture.swift"; sourceTree = "<group>"; };
+		1C09D15D24925AD500319BEC /* Movie+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Update.swift"; sourceTree = "<group>"; };
+		1C09D15F24926F6800319BEC /* PublicMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicMovie.swift; sourceTree = "<group>"; };
 		1C0ECF752477B7E100D5A597 /* Token+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+Public.swift"; sourceTree = "<group>"; };
 		1C0ECF772477C8F400D5A597 /* User+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Update.swift"; sourceTree = "<group>"; };
 		1C0ECF792477CA5100D5A597 /* User+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Registration.swift"; sourceTree = "<group>"; };
 		1C0ECF7B2477D1F200D5A597 /* User+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Password.swift"; sourceTree = "<group>"; };
 		1C0ECF7D2478036D00D5A597 /* User+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Avatar.swift"; sourceTree = "<group>"; };
-		1C0ECF802479488300D5A597 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
-		1C0ECF822479491100D5A597 /* Theater+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Content.swift"; sourceTree = "<group>"; };
-		1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Parameter.swift"; sourceTree = "<group>"; };
 		1C0FC570246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDestination+ConsoleDestination.swift"; sourceTree = "<group>"; };
 		1C0FC572246C44EA002E0EA4 /* BaseDestination+FileDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDestination+FileDestination.swift"; sourceTree = "<group>"; };
 		1C0FC574246C4504002E0EA4 /* SwiftyBeaver+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyBeaver+Configure.swift"; sourceTree = "<group>"; };
@@ -124,15 +123,6 @@
 		1C577B27246FE2640047B87A /* BackyardVapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackyardVapor.swift; sourceTree = "<group>"; };
 		1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaverService.swift; sourceTree = "<group>"; };
 		1C577B3124713A180047B87A /* UsersControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersControllerV1.swift; sourceTree = "<group>"; };
-		1C6727DB247A5918005E4BF7 /* Theater+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Update.swift"; sourceTree = "<group>"; };
-		1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Create.swift"; sourceTree = "<group>"; };
-		1C7B9559247BBA90009710B1 /* Theater+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theater+Picture.swift"; sourceTree = "<group>"; };
-		1C7B955C247CFF1A009710B1 /* Auditorium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auditorium.swift; sourceTree = "<group>"; };
-		1C7B955E247CFF2A009710B1 /* Auditorium+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Content.swift"; sourceTree = "<group>"; };
-		1C7B9560247CFF33009710B1 /* Auditorium+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Create.swift"; sourceTree = "<group>"; };
-		1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Parameter.swift"; sourceTree = "<group>"; };
-		1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Picture.swift"; sourceTree = "<group>"; };
-		1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auditorium+Update.swift"; sourceTree = "<group>"; };
 		1C7B956A247D106F009710B1 /* CommonCRUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCRUDController.swift; sourceTree = "<group>"; };
 		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,17 +183,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C0ECF7F2479487300D5A597 /* Theater */ = {
+		1C09D1522492568D00319BEC /* Miovie */ = {
 			isa = PBXGroup;
 			children = (
-				1C0ECF802479488300D5A597 /* Theater.swift */,
-				1C0ECF822479491100D5A597 /* Theater+Content.swift */,
-				1C6727DD247A5DA3005E4BF7 /* Theater+Create.swift */,
-				1C0ECF8624794A9000D5A597 /* Theater+Parameter.swift */,
-				1C7B9559247BBA90009710B1 /* Theater+Picture.swift */,
-				1C6727DB247A5918005E4BF7 /* Theater+Update.swift */,
+				1C09D1532492572600319BEC /* Movie.swift */,
+				1C09D1552492586600319BEC /* Movie+Content.swift */,
+				1C09D157249258A000319BEC /* Movie+Create.swift */,
+				1C09D15924925A6F00319BEC /* Movie+Parameter.swift */,
+				1C09D15B24925A8200319BEC /* Movie+Picture.swift */,
+				1C09D15D24925AD500319BEC /* Movie+Update.swift */,
 			);
-			path = Theater;
+			path = Miovie;
 			sourceTree = "<group>";
 		};
 		1C0FC56F246C3FCA002E0EA4 /* Logging */ = {
@@ -231,8 +221,7 @@
 		1C0FC581246C8C4A002E0EA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1C7B955B247CFF0A009710B1 /* Auditorium */,
-				1C0ECF7F2479487300D5A597 /* Theater */,
+				1C09D1522492568D00319BEC /* Miovie */,
 				1C8315D52471685F004B9D0C /* Token */,
 				1C8315CC24716047004B9D0C /* User */,
 			);
@@ -295,6 +284,7 @@
 		1C1DB21824804B480019CA92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C09D15F24926F6800319BEC /* PublicMovie.swift */,
 				1C09D14B2491375E00319BEC /* PublicToken.swift */,
 				1C09D14A2491375E00319BEC /* PublicUser.swift */,
 			);
@@ -317,19 +307,6 @@
 				1C577B3124713A180047B87A /* UsersControllerV1.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		1C7B955B247CFF0A009710B1 /* Auditorium */ = {
-			isa = PBXGroup;
-			children = (
-				1C7B955C247CFF1A009710B1 /* Auditorium.swift */,
-				1C7B955E247CFF2A009710B1 /* Auditorium+Content.swift */,
-				1C7B9560247CFF33009710B1 /* Auditorium+Create.swift */,
-				1C7B9562247CFF3E009710B1 /* Auditorium+Parameter.swift */,
-				1C7B9564247CFF4A009710B1 /* Auditorium+Picture.swift */,
-				1C7B9566247CFF55009710B1 /* Auditorium+Update.swift */,
-			);
-			path = Auditorium;
 			sourceTree = "<group>";
 		};
 		1C7D0BF9246B4DAB00139D45 /* Facade */ = {
@@ -615,19 +592,13 @@
 			files = (
 				1C09D14D2491375E00319BEC /* PublicToken.swift in Sources */,
 				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
-				1C7B955D247CFF1A009710B1 /* Auditorium.swift in Sources */,
 				1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */,
-				1C7B9563247CFF3E009710B1 /* Auditorium+Parameter.swift in Sources */,
 				1C1DB21A24804B480019CA92 /* PasswordStrengts+Enough.swift in Sources */,
 				1C0FC59C246DD372002E0EA4 /* PasswordGenerator.swift in Sources */,
-				1C0ECF832479491100D5A597 /* Theater+Content.swift in Sources */,
-				1C7B9561247CFF33009710B1 /* Auditorium+Create.swift in Sources */,
 				1C7F66E22465AB5300781406 /* main.swift in Sources */,
-				1C7B9567247CFF55009710B1 /* Auditorium+Update.swift in Sources */,
+				1C09D15E24925AD500319BEC /* Movie+Update.swift in Sources */,
 				1C09D14C2491375E00319BEC /* PublicUser.swift in Sources */,
 				1C0FC597246DCD00002E0EA4 /* MailingService.swift in Sources */,
-				1C0ECF8724794A9000D5A597 /* Theater+Parameter.swift in Sources */,
-				1C7B955A247BBA90009710B1 /* Theater+Picture.swift in Sources */,
 				1C1DB21924804B480019CA92 /* PasswordStrength.swift in Sources */,
 				1C0FC577246C457D002E0EA4 /* BaseDestination+DefaultConfig.swift in Sources */,
 				1C0FC579246C483B002E0EA4 /* BaseDestination+SBPlatformDestination.swift in Sources */,
@@ -635,11 +606,12 @@
 				1C8315E124717648004B9D0C /* User+PasswordAuthenticatable.swift in Sources */,
 				1C8315DB24716991004B9D0C /* Token+Generation.swift in Sources */,
 				1C8315D72471689D004B9D0C /* Token+BearerAuthenticatable.swift in Sources */,
+				1C09D158249258A000319BEC /* Movie+Create.swift in Sources */,
+				1C09D1542492572600319BEC /* Movie.swift in Sources */,
 				1C0ECF7C2477D1F200D5A597 /* User+Password.swift in Sources */,
 				1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */,
 				1C8315D224716521004B9D0C /* User+Content.swift in Sources */,
 				1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */,
-				1C0ECF812479488300D5A597 /* Theater.swift in Sources */,
 				1C0FC580246C8B25002E0EA4 /* OutputProcessor.swift in Sources */,
 				1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */,
 				1C0ECF762477B7E200D5A597 /* Token+Public.swift in Sources */,
@@ -647,24 +619,24 @@
 				1C0FC59E246E8B72002E0EA4 /* Token.swift in Sources */,
 				1C8315D9247168B0004B9D0C /* Token+AuthenticationToken.swift in Sources */,
 				1C0FC57E246C8B17002E0EA4 /* BackyardOutput.swift in Sources */,
-				1C6727DE247A5DA3005E4BF7 /* Theater+Create.swift in Sources */,
+				1C09D15A24925A6F00319BEC /* Movie+Parameter.swift in Sources */,
 				1C8315DD24716B28004B9D0C /* User+BasicAuthenticatable.swift in Sources */,
 				1C577B3224713A180047B87A /* UsersControllerV1.swift in Sources */,
-				1C6727DC247A5918005E4BF7 /* Theater+Update.swift in Sources */,
 				1C0FC599246DCD74002E0EA4 /* SMTPMailingService.swift in Sources */,
 				1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */,
 				1C0FC583246C8C5E002E0EA4 /* User.swift in Sources */,
 				1C8315DF24716CE0004B9D0C /* Token+Content.swift in Sources */,
-				1C7B955F247CFF2A009710B1 /* Auditorium+Content.swift in Sources */,
 				1C0FC586246D2C01002E0EA4 /* DataStorage.swift in Sources */,
+				1C09D16024926F6800319BEC /* PublicMovie.swift in Sources */,
+				1C09D15C24925A8200319BEC /* Movie+Picture.swift in Sources */,
 				1C8315D024716093004B9D0C /* User+Public.swift in Sources */,
 				1C0ECF7E2478036D00D5A597 /* User+Avatar.swift in Sources */,
 				1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */,
+				1C09D1562492586600319BEC /* Movie+Content.swift in Sources */,
 				1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */,
 				1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */,
 				1C7B956B247D106F009710B1 /* CommonCRUDController.swift in Sources */,
 				1C577B28246FE2640047B87A /* BackyardVapor.swift in Sources */,
-				1C7B9565247CFF4A009710B1 /* Auditorium+Picture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

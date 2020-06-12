@@ -50,10 +50,19 @@ class LoadingViewController: UIViewController {
         gradientView.startAnimate()
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loader = BlinkingCircles.createGeometricLoader(self.activityContainer)
-        loader?.circleColor = .white
+
+        if loader == nil {
+            loader = BlinkingCircles.createGeometricLoader(self.activityContainer)
+            loader?.circleColor = .white
+        }
+
         loader?.startAnimation()
 
         EKAttributes.Precedence.QueueingHeuristic.value = .chronological
@@ -107,7 +116,6 @@ class LoadingViewController: UIViewController {
         }
 
         loginView.showAsAuthentication()
-        loader?.stopAnimation()
     }
 
     private func showLoginError(_ error: Error) {

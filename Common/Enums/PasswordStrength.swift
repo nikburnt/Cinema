@@ -15,9 +15,9 @@ public enum PasswordStrength: Int, Comparable {
 
     // MARK: - Public Constants
 
-    public static let weakPasswordRegex = "^(?=.*?[A-Z])(?=.*?[a-z]).{6,}$"
-    public static let averagePasswordRegex = "^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$"
-    public static let strongPasswordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+    public static let weakPasswordRegex = "^(?=.*?[A-Z])(?=.*?[a-z]).{6,24}$"
+    public static let averagePasswordRegex = "^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,24}$"
+    public static let strongPasswordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,24}$"
 
 
     // MARK: - Cases

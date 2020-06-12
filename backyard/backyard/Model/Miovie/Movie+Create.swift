@@ -1,17 +1,17 @@
 //
-//  Auditorium+Create.swift
+//  Movie+Create.swift
 //  backyard
 //
-//  Created by Nik Burnt on 5/26/20.
+//  Created by Nik Burnt on 6/11/20.
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
 import Vapor
 
 
-// MARK: - Auditorium+Create
+// MARK: - Movie+Create
 
-extension Auditorium: CommonCreate {
+extension Movie: CommonCreate {
 
     // MARK: - Public Structures
 
@@ -19,9 +19,11 @@ extension Auditorium: CommonCreate {
 
         // MARK: - Public Variables
 
-        var theaterId: Int
-        var name: String
+        var title: String
         var description: String
+        var startAt: Date
+        var endAt: Date
+        var maxTickets: Int
 
 
         // MARK: - Validatable
@@ -29,8 +31,14 @@ extension Auditorium: CommonCreate {
         static func validations() throws -> Validations<CreateData> {
             var validations = Validations(CreateData.self)
             let charactersSet: Validator<String> = .characterSet(.alphanumerics + .whitespacesAndNewlines + .punctuationCharacters + .symbols)
-            try validations.add(\.name, charactersSet && .count(3...))
+            try validations.add(\.title, charactersSet && .count(1...))
             try validations.add(\.description, charactersSet && .count(12...))
+            try validations.add(\.startAt, .range(Date()...))
+            validations.add("End date should be after start date.") { model in
+                guard model.startAt < model.endAt else {
+                    throw BasicValidationError("Start date greater than end date.")
+                }
+            }
             return validations
         }
 
@@ -40,7 +48,7 @@ extension Auditorium: CommonCreate {
     // MARK: - Lifecycle
 
     init(with data: CreateData) throws {
-        self.init(theaterId: data.theaterId, name: data.name, description: data.description)
+        self.init(title: data.title, description: data.description, startAt: data.startAt, endAt: data.endAt, maxTickets: data.maxTickets)
     }
 
 }
