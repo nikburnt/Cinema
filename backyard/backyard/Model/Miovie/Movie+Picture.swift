@@ -1,8 +1,8 @@
 //
-//  Auditorium+Picture.swift
+//  Movie+Picture.swift
 //  backyard
 //
-//  Created by Nik Burnt on 5/26/20.
+//  Created by Nik Burnt on 6/11/20.
 //  Copyright © 2020 Nik Burnt Inc. All rights reserved.
 //
 
@@ -12,19 +12,19 @@ import Vapor
 // MARK: - Private Variables
 
 private let publicFolder = "Public"
-private let auditoriumsPicturesFolder = "auditoriums"
+private let moviesPicturesFolder = "posters"
 private let imageExtension = "image"
 
 
-// MARK: - Auditorium+Avatar
+// MARK: - Movie+Avatar
 
-extension Auditorium: PictureUpdate {
+extension Movie: PictureUpdate {
 
     // MARK: - Public Methods
 
-    func updated(with data: Data) throws -> Auditorium {
+    func updated(with data: Data) throws -> Movie {
         let relativePath = URL(fileURLWithPath: "/")
-            .appendingPathComponent(auditoriumsPicturesFolder)
+            .appendingPathComponent(moviesPicturesFolder)
             .appendingPathComponent(UUID().uuidString)
             .appendingPathExtension(imageExtension)
         let filePath = URL(fileURLWithPath: publicFolder).appendingPathComponent(relativePath.path)
@@ -36,7 +36,7 @@ extension Auditorium: PictureUpdate {
         try data.write(to: filePath)
 
         var copy = self
-        copy.picture = relativePath.path
+        copy.poster = relativePath.path
         return copy
     }
 

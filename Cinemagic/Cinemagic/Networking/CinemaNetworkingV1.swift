@@ -83,7 +83,17 @@ class CinemaNetworkingV1 {
 
     func currentUser(_ bearer: String) -> Promise<PublicUser> {
         firstly { Promise<URLRequest>.value(try URLRequest.currentUser(bearer: bearer)) }
-            .then { Alamofire.request($0).responseDecodable(PublicUser.self) }
+            .then { Alamofire.request($0).responseData() }
+            .map { try JSONDecoder.decode($0.data) }
+    }
+
+
+    // MARK: - Users
+
+    func allMovies() -> Promise<[PublicMovie]> {
+        firstly { Promise<URLRequest>.value(try URLRequest.allMovies()) }
+            .then { Alamofire.request($0).responseData() }
+            .map { try JSONDecoder.decode($0.data) }
     }
 
 }

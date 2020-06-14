@@ -15,7 +15,8 @@ import Foundation
 // swiftlint:disable nesting
 extension URL {
 
-    private static let host: URL = "http://nikburnttmbpro2019.ddns.net:8080/"
+    static let host: URL = "http://nikburnttmbpro2019.ddns.net:8080"
+    static let publicResources = host.appendingPathComponent("public")
 
     // Routes Declaration, this check not needed
     // swiftlint:disable type_name
@@ -34,6 +35,8 @@ extension URL {
             static let uploadAvatar = current.appendingPathComponent("upload-avatar")
 
         }
+
+        static let movies = v1Route.appendingPathComponent("movies")
 
     }
 

@@ -61,7 +61,18 @@ class LoginView: UIView, NibBasedView {
     // MARK: - Actions
 
     @IBAction private func login(_ sender: Any) {
-        if emailField.isValid && passwordField.isValid {
+        var somethingMissing = false
+        if emailField.text?.isEmpty ?? true {
+            somethingMissing = true
+            emailField.showAlert("Адрес электронной почты не должен быть пустым.")
+        }
+
+        if passwordField.text?.isEmpty ?? true {
+            somethingMissing = true
+            passwordField.showAlert("Пароль не должен быть пустым.")
+        }
+
+        if !somethingMissing && emailField.isValid && passwordField.isValid {
             // Unwrap is safe because validation passed before
             // swiftlint:disable force_unwrapping
             loginHandle?(emailField.text!, passwordField.text!)
@@ -69,7 +80,18 @@ class LoginView: UIView, NibBasedView {
     }
 
     @IBAction private func register(_ sender: Any) {
-        if emailField.isValid && passwordField.isValid {
+        var somethingMissing = false
+        if emailField.text?.isEmpty ?? true {
+            somethingMissing = true
+            emailField.showAlert("Адрес электронной почты не должен быть пустым.")
+        }
+
+        if passwordField.text?.isEmpty ?? true {
+            somethingMissing = true
+            passwordField.showAlert("Пароль не должен быть пустым.")
+        }
+
+        if !somethingMissing && emailField.isValid && passwordField.isValid {
             // Unwrap is safe because validation passed before
             // swiftlint:disable force_unwrapping
             registerHandle?(emailField.text!, passwordField.text!)
@@ -77,7 +99,13 @@ class LoginView: UIView, NibBasedView {
     }
 
     @IBAction private func restore(_ sender: Any) {
-        if emailField.isValid && passwordField.isValid {
+        var somethingMissing = false
+        if emailField.text?.isEmpty ?? true {
+            somethingMissing = true
+            emailField.showAlert("Адрес электронной почты не должен быть пустым.")
+        }
+
+        if !somethingMissing && emailField.isValid && passwordField.isValid {
             // Unwrap is safe because validation passed before
             // swiftlint:disable force_unwrapping
             resetHandle?(emailField.text!)

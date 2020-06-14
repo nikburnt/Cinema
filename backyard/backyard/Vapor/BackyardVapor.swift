@@ -87,8 +87,7 @@ class BackyardVapor {
 
         try v1Route.register(collection: UsersControllerV1(mailingService: mailingService))
 
-        try v1Route.register(collection: CommonCRUDController<Theater>(route: "theaters"))
-        try v1Route.register(collection: CommonCRUDController<Auditorium>(route: "auditoriums"))
+        try v1Route.register(collection: CommonCRUDController<Movie>(route: "movies"))
     }
 
 }

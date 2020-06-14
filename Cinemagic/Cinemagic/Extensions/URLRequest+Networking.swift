@@ -45,4 +45,11 @@ extension URLRequest {
         return request
     }
 
+    // MARK: - Movies
+
+    static func allMovies() throws -> URLRequest {
+        let request = try URLRequest(url: URL.v1.movies, method: .get)
+        return request
+    }
+
 }
