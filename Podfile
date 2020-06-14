@@ -15,7 +15,9 @@ target 'Cinemagic' do
   project 'Cinemagic/Cinemagic.xcodeproj'
 
   pod 'AlamofireImage'
+  pod 'AttributedLib'
   pod 'AnimatedField'
+  pod 'EmptyDataSet-Swift'
   pod 'GeometricLoaders', :git => 'https://github.com/nikburnt/GeometricLoaders', :branch => 'develop'
   pod 'GradientAnimator'
   pod 'KeychainAccess'

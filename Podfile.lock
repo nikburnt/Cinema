@@ -3,6 +3,8 @@ PODS:
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
   - AnimatedField (2.4.4)
+  - AttributedLib (3.0.0)
+  - EmptyDataSet-Swift (5.0.0)
   - GeometricLoaders (1.1.1)
   - GradientAnimator (1.3.1)
   - KeychainAccess (4.2.0)
@@ -29,6 +31,8 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage
   - AnimatedField
+  - AttributedLib
+  - EmptyDataSet-Swift
   - GeometricLoaders (from `https://github.com/nikburnt/GeometricLoaders`, branch `develop`)
   - GradientAnimator
   - KeychainAccess
@@ -45,6 +49,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AnimatedField
+    - AttributedLib
+    - EmptyDataSet-Swift
     - GradientAnimator
     - KeychainAccess
     - LGButton
@@ -69,6 +75,8 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AnimatedField: af48a2d59a50b33b30446267f7f2af274296203c
+  AttributedLib: ad537d4f9285ed57fc4d9103dd83c2ee6be1582b
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   GeometricLoaders: 4fbbeb569cf0ea647c620a9ffb87c9e63812e743
   GradientAnimator: 30c054568a68b5b03ae26586fdfca21036f6ad92
   KeychainAccess: 3f760109aa99b05d0f231e28b22642da7153e38a
@@ -80,6 +88,6 @@ SPEC CHECKSUMS:
   Require: f93abc18dda985f665465cf027cea7166455fb28
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
 
-PODFILE CHECKSUM: cfe42780bf88d14f7c45c19baf570e6ce944c86f
+PODFILE CHECKSUM: 9e314a84ee50fe1a70cb05e3481ccf5e8ff0a210
 
 COCOAPODS: 1.8.4
