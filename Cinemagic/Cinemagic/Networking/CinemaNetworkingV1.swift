@@ -16,6 +16,8 @@ import PromiseKit
 
 enum NetworkingErrors: Error {
     case authenticationError
+    case movieNotExists
+    case imageCantBeconvertedToPNG
     case userNotExists
     case userAlreadyExists
     case unexpectedError
@@ -88,12 +90,70 @@ class CinemaNetworkingV1 {
     }
 
 
-    // MARK: - Users
+    // MARK: - Movies
 
     func allMovies() -> Promise<[PublicMovie]> {
         firstly { Promise<URLRequest>.value(try URLRequest.allMovies()) }
             .then { Alamofire.request($0).responseData() }
             .map { try JSONDecoder.decode($0.data) }
+    }
+
+    func update(_ movie: PublicMovie, bearer: String) -> Promise<PublicMovie> {
+        firstly { Promise<URLRequest>.value(try URLRequest.update(movie, bearer: bearer)) }
+            .then { Alamofire.request($0).responseData() }
+            .map { alamofireDataResponse -> PublicMovie in
+                guard let statusCodeInteger = alamofireDataResponse.response.response?.statusCode else { throw NetworkingErrors.unexpectedError }
+                guard let statusCode = HTTPResponseStatus(rawValue: statusCodeInteger) else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+
+                guard statusCode != .notFound else { throw NetworkingErrors.movieNotExists }
+                guard statusCode == .ok else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+
+                let tokenResponse: PublicMovie = try JSONDecoder.decode(alamofireDataResponse.data)
+                return tokenResponse
+            }
+    }
+
+    func create(_ movie: PublicMovie, bearer: String) -> Promise<PublicMovie> {
+        firstly { Promise<URLRequest>.value(try URLRequest.create(movie, bearer: bearer)) }
+            .then { Alamofire.request($0).responseData() }
+            .map { alamofireDataResponse -> PublicMovie in
+                guard let statusCodeInteger = alamofireDataResponse.response.response?.statusCode else { throw NetworkingErrors.unexpectedError }
+                guard let statusCode = HTTPResponseStatus(rawValue: statusCodeInteger) else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+                guard statusCode == .ok else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+
+                let tokenResponse: PublicMovie = try JSONDecoder.decode(alamofireDataResponse.data)
+                return tokenResponse
+            }
+    }
+
+    func upload(_ movie: PublicMovie, poster: UIImage, bearer: String) -> Promise<PublicMovie> {
+        guard let imageDate = poster.pngData() else {
+            return .init(error: NetworkingErrors.imageCantBeconvertedToPNG)
+        }
+        return firstly { Promise<URLRequest>.value(try URLRequest.upload(movie, bearer: bearer)) }
+            .then { Alamofire.upload(imageDate, with: $0).responseData() }
+            .map { alamofireDataResponse -> PublicMovie in
+                guard let statusCodeInteger = alamofireDataResponse.response.response?.statusCode else { throw NetworkingErrors.unexpectedError }
+                guard let statusCode = HTTPResponseStatus(rawValue: statusCodeInteger) else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+                guard statusCode == .ok else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+
+                let tokenResponse: PublicMovie = try JSONDecoder.decode(alamofireDataResponse.data)
+                return tokenResponse
+            }
+    }
+
+    func remove(_ movie: PublicMovie, bearer: String) -> Promise<Void> {
+        firstly { Promise<URLRequest>.value(try URLRequest.remove(movie, bearer: bearer)) }
+            .then { Alamofire.request($0).responseData() }
+            .map { alamofireDataResponse -> Void in
+                guard let statusCodeInteger = alamofireDataResponse.response.response?.statusCode else { throw NetworkingErrors.unexpectedError }
+                guard let statusCode = HTTPResponseStatus(rawValue: statusCodeInteger) else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+
+                guard statusCode != .notFound else { throw NetworkingErrors.movieNotExists }
+                guard statusCode == .ok else { throw NetworkingErrors.unknownError(statusCodeInteger) }
+
+                return ()
+            }
     }
 
 }

@@ -32,14 +32,14 @@
                             <color key="textColor" name="text-medium"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-uc-x9k" customClass="AnimatedField" customModule="AnimatedField">
+                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-uc-x9k" customClass="AnimatedField" customModule="AnimatedField">
                             <rect key="frame" x="0.0" y="260" width="345" height="80"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="VRj-d7-gA5"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-ue-KjR" customClass="AnimatedField" customModule="AnimatedField">
+                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-ue-KjR" customClass="AnimatedField" customModule="AnimatedField">
                             <rect key="frame" x="0.0" y="340" width="345" height="80"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
@@ -60,7 +60,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Uxp-Ii-cP5">
                             <rect key="frame" x="0.0" y="428" width="345" height="42"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Th-lW-uhW" customClass="LGButton" customModule="LGButton">
+                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Th-lW-uhW" customClass="LGButton" customModule="LGButton">
                                     <rect key="frame" x="0.0" y="0.0" width="167.5" height="42"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <userDefinedRuntimeAttributes>
@@ -184,6 +184,7 @@
             <connections>
                 <outlet property="emailField" destination="AZc-uc-x9k" id="vpE-Y3-rFn"/>
                 <outlet property="loadingView" destination="CuY-hJ-hs2" id="eoK-2c-nIl"/>
+                <outlet property="loginButton" destination="3Th-lW-uhW" id="nFY-fH-Yx0"/>
                 <outlet property="passwordField" destination="ar4-ue-KjR" id="KwJ-bD-zTB"/>
             </connections>
             <point key="canvasLocation" x="-60.14492753623189" y="-206.91964285714286"/>

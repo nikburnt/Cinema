@@ -26,13 +26,14 @@
 		1C1DB23424804B930019CA92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DB23224804B930019CA92 /* LaunchScreen.storyboard */; };
 		1C1DB23F24804B930019CA92 /* CinemagicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB23E24804B930019CA92 /* CinemagicTests.swift */; };
 		1C1DB24A24804B930019CA92 /* CinemagicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DB24924804B930019CA92 /* CinemagicUITests.swift */; };
+		1C2F2F902497AA3F0039D394 /* JSONEncoder+Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2F2F8F2497AA3F0039D394 /* JSONEncoder+Cinema.swift */; };
 		1C2F56B624814235002CC459 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C2F56B524814235002CC459 /* LoginView.xib */; };
 		1C2F56B82481424E002CC459 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2F56B72481424E002CC459 /* LoginView.swift */; };
+		1C5F31562496227200B50771 /* StaffMovieInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F31552496227200B50771 /* StaffMovieInfoViewController.swift */; };
+		1C5F315B2496425C00B50771 /* CinemaAnimatedTextFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F315A2496425C00B50771 /* CinemaAnimatedTextFieldDataSource.swift */; };
 		1C77FE5A248971CE00B0730E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C77FE59248971CE00B0730E /* FontAwesome.ttf */; };
 		1C77FE5C2489757B00B0730E /* EKAttributes+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C77FE5B2489757B00B0730E /* EKAttributes+Custom.swift */; };
 		1C77FE5E248978EF00B0730E /* UIView+SwiftEntryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C77FE5D248978EF00B0730E /* UIView+SwiftEntryKit.swift */; };
-		1C7AFDE7248B90D6003D1093 /* PasswordFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDE5248B90D6003D1093 /* PasswordFieldDataSource.swift */; };
-		1C7AFDE8248B90D6003D1093 /* EmailFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDE6248B90D6003D1093 /* EmailFieldDataSource.swift */; };
 		1C7AFDEF248B90FE003D1093 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDEB248B90FE003D1093 /* PasswordStrength.swift */; };
 		1C7AFDF0248B90FE003D1093 /* PasswordStrengts+Enough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDED248B90FE003D1093 /* PasswordStrengts+Enough.swift */; };
 		1C7AFDF4248B9506003D1093 /* CinemaNetworkingV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7AFDF3248B9506003D1093 /* CinemaNetworkingV1.swift */; };
@@ -42,6 +43,8 @@
 		1C7DEE25248F886600384AE8 /* URLRequest+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */; };
 		1CBC25D02483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC25CF2483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift */; };
 		1CBC25D22483BECD00CDE30E /* AnimatedField+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC25D12483BECD00CDE30E /* AnimatedField+Types.swift */; };
+		1CD253BE24966E22007184EA /* TitleFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD253BD24966E22007184EA /* TitleFieldDataSource.swift */; };
+		1CD253C22496830F007184EA /* DateScrollPickerFormat+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD253C12496830F007184EA /* DateScrollPickerFormat+Styles.swift */; };
 		1CF445C5248254D500152C8C /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF445C2248254D500152C8C /* UIView+Nib.swift */; };
 		79520C23DEFD420E2BCD4855 /* Pods_Cinemagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923A1C9E1E576F623EFD015 /* Pods_Cinemagic.framework */; };
 /* End PBXBuildFile section */
@@ -90,13 +93,16 @@
 		1C1DB24524804B930019CA92 /* CinemagicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinemagicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1DB24924804B930019CA92 /* CinemagicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemagicUITests.swift; sourceTree = "<group>"; };
 		1C1DB24B24804B930019CA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C2F2F8F2497AA3F0039D394 /* JSONEncoder+Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Cinema.swift"; sourceTree = "<group>"; };
 		1C2F56B524814235002CC459 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		1C2F56B72481424E002CC459 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1C5F31552496227200B50771 /* StaffMovieInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffMovieInfoViewController.swift; sourceTree = "<group>"; };
+		1C5F315A2496425C00B50771 /* CinemaAnimatedTextFieldDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaAnimatedTextFieldDataSource.swift; sourceTree = "<group>"; };
+		1C5F31602496560000B50771 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1C5F31612496560000B50771 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		1C77FE59248971CE00B0730E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = ../../../Pods/LGButton/LGButton/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
 		1C77FE5B2489757B00B0730E /* EKAttributes+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKAttributes+Custom.swift"; sourceTree = "<group>"; };
 		1C77FE5D248978EF00B0730E /* UIView+SwiftEntryKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SwiftEntryKit.swift"; sourceTree = "<group>"; };
-		1C7AFDE5248B90D6003D1093 /* PasswordFieldDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordFieldDataSource.swift; sourceTree = "<group>"; };
-		1C7AFDE6248B90D6003D1093 /* EmailFieldDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFieldDataSource.swift; sourceTree = "<group>"; };
 		1C7AFDEB248B90FE003D1093 /* PasswordStrength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		1C7AFDED248B90FE003D1093 /* PasswordStrengts+Enough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PasswordStrengts+Enough.swift"; sourceTree = "<group>"; };
 		1C7AFDF3248B9506003D1093 /* CinemaNetworkingV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaNetworkingV1.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 		1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Networking.swift"; sourceTree = "<group>"; };
 		1CBC25CF2483B94E00CDE30E /* AnimatedFieldFormat+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimatedFieldFormat+Styles.swift"; sourceTree = "<group>"; };
 		1CBC25D12483BECD00CDE30E /* AnimatedField+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimatedField+Types.swift"; sourceTree = "<group>"; };
+		1CD253BD24966E22007184EA /* TitleFieldDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFieldDataSource.swift; sourceTree = "<group>"; };
+		1CD253C12496830F007184EA /* DateScrollPickerFormat+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateScrollPickerFormat+Styles.swift"; sourceTree = "<group>"; };
 		1CF445C2248254D500152C8C /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		1F1E4CFD957756E4999E52B6 /* Pods-Cinemagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinemagic.release.xcconfig"; path = "Target Support Files/Pods-Cinemagic/Pods-Cinemagic.release.xcconfig"; sourceTree = "<group>"; };
 		A923A1C9E1E576F623EFD015 /* Pods_Cinemagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinemagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +237,7 @@
 		1C1DB25824804BDB0019CA92 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C5F31592496422B00B50771 /* AnimatedTextField */,
 				1C09D1652492AD3100319BEC /* StaffMovieCell */,
 				1C7AFDE4248B9092003D1093 /* Login */,
 			);
@@ -260,6 +269,7 @@
 			children = (
 				1C1DB22B24804B920019CA92 /* LoadingViewController.swift */,
 				1C09D1632492AB9400319BEC /* StaffMoviesController.swift */,
+				1C5F31552496227200B50771 /* StaffMovieInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -280,8 +290,19 @@
 				1C77FE5D248978EF00B0730E /* UIView+SwiftEntryKit.swift */,
 				1C7DEE1A248BFAC800384AE8 /* URL+String.swift */,
 				1C7DEE24248F886600384AE8 /* URLRequest+Networking.swift */,
+				1CD253C12496830F007184EA /* DateScrollPickerFormat+Styles.swift */,
+				1C2F2F8F2497AA3F0039D394 /* JSONEncoder+Cinema.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1C5F31592496422B00B50771 /* AnimatedTextField */ = {
+			isa = PBXGroup;
+			children = (
+				1C5F315A2496425C00B50771 /* CinemaAnimatedTextFieldDataSource.swift */,
+				1CD253BD24966E22007184EA /* TitleFieldDataSource.swift */,
+			);
+			path = AnimatedTextField;
 			sourceTree = "<group>";
 		};
 		1C77FE5F248982EB00B0730E /* Model */ = {
@@ -305,8 +326,6 @@
 			children = (
 				1C2F56B72481424E002CC459 /* LoginView.swift */,
 				1C2F56B524814235002CC459 /* LoginView.xib */,
-				1C7AFDE6248B90D6003D1093 /* EmailFieldDataSource.swift */,
-				1C7AFDE5248B90D6003D1093 /* PasswordFieldDataSource.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -447,6 +466,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 1C1DB21B24804B920019CA92;
 			productRefGroup = 1C1DB22524804B920019CA92 /* Products */;
@@ -554,17 +574,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7AFDE8248B90D6003D1093 /* EmailFieldDataSource.swift in Sources */,
 				1C09D1642492AB9400319BEC /* StaffMoviesController.swift in Sources */,
 				1C7AFDEF248B90FE003D1093 /* PasswordStrength.swift in Sources */,
 				1C7DEE1D248BFC0600384AE8 /* URL+Routes.swift in Sources */,
+				1C5F315B2496425C00B50771 /* CinemaAnimatedTextFieldDataSource.swift in Sources */,
 				1C1DB22C24804B920019CA92 /* LoadingViewController.swift in Sources */,
+				1C2F2F902497AA3F0039D394 /* JSONEncoder+Cinema.swift in Sources */,
 				1C77FE5C2489757B00B0730E /* EKAttributes+Custom.swift in Sources */,
+				1CD253BE24966E22007184EA /* TitleFieldDataSource.swift in Sources */,
 				1C7DEE1B248BFAC800384AE8 /* URL+String.swift in Sources */,
 				1C1D193B248FF77B00EEC254 /* CinemaDataProvider.swift in Sources */,
+				1C5F31562496227200B50771 /* StaffMovieInfoViewController.swift in Sources */,
 				1C09D16F24936EB800319BEC /* DateFormatter+Initialization.swift in Sources */,
 				1C1DB22824804B920019CA92 /* AppDelegate.swift in Sources */,
-				1C7AFDE7248B90D6003D1093 /* PasswordFieldDataSource.swift in Sources */,
 				1C09D16D24936CB000319BEC /* PublicMovie+Poster.swift in Sources */,
 				1C09D1672492AD5500319BEC /* StaffMovieCell.swift in Sources */,
 				1C7DEE23248E97B600384AE8 /* String+Base64.swift in Sources */,
@@ -582,6 +604,7 @@
 				1C09D1512492336F00319BEC /* PublicToken.swift in Sources */,
 				1C1D193F2490913400EEC254 /* JSONDecoder+Cinema.swift in Sources */,
 				1C77FE5E248978EF00B0730E /* UIView+SwiftEntryKit.swift in Sources */,
+				1CD253C22496830F007184EA /* DateScrollPickerFormat+Styles.swift in Sources */,
 				1C1D193D248FFFA500EEC254 /* CinemaKeychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,6 +645,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1C1DB22E24804B920019CA92 /* Base */,
+				1C5F31612496560000B50771 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -630,6 +654,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1C1DB23324804B930019CA92 /* Base */,
+				1C5F31602496560000B50771 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -641,6 +666,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -701,6 +727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

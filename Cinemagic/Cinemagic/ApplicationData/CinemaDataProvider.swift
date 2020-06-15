@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 import PromiseKit
 import Require
@@ -125,6 +126,22 @@ class CinemaDataProvider {
 
     func moviesList() -> Promise<[PublicMovie]> {
         networkProvider.allMovies()
+    }
+
+    func update(_ movie: PublicMovie) -> Promise<PublicMovie> {
+        networkProvider.update(movie, bearer: keychainProvider.token.require())
+    }
+
+    func create(_ movie: PublicMovie) -> Promise<PublicMovie> {
+        networkProvider.create(movie, bearer: keychainProvider.token.require())
+    }
+
+    func upload(_ movie: PublicMovie, poster: UIImage) -> Promise<PublicMovie> {
+        networkProvider.upload(movie, poster: poster, bearer: keychainProvider.token.require())
+    }
+
+    func remove(_ movie: PublicMovie) -> Promise<Void> {
+        networkProvider.remove(movie, bearer: keychainProvider.token.require())
     }
 
 }

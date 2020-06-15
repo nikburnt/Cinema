@@ -16,7 +16,8 @@ target 'Cinemagic' do
 
   pod 'AlamofireImage'
   pod 'AttributedLib'
-  pod 'AnimatedField'
+  pod 'AnimatedField', :git => 'https://github.com/nikburnt/AnimatedField.git', :branch => 'master'
+  pod 'DateScrollPicker'
   pod 'EmptyDataSet-Swift'
   pod 'GeometricLoaders', :git => 'https://github.com/nikburnt/GeometricLoaders', :branch => 'develop'
   pod 'GradientAnimator'

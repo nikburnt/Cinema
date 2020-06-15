@@ -20,6 +20,7 @@ extension AnimatedField {
 
         self.placeholder = "Адрес электронной почты"
         self.format = .common
+        self.keyboardType = .emailAddress
     }
 
     func setupPassword(with dataSource: AnimatedFieldDataSource) {
@@ -28,6 +29,23 @@ extension AnimatedField {
         self.placeholder = "Пароль"
         self.format = .common
         self.isSecure = true
+        self.keyboardType = .default
+    }
+
+    func setupTitle(with dataSource: AnimatedFieldDataSource) {
+        self.dataSource = dataSource
+
+        self.type = .none
+        self.format = .common
+        self.format.counterEnabled = true
+    }
+
+    func setupDescription(with dataSource: AnimatedFieldDataSource) {
+        self.dataSource = dataSource
+
+        self.type = .multiline
+        self.format = .common
+        self.format.counterEnabled = true
     }
 
 }
