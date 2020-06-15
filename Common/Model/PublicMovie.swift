@@ -19,6 +19,7 @@ struct PublicMovie: Codable {
     var title: String
     var description: String
     var showtime: Date
+    var tickets: Int = 30
 
     var poster: String?
 
