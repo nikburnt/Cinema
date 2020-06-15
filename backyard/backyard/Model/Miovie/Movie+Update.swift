@@ -22,8 +22,7 @@ extension Movie: CommonUpdate {
         var copy = self
         copy.title = data.title
         copy.description = data.description
-        copy.startAt = data.startAt
-        copy.endAt = data.endAt
+        copy.showtime = data.showtime
         return copy
     }
 

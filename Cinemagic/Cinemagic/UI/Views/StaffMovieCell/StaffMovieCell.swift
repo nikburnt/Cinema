@@ -24,6 +24,11 @@ class StaffMovieCell: UITableViewCell {
     @IBOutlet private var startAtLabel: UILabel!
 
 
+    // MARK: - Public Variables
+
+    var movie: PublicMovie? { didSet { configure(with: movie) } }
+
+
     // MARK: - Private Variables
 
     private let dateFormatter: DateFormatter = .dateFormatter(using: " d MMMM")
@@ -36,14 +41,22 @@ class StaffMovieCell: UITableViewCell {
     }
 
 
-    // MARK: - Public Methods
+    // MARK: - Private Methods
 
-    func configure(with movie: PublicMovie) {
+    private func configure(with movie: PublicMovie?) {
+        let placeholderImage = Image(named: "movie-placeholder").require()
+        guard let movie = movie else {
+            titleLabel.text = nil
+            descriptionLabel.text = nil
+            startAtLabel.text = nil
+            posterImage.image = placeholderImage
+            return
+        }
+
         titleLabel.text = movie.title
         descriptionLabel.text = movie.description
-        startAtLabel.text = "с \(dateFormatter.string(from: movie.startAt))"
+        startAtLabel.text = dateFormatter.string(from: movie.showtime)
 
-        let placeholderImage = Image(named: "movie-placeholder").require()
         if let posterUrl = movie.posterUrl {
             posterImage.af_setImage(withURL: posterUrl, placeholderImage: placeholderImage, imageTransition: .crossDissolve(0.3))
         } else {

@@ -52,4 +52,35 @@ extension URLRequest {
         return request
     }
 
+    static func update(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies.appendingPathComponent(movie.id.require().description), method: .put)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try JSONEncoder.encodeWithStringDate(movie)
+        return request
+
+    }
+
+    static func create(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies, method: .post)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try JSONEncoder.encodeWithStringDate(movie)
+        return request
+    }
+
+    static func upload(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies.appendingPathComponent(movie.id.require().description), method: .patch)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        request.addValue("multipart/form-data;boundary=----WebKitFormBoundaryyrV7KO0BoCBuDbTL", forHTTPHeaderField: "Content-Type")
+        return request
+    }
+
+    static func remove(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies.appendingPathComponent(movie.id.require().description), method: .delete)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        return request
+
+    }
+
 }

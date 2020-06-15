@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "4Am-cO-RCh"; */
+"4Am-cO-RCh.text" = "Title";
+
+/* Class = "UILabel"; text = "CUSTOMER"; ObjectID = "4oM-HJ-PGS"; */
+"4oM-HJ-PGS.text" = "CUSTOMER";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "B5K-zi-2VT"; */
+"B5K-zi-2VT.text" = "Description";
+
+/* Class = "UILabel"; text = "С 5 мая"; ObjectID = "BDX-QO-ZwH"; */
+"BDX-QO-ZwH.text" = "С 5 мая";
+
+/* Class = "UITabBarItem"; title = "Кинотеатры"; ObjectID = "Q4N-e6-Zi8"; */
+"Q4N-e6-Zi8.title" = "Кинотеатры";
+
+/* Class = "UINavigationItem"; title = "Премьеры"; ObjectID = "flH-uv-oxC"; */
+"flH-uv-oxC.title" = "Премьеры";

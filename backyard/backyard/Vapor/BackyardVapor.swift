@@ -50,6 +50,7 @@ class BackyardVapor {
         var services: Services = .default()
 
         services.register(SwiftyBeaverService(), as: Logger.self)
+        services.register(NIOServerConfig.default(maxBodySize: 100_000_000))
 
         try services.register(AuthenticationProvider())
 

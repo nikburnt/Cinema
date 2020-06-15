@@ -19,6 +19,8 @@ private let cellHeight: CGFloat = 140
 private let emptyInfoSpacing: CGFloat = 15
 private let emptyInfoOffset: CGFloat = -100
 
+private let movieDetailsSegue = "movieDetails"
+
 
 // MARK: - StaffMoviesController
 
@@ -54,9 +56,19 @@ class StaffMoviesController: UITableViewController, UISearchResultsUpdating, Emp
         searchController.searchBar.placeholder = "Название или описание фильма"
         navigationItem.searchController = searchController
 
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.0431372549, green: 0.07058823529, blue: 0.09019607843, alpha: 1)
+
         updateData()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let movieInfo = segue.destination as? StaffMovieInfoViewController else { return }
+        movieInfo.movie = (sender as? StaffMovieCell)?.movie
+    }
 
     // MARK: - Actions
 
@@ -65,6 +77,9 @@ class StaffMoviesController: UITableViewController, UISearchResultsUpdating, Emp
         dismiss(animated: true)
     }
 
+    @IBAction private func addMovie(_ sender: Any) {
+        performSegue(withIdentifier: movieDetailsSegue, sender: self)
+    }
 
     // MARK: - UITableViewDelegate
 
@@ -82,7 +97,7 @@ class StaffMoviesController: UITableViewController, UISearchResultsUpdating, Emp
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StaffMovieCell = tableView.dequeue(for: indexPath).require()
         let data = filteredMovies[indexPath.row]
-        cell.configure(with: data)
+        cell.movie = data
         return cell
     }
 
@@ -98,7 +113,7 @@ class StaffMoviesController: UITableViewController, UISearchResultsUpdating, Emp
 
     func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
         if lastError == nil {
-            print("go to add screen")
+            performSegue(withIdentifier: movieDetailsSegue, sender: self)
         } else {
             updateData()
         }
@@ -182,7 +197,7 @@ class StaffMoviesController: UITableViewController, UISearchResultsUpdating, Emp
             .moviesList()
             .done {
                 self.lastError = nil
-                self.movies = $0.sorted { $0.startAt > $1.startAt }
+                self.movies = $0.sorted { $0.showtime < $1.showtime }
                 self.loader?.stopAnimation()
             }
             .catch { self.lastError = $0 }

@@ -10,6 +10,7 @@ import UIKit
 
 import AnimatedField
 import GeometricLoaders
+import LGButton
 
 
 // MARK: - LoginView
@@ -21,6 +22,7 @@ class LoginView: UIView, NibBasedView {
     @IBOutlet private var emailField: AnimatedField!
     @IBOutlet private var passwordField: AnimatedField!
     @IBOutlet private var loadingView: UIView!
+    @IBOutlet private var loginButton: LGButton!
 
 
     // MARK: - Public Variables
@@ -33,8 +35,11 @@ class LoginView: UIView, NibBasedView {
 
     // MARK: - Private Variables
 
-    private let emailFieldDataSource = EmailFieldDataSource()
-    private let passwordFieldDataSource = PasswordFieldDataSource()
+
+    // swiftlint:disable implicitly_unwrapped_optional
+    private var emailFieldDataSource: AnimatedFieldDataSource!
+    private var passwordFieldDataSource: AnimatedFieldDataSource!
+    // swiftlint:enable implicitly_unwrapped_optional
 
     private var loader: WaterWaves?
 
@@ -46,9 +51,18 @@ class LoginView: UIView, NibBasedView {
         clipsToBounds = true
         layer.cornerRadius = 16
 
+        emailFieldDataSource = CinemaAnimatedTextFieldDataSource(validationRegex: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,9}",
+                                                                 validationError: "Неверный формат адреса электронной почты",
+                                                                 limit: 64,
+                                                                 nextResponder: passwordField)
         self.emailField.setupEmail(with: emailFieldDataSource)
         self.emailField.text = "nikburnt@gmail.com"
 
+        passwordFieldDataSource = CinemaAnimatedTextFieldDataSource(validationRegex: PasswordStrength.averagePasswordRegex,
+                                                                    validationError: "Должен быть 6 символов a-z и как минимум одной цифры",
+                                                                    limit: 24) {
+            self.login(self.loginButton as Any)
+        }
         self.passwordField.setupPassword(with: passwordFieldDataSource)
         self.passwordField.text = "q2w3e4R%"
 

@@ -21,9 +21,7 @@ extension Movie: CommonCreate {
 
         var title: String
         var description: String
-        var startAt: Date
-        var endAt: Date
-        var maxTickets: Int
+        var showtime: Date
 
 
         // MARK: - Validatable
@@ -31,14 +29,8 @@ extension Movie: CommonCreate {
         static func validations() throws -> Validations<CreateData> {
             var validations = Validations(CreateData.self)
             let charactersSet: Validator<String> = .characterSet(.alphanumerics + .whitespacesAndNewlines + .punctuationCharacters + .symbols)
-            try validations.add(\.title, charactersSet && .count(1...))
-            try validations.add(\.description, charactersSet && .count(12...))
-            try validations.add(\.startAt, .range(Date()...))
-            validations.add("End date should be after start date.") { model in
-                guard model.startAt < model.endAt else {
-                    throw BasicValidationError("Start date greater than end date.")
-                }
-            }
+            try validations.add(\.title, charactersSet && .count(1...50))
+            try validations.add(\.description, charactersSet && .count(12...1000))
             return validations
         }
 
@@ -48,7 +40,7 @@ extension Movie: CommonCreate {
     // MARK: - Lifecycle
 
     init(with data: CreateData) throws {
-        self.init(title: data.title, description: data.description, startAt: data.startAt, endAt: data.endAt, maxTickets: data.maxTickets)
+        self.init(title: data.title, description: data.description, showtime: data.showtime)
     }
 
 }
