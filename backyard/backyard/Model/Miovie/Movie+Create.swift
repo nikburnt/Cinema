@@ -40,7 +40,7 @@ extension Movie: CommonCreate {
     // MARK: - Lifecycle
 
     init(with data: CreateData) throws {
-        self.init(title: data.title, description: data.description, showtime: data.showtime)
+        self.init(title: data.title, description: data.description, showtime: data.showtime, tickets: 30)
     }
 
 }
