@@ -201,7 +201,10 @@ class StaffMoviesController: UITableViewController, UISearchResultsUpdating, Emp
                 self.loader?.stopAnimation()
             }
             .catch { self.lastError = $0 }
-        .finally { self.setActivity(visible: false) }
+            .finally {
+                self.setActivity(visible: false)
+                self.loader?.stopAnimation()
+            }
     }
 
     private func setActivity(visible: Bool) {

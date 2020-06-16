@@ -56,7 +56,7 @@ class LoginView: UIView, NibBasedView {
                                                                  limit: 64,
                                                                  nextResponder: passwordField)
         self.emailField.setupEmail(with: emailFieldDataSource)
-        self.emailField.text = "nikburnt@gmail.com"
+//        self.emailField.text = "nikburnt@gmail.com"
 
         passwordFieldDataSource = CinemaAnimatedTextFieldDataSource(validationRegex: PasswordStrength.averagePasswordRegex,
                                                                     validationError: "Должен быть 6 символов a-z и как минимум одной цифры",
@@ -64,7 +64,7 @@ class LoginView: UIView, NibBasedView {
             self.login(self.loginButton as Any)
         }
         self.passwordField.setupPassword(with: passwordFieldDataSource)
-        self.passwordField.text = "q2w3e4R%"
+//        self.passwordField.text = "q2w3e4R%"
 
         loader = WaterWaves.createGeometricLoader(self.loadingView)
         loader?.circleColor = #colorLiteral(red: 0.2039215686, green: 0.3294117647, blue: 0.4196078431, alpha: 1)

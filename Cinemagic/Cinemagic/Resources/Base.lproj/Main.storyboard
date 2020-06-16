@@ -48,66 +48,10 @@
             </objects>
             <point key="canvasLocation" x="141" y="139"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="jAD-j4-QXD">
-            <objects>
-                <viewController id="8Jo-ft-Xcu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="edR-be-d1a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oM-HJ-PGS">
-                                <rect key="frame" x="161" y="437.5" width="92" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="4oM-HJ-PGS" firstAttribute="centerX" secondItem="edR-be-d1a" secondAttribute="centerX" id="2zX-Ez-mtH"/>
-                            <constraint firstItem="4oM-HJ-PGS" firstAttribute="centerY" secondItem="edR-be-d1a" secondAttribute="centerY" id="oqs-H2-q4n"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4jP-3O-z3B"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="GT5-IX-akx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rEs-W1-QZY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1077" y="506"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="Q9s-SV-BxL">
-            <objects>
-                <tableViewController id="lU0-6j-mLT" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Wa-gw-FcF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="le4-2i-9oI">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="le4-2i-9oI" id="Ca8-cj-fm5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lU0-6j-mLT" id="rJP-ZO-b83"/>
-                            <outlet property="delegate" destination="lU0-6j-mLT" id="QI0-pr-Crp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ROX-B8-ss9"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QKT-yb-MFn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1996" y="505"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="DeC-N1-2zO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Po4-sT-QPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="Ibe-wY-Xno" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DkF-lb-Gvg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -123,7 +67,6 @@
                         <segue destination="XDM-I5-mfe" kind="relationship" relationship="rootViewController" id="IeE-NF-KUg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Po4-sT-QPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077" y="505"/>
         </scene>
@@ -223,6 +166,7 @@
         <!--Staff Movie Info View Controller-->
         <scene sceneID="u1e-Ia-N0q">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vS7-g8-GQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="7XO-ap-3IA" customClass="StaffMovieInfoViewController" customModule="Cinemagic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="5qW-NN-kb3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -293,7 +237,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата показа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Co9-Wk-dtj">
-                                                        <rect key="frame" x="8" y="0.0" width="77.5" height="16"/>
+                                                        <rect key="frame" x="8" y="0.0" width="398" height="16"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <color key="textColor" name="text-medium"/>
                                                         <nil key="highlightedColor"/>
@@ -306,6 +250,7 @@
                                                     <constraint firstItem="Co9-Wk-dtj" firstAttribute="leading" secondItem="WIx-yH-YCh" secondAttribute="leading" constant="8" id="76r-9H-OoR"/>
                                                     <constraint firstItem="cff-pd-yDO" firstAttribute="leading" secondItem="WIx-yH-YCh" secondAttribute="leading" id="NMt-7G-Um6"/>
                                                     <constraint firstItem="Co9-Wk-dtj" firstAttribute="top" secondItem="WIx-yH-YCh" secondAttribute="top" id="SiI-c2-mBi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Co9-Wk-dtj" secondAttribute="trailing" constant="8" id="pXJ-L9-oWL"/>
                                                     <constraint firstItem="cff-pd-yDO" firstAttribute="top" secondItem="WIx-yH-YCh" secondAttribute="top" constant="18" id="w4D-ij-pOn"/>
                                                 </constraints>
                                             </view>
@@ -320,7 +265,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26b-gz-Yrf">
-                                                        <rect key="frame" x="8" y="10" width="61" height="16"/>
+                                                        <rect key="frame" x="8" y="10" width="398" height="16"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <color key="textColor" name="text-medium"/>
                                                         <nil key="highlightedColor"/>
@@ -328,6 +273,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" name="background"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="26b-gz-Yrf" secondAttribute="trailing" constant="8" id="5fz-k4-zdS"/>
                                                     <constraint firstItem="26b-gz-Yrf" firstAttribute="top" secondItem="GU0-7d-mRh" secondAttribute="top" constant="10" id="GpR-QA-lqi"/>
                                                     <constraint firstItem="HBY-fq-dqg" firstAttribute="top" secondItem="GU0-7d-mRh" secondAttribute="top" constant="8" id="Kne-MM-rHm"/>
                                                     <constraint firstAttribute="bottom" secondItem="HBY-fq-dqg" secondAttribute="bottom" constant="8" id="X9s-vH-wpm"/>
@@ -347,7 +293,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g3-mH-eY5">
-                                                        <rect key="frame" x="8" y="10" width="63.5" height="16"/>
+                                                        <rect key="frame" x="8" y="10" width="398" height="16"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <color key="textColor" name="text-medium"/>
                                                         <nil key="highlightedColor"/>
@@ -356,6 +302,7 @@
                                                 <color key="backgroundColor" name="background"/>
                                                 <constraints>
                                                     <constraint firstItem="9g3-mH-eY5" firstAttribute="leading" secondItem="X3j-cN-5Gf" secondAttribute="leading" constant="8" id="4nX-7s-bQH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9g3-mH-eY5" secondAttribute="trailing" constant="8" id="7RT-hN-rGn"/>
                                                     <constraint firstItem="qm6-Ma-SyO" firstAttribute="leading" secondItem="X3j-cN-5Gf" secondAttribute="leading" constant="8" id="ITH-O5-6lG"/>
                                                     <constraint firstItem="qm6-Ma-SyO" firstAttribute="top" secondItem="X3j-cN-5Gf" secondAttribute="top" constant="8" id="oON-fw-ln9"/>
                                                     <constraint firstItem="9g3-mH-eY5" firstAttribute="top" secondItem="X3j-cN-5Gf" secondAttribute="top" constant="10" id="p34-r8-U0e"/>
@@ -472,13 +419,13 @@
                         <outlet property="titleTextField" destination="HBY-fq-dqg" id="leK-qg-XoP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vS7-g8-GQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2898.5507246376815" y="-171.42857142857142"/>
         </scene>
         <!--Кинотеатры-->
         <scene sceneID="VfW-sr-KyH">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igX-98-z6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="uZq-Fo-5re" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Кинотеатры" image="theater" selectedImage="theater" id="Q4N-e6-Zi8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w5z-Et-Z6E">
@@ -495,13 +442,13 @@
                         <segue destination="rOn-P3-U0M" kind="relationship" relationship="rootViewController" id="E83-1k-D0A"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="igX-98-z6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077" y="-173"/>
         </scene>
         <!--Премьеры-->
         <scene sceneID="cX4-fy-bKc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waP-MK-ESQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="XDM-I5-mfe" customClass="CustomerMoviesViewController" customModule="Cinemagic" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4rT-4T-WND">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -607,7 +554,6 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="waP-MK-ESQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1995.6521739130437" y="505.58035714285711"/>
         </scene>
