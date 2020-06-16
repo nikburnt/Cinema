@@ -17,9 +17,12 @@ import SwiftyBeaver
 
 struct MySQLDataStorage: DataStorage {
 
-    // MARK: - Private Variables
+    // MARK: - Public Variables
 
-    private let database: MySQLDatabase
+    let database: MySQLDatabase
+
+
+    // MARK: - Private Variables
 
     private let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: 10)
 
@@ -99,6 +102,7 @@ struct MySQLDataStorage: DataStorage {
         User.defaultDatabase = .mysql
         Token.defaultDatabase = .mysql
         Movie.defaultDatabase = .mysql
+        MovieWithTicket.defaultDatabase = .mysql
     }
 
 }

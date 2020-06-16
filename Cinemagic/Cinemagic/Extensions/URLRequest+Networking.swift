@@ -48,12 +48,12 @@ extension URLRequest {
     // MARK: - Movies
 
     static func allMovies() throws -> URLRequest {
-        let request = try URLRequest(url: URL.v1.movies, method: .get)
+        let request = try URLRequest(url: URL.v1.movies.route, method: .get)
         return request
     }
 
     static func update(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
-        var request = try URLRequest(url: URL.v1.movies.appendingPathComponent(movie.id.require().description), method: .put)
+        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent(movie.id.require().description), method: .put)
         request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try JSONEncoder.encodeWithStringDate(movie)
@@ -62,7 +62,7 @@ extension URLRequest {
     }
 
     static func create(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
-        var request = try URLRequest(url: URL.v1.movies, method: .post)
+        var request = try URLRequest(url: URL.v1.movies.route, method: .post)
         request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try JSONEncoder.encodeWithStringDate(movie)
@@ -70,17 +70,41 @@ extension URLRequest {
     }
 
     static func upload(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
-        var request = try URLRequest(url: URL.v1.movies.appendingPathComponent(movie.id.require().description), method: .patch)
+        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent(movie.id.require().description), method: .patch)
         request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         request.addValue("multipart/form-data;boundary=----WebKitFormBoundaryyrV7KO0BoCBuDbTL", forHTTPHeaderField: "Content-Type")
         return request
     }
 
     static func remove(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
-        var request = try URLRequest(url: URL.v1.movies.appendingPathComponent(movie.id.require().description), method: .delete)
+        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent(movie.id.require().description), method: .delete)
         request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         return request
+    }
 
+
+    // MARK: - Movies With Tickets
+
+    static func allMoviesWithTickets(bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies.withTickets.route, method: .get)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        return request
+    }
+
+    static func claimTicket(for movie: PublicMovieWithTicket, bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies.withTickets.claim, method: .post)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try JSONEncoder.encodeWithStringDate(movie)
+        return request
+    }
+
+    static func refoundTicket(for movie: PublicMovieWithTicket, bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies.withTickets.refound, method: .post)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try JSONEncoder.encodeWithStringDate(movie)
+        return request
     }
 
 }

@@ -28,7 +28,7 @@ class CustomerMovieCell: UITableViewCell {
 
     // MARK: - Public Variables
 
-    var movie: PublicMovie? { didSet { configure(with: movie) } }
+    var movie: PublicMovieWithTicket? { didSet { configure(with: movie) } }
 
 
     // MARK: - Private Variables
@@ -45,7 +45,7 @@ class CustomerMovieCell: UITableViewCell {
 
     // MARK: - Private Methods
 
-    private func configure(with movie: PublicMovie?) {
+    private func configure(with movie: PublicMovieWithTicket?) {
         let placeholderImage = Image(named: "movie-placeholder").require()
         guard let movie = movie else {
             titleLabel.text = nil
@@ -59,7 +59,14 @@ class CustomerMovieCell: UITableViewCell {
         titleLabel.text = movie.title
         descriptionLabel.text = movie.description
         startAtLabel.text = dateFormatter.string(from: movie.showtime)
-        ticketsLeftLabel.titleString = "Билетов: \(movie.tickets)"
+
+        if movie.hasTicket {
+            ticketsLeftLabel.titleString = "Вы идёте!"
+            ticketsLeftLabel.bgColor = #colorLiteral(red: 0.7764705882, green: 0.1568627451, blue: 0.1568627451, alpha: 1)
+        } else {
+            ticketsLeftLabel.titleString = "Билетов: \(movie.tickets)"
+            ticketsLeftLabel.bgColor = #colorLiteral(red: 0.2901960784, green: 0.462745098, blue: 0.5882352941, alpha: 1)
+        }
 
         if let posterUrl = movie.posterUrl {
             posterImage.af_setImage(withURL: posterUrl, placeholderImage: placeholderImage, imageTransition: .crossDissolve(0.3))

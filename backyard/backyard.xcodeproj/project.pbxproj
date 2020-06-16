@@ -73,6 +73,11 @@
 		1C8315DD24716B28004B9D0C /* User+BasicAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315DC24716B28004B9D0C /* User+BasicAuthenticatable.swift */; };
 		1C8315DF24716CE0004B9D0C /* Token+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315DE24716CE0004B9D0C /* Token+Content.swift */; };
 		1C8315E124717648004B9D0C /* User+PasswordAuthenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8315E024717648004B9D0C /* User+PasswordAuthenticatable.swift */; };
+		1C9DA86124980C79007180AD /* MovieWithTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA86024980C79007180AD /* MovieWithTicket.swift */; };
+		1C9DA86324980CB7007180AD /* MovieWithTicket+Conten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA86224980CB7007180AD /* MovieWithTicket+Conten.swift */; };
+		1C9DA86924980E00007180AD /* MovieWithTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA86824980E00007180AD /* MovieWithTicketController.swift */; };
+		1C9DA86D24980F7D007180AD /* PublicMovieWithTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA86C24980F7D007180AD /* PublicMovieWithTicket.swift */; };
+		1C9DA86F249822B9007180AD /* MovieWithTicket+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA86E249822B9007180AD /* MovieWithTicket+Public.swift */; };
 		1CCAF1762466C2E500CEF646 /* CommandLineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAF1752466C2E500CEF646 /* CommandLineApp.swift */; };
 		C46E562210D6D593D87373A4 /* libPods-backyardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5A1C393E6A2B3FDCBA0B94 /* libPods-backyardTests.a */; };
 /* End PBXBuildFile section */
@@ -141,6 +146,11 @@
 		1C8315DC24716B28004B9D0C /* User+BasicAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+BasicAuthenticatable.swift"; sourceTree = "<group>"; };
 		1C8315DE24716CE0004B9D0C /* Token+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Token+Content.swift"; sourceTree = "<group>"; };
 		1C8315E024717648004B9D0C /* User+PasswordAuthenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+PasswordAuthenticatable.swift"; sourceTree = "<group>"; };
+		1C9DA86024980C79007180AD /* MovieWithTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieWithTicket.swift; sourceTree = "<group>"; };
+		1C9DA86224980CB7007180AD /* MovieWithTicket+Conten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieWithTicket+Conten.swift"; sourceTree = "<group>"; };
+		1C9DA86824980E00007180AD /* MovieWithTicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieWithTicketController.swift; sourceTree = "<group>"; };
+		1C9DA86C24980F7D007180AD /* PublicMovieWithTicket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicMovieWithTicket.swift; sourceTree = "<group>"; };
+		1C9DA86E249822B9007180AD /* MovieWithTicket+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieWithTicket+Public.swift"; sourceTree = "<group>"; };
 		1CCAF1752466C2E500CEF646 /* CommandLineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineApp.swift; sourceTree = "<group>"; };
 		1D5A1C393E6A2B3FDCBA0B94 /* libPods-backyardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-backyardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9432C17CA99213945AC015B6 /* Pods-backyardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backyardTests.release.xcconfig"; path = "Target Support Files/Pods-backyardTests/Pods-backyardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +231,7 @@
 		1C0FC581246C8C4A002E0EA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C9DA85F24980C6A007180AD /* MovieWithTicket */,
 				1C09D1522492568D00319BEC /* Miovie */,
 				1C8315D52471685F004B9D0C /* Token */,
 				1C8315CC24716047004B9D0C /* User */,
@@ -284,6 +295,7 @@
 		1C1DB21824804B480019CA92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C9DA86C24980F7D007180AD /* PublicMovieWithTicket.swift */,
 				1C09D15F24926F6800319BEC /* PublicMovie.swift */,
 				1C09D14B2491375E00319BEC /* PublicToken.swift */,
 				1C09D14A2491375E00319BEC /* PublicUser.swift */,
@@ -305,6 +317,7 @@
 			children = (
 				1C7B956A247D106F009710B1 /* CommonCRUDController.swift */,
 				1C577B3124713A180047B87A /* UsersControllerV1.swift */,
+				1C9DA86824980E00007180AD /* MovieWithTicketController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -393,6 +406,16 @@
 				1C0ECF752477B7E100D5A597 /* Token+Public.swift */,
 			);
 			path = Token;
+			sourceTree = "<group>";
+		};
+		1C9DA85F24980C6A007180AD /* MovieWithTicket */ = {
+			isa = PBXGroup;
+			children = (
+				1C9DA86024980C79007180AD /* MovieWithTicket.swift */,
+				1C9DA86224980CB7007180AD /* MovieWithTicket+Conten.swift */,
+				1C9DA86E249822B9007180AD /* MovieWithTicket+Public.swift */,
+			);
+			path = MovieWithTicket;
 			sourceTree = "<group>";
 		};
 		1CCAF1732466C28B00CEF646 /* CommandLine */ = {
@@ -591,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C09D14D2491375E00319BEC /* PublicToken.swift in Sources */,
+				1C9DA86D24980F7D007180AD /* PublicMovieWithTicket.swift in Sources */,
 				1C0FC58B246D389A002E0EA4 /* MySQLDataStorage.swift in Sources */,
 				1C8315CE2471608B004B9D0C /* User+TokenAuthenticatable.swift in Sources */,
 				1C1DB21A24804B480019CA92 /* PasswordStrengts+Enough.swift in Sources */,
@@ -614,6 +638,7 @@
 				1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */,
 				1C0FC580246C8B25002E0EA4 /* OutputProcessor.swift in Sources */,
 				1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */,
+				1C9DA86324980CB7007180AD /* MovieWithTicket+Conten.swift in Sources */,
 				1C0ECF762477B7E200D5A597 /* Token+Public.swift in Sources */,
 				1C0FC573246C44EA002E0EA4 /* BaseDestination+FileDestination.swift in Sources */,
 				1C0FC59E246E8B72002E0EA4 /* Token.swift in Sources */,
@@ -633,8 +658,11 @@
 				1C0ECF7E2478036D00D5A597 /* User+Avatar.swift in Sources */,
 				1C0FC575246C4504002E0EA4 /* SwiftyBeaver+Configure.swift in Sources */,
 				1C09D1562492586600319BEC /* Movie+Content.swift in Sources */,
+				1C9DA86124980C79007180AD /* MovieWithTicket.swift in Sources */,
 				1C0FC571246C3FE6002E0EA4 /* BaseDestination+ConsoleDestination.swift in Sources */,
 				1C8020362468020D004031A1 /* CommandsProcessor.swift in Sources */,
+				1C9DA86924980E00007180AD /* MovieWithTicketController.swift in Sources */,
+				1C9DA86F249822B9007180AD /* MovieWithTicket+Public.swift in Sources */,
 				1C7B956B247D106F009710B1 /* CommonCRUDController.swift in Sources */,
 				1C577B28246FE2640047B87A /* BackyardVapor.swift in Sources */,
 			);

@@ -30,8 +30,8 @@ class CustomerMoviesViewController: UITableViewController, UISearchResultsUpdati
 
     private var loader: Infinity?
 
-    private var movies: [PublicMovie] = [] { didSet { filter(movies) } }
-    private var filteredMovies: [PublicMovie] = [] { didSet { tableView.reloadData() } }
+    private var movies: [PublicMovieWithTicket] = [] { didSet { filter(movies) } }
+    private var filteredMovies: [PublicMovieWithTicket] = [] { didSet { tableView.reloadData() } }
 
     private let searchController = UISearchController(searchResultsController: nil)
 
@@ -185,14 +185,16 @@ class CustomerMoviesViewController: UITableViewController, UISearchResultsUpdati
         loader?.startAnimation()
 
         CinemaDataProvider.shared
-            .moviesList()
+            .moviesWithTicketsList()
             .done {
                 self.lastError = nil
                 self.movies = $0.sorted { $0.showtime < $1.showtime }
-                self.loader?.stopAnimation()
             }
             .catch { self.lastError = $0 }
-        .finally { self.setActivity(visible: false) }
+            .finally {
+                self.setActivity(visible: false)
+                self.loader?.stopAnimation()
+            }
     }
 
     private func setActivity(visible: Bool) {
@@ -205,11 +207,11 @@ class CustomerMoviesViewController: UITableViewController, UISearchResultsUpdati
         tableView.reloadEmptyDataSet()
     }
 
-    private func filter(_ movies: [PublicMovie]) {
+    private func filter(_ movies: [PublicMovieWithTicket]) {
         filteredMovies = isSearchBarEmpty ? movies : filtered(movies, using: searchController.searchBar.text ?? "")
     }
 
-    private func filtered(_ movies: [PublicMovie], using search: String) -> [PublicMovie] {
+    private func filtered(_ movies: [PublicMovieWithTicket], using search: String) -> [PublicMovieWithTicket] {
         movies.filter { search.isEmpty || $0.title.lowercased().contains(search.lowercased()) || $0.description.lowercased().contains(search.lowercased()) }
     }
 

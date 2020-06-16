@@ -144,4 +144,20 @@ class CinemaDataProvider {
         networkProvider.remove(movie, bearer: keychainProvider.token.require())
     }
 
+
+    // MARK: - Movies With Tickets
+
+    func moviesWithTicketsList() -> Promise<[PublicMovieWithTicket]> {
+        networkProvider.allMoviesWithTickets(bearer: keychainProvider.token.require())
+    }
+
+    func claimTicket(for movie: PublicMovieWithTicket) -> Promise<PublicMovieWithTicket> {
+        networkProvider.claimTicket(for: movie, bearer: keychainProvider.token.require())
+    }
+
+    func refoundTicket(for movie: PublicMovieWithTicket) -> Promise<PublicMovieWithTicket> {
+        networkProvider.refoundTicket(for: movie, bearer: keychainProvider.token.require())
+    }
+
+
 }

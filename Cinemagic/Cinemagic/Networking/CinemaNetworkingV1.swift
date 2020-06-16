@@ -156,4 +156,29 @@ class CinemaNetworkingV1 {
             }
     }
 
+
+    // MARK: - Movies With Tickets
+
+    func allMoviesWithTickets(bearer: String) -> Promise<[PublicMovieWithTicket]> {
+        firstly { Promise<URLRequest>.value(try URLRequest.allMoviesWithTickets(bearer: bearer)) }
+            .then { Alamofire.request($0).responseData() }
+            .map { try JSONDecoder.decode($0.data) }
+    }
+
+    func claimTicket(for movie: PublicMovieWithTicket, bearer: String) -> Promise<PublicMovieWithTicket> {
+        firstly { Promise<URLRequest>.value(try URLRequest.claimTicket(for: movie, bearer: bearer)) }
+            .then { Alamofire.request($0).responseData() }
+            .map {
+                try JSONDecoder.decode($0.data)
+
+        }
+    }
+
+    func refoundTicket(for movie: PublicMovieWithTicket, bearer: String) -> Promise<PublicMovieWithTicket> {
+        firstly { Promise<URLRequest>.value(try URLRequest.refoundTicket(for: movie, bearer: bearer)) }
+            .then { Alamofire.request($0).responseData() }
+            .map { try JSONDecoder.decode($0.data) }
+    }
+
+
 }
