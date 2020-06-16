@@ -28,10 +28,13 @@ private let minimumDescriptionLength = 12
 private let maximumDescriptionLength = 1000
 
 
-
 // MARK: - StaffMovieInfoViewController
 
-class StaffMovieInfoViewController: UIViewController, DateScrollPickerDelegate, AnimatedFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class StaffMovieInfoViewController: UIViewController,
+                                    DateScrollPickerDelegate,
+                                    AnimatedFieldDelegate,
+                                    UIImagePickerControllerDelegate,
+                                    UINavigationControllerDelegate {
 
     // MARK: - Outlets
 
@@ -110,9 +113,9 @@ class StaffMovieInfoViewController: UIViewController, DateScrollPickerDelegate, 
         titleDataSource = CinemaAnimatedTextFieldDataSource(validationRegex: ".{\(minimumTitleLength),\(maximumTitleLength)}",
                                                             validationError: "Название должно быть не пустым и не длиннее \(maximumTitleLength) символов.",
                                                             limit: maximumTitleLength) {
-                                                                self.descriptionTextField.becomeFirstResponder()
-                                                                let frame = self.contentScrollView.convert(self.descriptionTextField.frame, from: self.descriptionTextField)
-                                                                self.contentScrollView.scrollRectToVisible(frame, animated: true)
+            _ = self.descriptionTextField.becomeFirstResponder()
+            let frame = self.contentScrollView.convert(self.descriptionTextField.frame, from: self.descriptionTextField)
+            self.contentScrollView.scrollRectToVisible(frame, animated: true)
         }
         titleTextField.setupTitle(with: titleDataSource)
 
@@ -191,7 +194,7 @@ class StaffMovieInfoViewController: UIViewController, DateScrollPickerDelegate, 
                 _ = CinemaDataProvider.shared.remove(movieToSend).done { }
                 self.showError($0)
             }
-            .finally { self.setActivity(visible: false) }
+            .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)) { self.setActivity(visible: false) } }
     }
 
     @IBAction private func remove(_ sender: Any) {
@@ -205,7 +208,7 @@ class StaffMovieInfoViewController: UIViewController, DateScrollPickerDelegate, 
                 .remove(movie)
                 .done { _ = self.navigationController?.popViewController(animated: true) }
                 .catch { self.showError($0) }
-                .finally { self.setActivity(visible: false) }
+                .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)) { self.setActivity(visible: false) } }
         }))
         alert.addAction(.init(title: "Отмена", style: .cancel))
 
@@ -225,10 +228,8 @@ class StaffMovieInfoViewController: UIViewController, DateScrollPickerDelegate, 
 
     @objc
     func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            saveButtonBottomConstraint.constant = 8
-            UIView.animate(withDuration: 0.25) { self.view.layoutIfNeeded() }
-        }
+        saveButtonBottomConstraint.constant = 8
+        UIView.animate(withDuration: 0.25) { self.view.layoutIfNeeded() }
     }
 
     @objc

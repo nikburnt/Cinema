@@ -33,6 +33,7 @@ class CustomerMovieInfoViewController: UIViewController {
 
     // MARK: - Public Variables
 
+    // swiftlint:disable implicitly_unwrapped_optional
     var movie: PublicMovieWithTicket! { didSet { configure(with: movie) } }
 
 
@@ -130,10 +131,10 @@ class CustomerMovieInfoViewController: UIViewController {
             .claimTicket(for: movie)
             .done { self.movie = $0 }
             .catch { self.showError($0) }
-            .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { self.setActivity(visible: false) } }
+            .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)) { self.setActivity(visible: false) } }
     }
 
-    private func refoundTicket()  {
+    private func refoundTicket() {
         let alert = UIAlertController(title: "Подтверждение",
                                       message: "Вы дествительно хотите отменить бронирование?",
                                       preferredStyle: .alert)
@@ -143,7 +144,7 @@ class CustomerMovieInfoViewController: UIViewController {
                 .refoundTicket(for: self.movie)
                 .done { self.movie = $0 }
                 .catch { self.showError($0) }
-                .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { self.setActivity(visible: false) } }
+                .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)) { self.setActivity(visible: false) } }
         }))
         alert.addAction(.init(title: "Остаивть билет", style: .cancel))
 
