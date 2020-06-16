@@ -10,23 +10,10 @@ import UIKit
 
 import Alamofire
 import AlamofireImage
-import AnimatedField
 import DateScrollPicker
 import GeometricLoaders
 import LGButton
 import PromiseKit
-
-
-// MARK: - Private Constants
-
-private let oneLineHeight: CGFloat = 47.333
-private let descriptionInitialHeight: CGFloat = 80 - oneLineHeight
-
-private let minimumTitleLength = 1
-private let maximumTitleLength = 60
-private let minimumDescriptionLength = 12
-private let maximumDescriptionLength = 1000
-
 
 
 // MARK: - StaffMovieInfoViewController
@@ -46,7 +33,7 @@ class CustomerMovieInfoViewController: UIViewController {
 
     // MARK: - Public Variables
 
-    var movie: PublicMovie! { didSet { configure(with: movie) } }
+    var movie: PublicMovieWithTicket! { didSet { configure(with: movie) } }
 
 
     // MARK: - Private Variables
@@ -80,60 +67,27 @@ class CustomerMovieInfoViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction private func ticket(_ sender: Any) {
-//        guard let title = titleTextField.text, let description = descriptionTextField.text else {
-//            return
-//        }
-//
-//        guard !title.isEmpty else {
-//            titleTextField.showAlert(titleTextField.dataSource?.animatedFieldValidationError(titleTextField))
-//            return
-//        }
-//        guard !description.isEmpty else {
-//            descriptionTextField.showAlert(descriptionTextField.dataSource?.animatedFieldValidationError(descriptionTextField))
-//            return
-//        }
-//
-//        guard titleTextField.isValid && descriptionTextField.isValid else { return }
-//
-//        setActivity(visible: true)
-//        let promise: Promise<PublicMovie>
-//        var movieToSend: PublicMovie
-//        if let movie = movie {
-//            var copy = movie
-//            copy.title = title
-//            copy.description = description
-//            copy.showtime = showtime ?? Date()
-//            movieToSend = copy
-//            promise = CinemaDataProvider.shared.update(movieToSend)
-//        } else {
-//            movieToSend = PublicMovie(title: title, description: description, showtime: self.showtime ?? Date())
-//            promise = CinemaDataProvider.shared.create(movieToSend)
-//        }
-//
-//        promise
-//            .then { movie -> Promise<PublicMovie> in
-//                movieToSend = movie
-//                return self.uploadPoster(movie)
-//            }
-//            .done { _ in _ = self.navigationController?.popViewController(animated: true) }
-//            .catch {
-//                _ = CinemaDataProvider.shared.remove(movieToSend).done { }
-//                self.showError($0)
-//            }
-//            .finally { self.setActivity(visible: false) }
+        if movie.hasTicket {
+            refoundTicket()
+        } else if movie.tickets == 0 {
+            // do nothing
+        } else {
+            claimTicket()
+        }
     }
 
 
     // MARK: - Private Methods
 
-    private func configure(with movie: PublicMovie) {
+    private func configure(with movie: PublicMovieWithTicket) {
         guard isViewLoaded else {
             requireMoviewSetup = true
             return
         }
 
+        let placeholderImage = Image(named: "movie-placeholder").require()
         let hidePoster = {
-            self.poster.image = #imageLiteral(resourceName: "movie-placeholder@3x.png")
+            self.poster.image = placeholderImage
         }
 
         if let posterUrl = movie.posterUrl {
@@ -148,38 +102,67 @@ class CustomerMovieInfoViewController: UIViewController {
         self.titleLabel.text = movie.title
         self.descriptionLabel.text = movie.description
         self.showtimeLabel.text = dateFormatter.string(from: movie.showtime)
+
+        if movie.hasTicket {
+            ticketButton.titleString = "Отменить бронирование"
+            ticketButton.bgColor = #colorLiteral(red: 0.7764705882, green: 0.1568627451, blue: 0.1568627451, alpha: 1)
+        } else if movie.tickets == 0 {
+            ticketButton.titleString = "Нет билетов"
+            ticketButton.bgColor = #colorLiteral(red: 0.2901960784, green: 0.462745098, blue: 0.5882352941, alpha: 1)
+        } else {
+            ticketButton.titleString = "Забронировать билет"
+            ticketButton.bgColor = #colorLiteral(red: 0.2901960784, green: 0.462745098, blue: 0.5882352941, alpha: 1)
+        }
     }
 
-//    private func setActivity(visible: Bool) {
-//        self.navigationController?.navigationBar.isUserInteractionEnabled = !visible
-//        DispatchQueue.main.async {
-//            UIView.animate(withDuration: 0.3) {
-//                self.progressView.alpha = visible ? 1 : 0
-//            }
-//        }
-//    }
-//
-//    private func showError(_ error: Error) {
-//        let message: String
-//        if case NetworkingErrors.movieNotExists = error {
-//            message = "Такого фильма не существует в базе."
-//        } else if error is URLError {
-//            message = "Ошибка соединения с сервером. Проверьте подключение или повторите попытку позже."
-//        } else {
-//            message = "Неизвестаня ошибка. Свяжитесь со службой технической поддержки."
-//        }
-//        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-//        alert.addAction(.init(title: "Ok", style: .default))
-//
-//        self.present(alert, animated: true, completion: nil)
-//    }
-//
-//    private func uploadPoster(_ movie: PublicMovie) -> Promise<PublicMovie> {
-//        guard let image = newImage else {
-//            return .value(movie)
-//        }
-//
-//        return CinemaDataProvider.shared.upload(movie, poster: image)
-//    }
+    private func setActivity(visible: Bool) {
+        self.navigationController?.navigationBar.isUserInteractionEnabled = !visible
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.3) {
+                self.progressView.alpha = visible ? 1 : 0
+            }
+        }
+    }
+
+    private func claimTicket() {
+        self.setActivity(visible: true)
+        CinemaDataProvider.shared
+            .claimTicket(for: movie)
+            .done { self.movie = $0 }
+            .catch { self.showError($0) }
+            .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { self.setActivity(visible: false) } }
+    }
+
+    private func refoundTicket()  {
+        let alert = UIAlertController(title: "Подтверждение",
+                                      message: "Вы дествительно хотите отменить бронирование?",
+                                      preferredStyle: .alert)
+        alert.addAction(.init(title: "Отменить бронь", style: .destructive, handler: { _ in
+            self.setActivity(visible: true)
+            CinemaDataProvider.shared
+                .refoundTicket(for: self.movie)
+                .done { self.movie = $0 }
+                .catch { self.showError($0) }
+                .finally { DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { self.setActivity(visible: false) } }
+        }))
+        alert.addAction(.init(title: "Остаивть билет", style: .cancel))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    private func showError(_ error: Error) {
+        let message: String
+        if case NetworkingErrors.movieNotExists = error {
+            message = "Такого фильма не существует в базе."
+        } else if error is URLError {
+            message = "Ошибка соединения с сервером. Проверьте подключение или повторите попытку позже."
+        } else {
+            message = "Неизвестаня ошибка. Свяжитесь со службой технической поддержки."
+        }
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok", style: .default))
+
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }

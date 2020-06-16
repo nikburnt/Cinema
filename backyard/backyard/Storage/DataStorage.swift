@@ -8,11 +8,14 @@
 
 import Async
 import Fluent
+import MySQL
 
 
 // MARK: - DataStorage
 
 protocol DataStorage {
+
+    var database: MySQLDatabase { get }
 
     // Storage initialzation, this check is not needed here
     // swiftlint:disable function_parameter_count

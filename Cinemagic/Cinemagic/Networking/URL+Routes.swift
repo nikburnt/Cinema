@@ -36,7 +36,17 @@ extension URL {
 
         }
 
-        static let movies = v1Route.appendingPathComponent("movies")
+        enum movies {
+            static let route = v1Route.appendingPathComponent("movies")
+
+
+            enum withTickets {
+                static let route = v1Route.appendingPathComponent("movies-with-tickets")
+
+                static let claim = route.appendingPathComponent("claim")
+                static let refound = route.appendingPathComponent("refound")
+            }
+        }
 
     }
 

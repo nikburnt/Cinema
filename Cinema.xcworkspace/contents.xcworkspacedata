@@ -30,6 +30,9 @@
          <FileRef
             location = "group:/Users/nikburnt/Development/RnD/BNTU/Cinema/Common/Model/PublicMovie.swift">
          </FileRef>
+         <FileRef
+            location = "group:/Users/nikburnt/Development/RnD/BNTU/Cinema/Common/Model/PublicMovieWithTicket.swift">
+         </FileRef>
       </Group>
    </Group>
    <FileRef

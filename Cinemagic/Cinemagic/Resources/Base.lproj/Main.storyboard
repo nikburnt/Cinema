@@ -739,7 +739,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Забронировать билет"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="ticket:" destination="Jh7-Cx-zBo" eventType="valueChanged" id="MxF-l4-vdK"/>
+                                    <action selector="ticket:" destination="Jh7-Cx-zBo" eventType="touchUpInside" id="shv-iV-YOd"/>
                                 </connections>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CZ-QT-ixN">

@@ -87,7 +87,7 @@ class BackyardVapor {
         let v1Route = router.grouped("v1")
 
         try v1Route.register(collection: UsersControllerV1(mailingService: mailingService))
-
+        try v1Route.register(collection: MovieWithTicketController())
         try v1Route.register(collection: CommonCRUDController<Movie>(route: "movies"))
     }
 

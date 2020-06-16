@@ -16,3 +16,9 @@ extension PublicMovie {
     var posterUrl: URL? { poster != nil ? URL.host.appendingPathComponent(poster.require()) : nil }
 
 }
+
+extension PublicMovieWithTicket {
+
+    var posterUrl: URL? { poster != nil ? URL.host.appendingPathComponent(poster.require()) : nil }
+
+}
