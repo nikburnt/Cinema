@@ -79,14 +79,20 @@ class LoginView: UIView, NibBasedView {
         if emailField.text?.isEmpty ?? true {
             somethingMissing = true
             emailField.showAlert("Адрес электронной почты не должен быть пустым.")
+        } else if !emailField.isValid {
+            somethingMissing = true
+            emailField.showAlert("Неверный формат адреса электронной почты")
         }
 
         if passwordField.text?.isEmpty ?? true {
             somethingMissing = true
             passwordField.showAlert("Пароль не должен быть пустым.")
+        } else if !passwordField.isValid {
+            somethingMissing = true
+            passwordField.showAlert("Должен быть 6 символов a-z и как минимум одной цифры.")
         }
 
-        if !somethingMissing && emailField.isValid && passwordField.isValid {
+        if !somethingMissing {
             // Unwrap is safe because validation passed before
             // swiftlint:disable force_unwrapping
             loginHandle?(emailField.text!, passwordField.text!)
@@ -98,14 +104,20 @@ class LoginView: UIView, NibBasedView {
         if emailField.text?.isEmpty ?? true {
             somethingMissing = true
             emailField.showAlert("Адрес электронной почты не должен быть пустым.")
+        } else if !emailField.isValid {
+            somethingMissing = true
+            emailField.showAlert("Неверный формат адреса электронной почты")
         }
 
         if passwordField.text?.isEmpty ?? true {
             somethingMissing = true
             passwordField.showAlert("Пароль не должен быть пустым.")
+        } else if !passwordField.isValid {
+            somethingMissing = true
+            passwordField.showAlert("Должен быть 6 символов a-z и как минимум одной цифры.")
         }
 
-        if !somethingMissing && emailField.isValid && passwordField.isValid {
+        if !somethingMissing {
             // Unwrap is safe because validation passed before
             // swiftlint:disable force_unwrapping
             registerHandle?(emailField.text!, passwordField.text!)

@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: - Private Constants
 
-private let minimumStrength = PasswordStrength.average
+private let minimumStrength = PasswordStrength.weak
 
 
 // MARK: - PasswordStrengts+Enough

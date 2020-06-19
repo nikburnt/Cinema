@@ -23,7 +23,7 @@ private let oneLineHeight: CGFloat = 47.333
 private let descriptionInitialHeight: CGFloat = 80 - oneLineHeight
 
 private let minimumTitleLength = 1
-private let maximumTitleLength = 60
+private let maximumTitleLength = 50
 private let minimumDescriptionLength = 12
 private let maximumDescriptionLength = 1000
 
@@ -69,7 +69,7 @@ class StaffMovieInfoViewController: UIViewController,
 
     private var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateFormat = "d MMMM yyyy"
         return dateFormatter
     }()
@@ -158,16 +158,19 @@ class StaffMovieInfoViewController: UIViewController,
             return
         }
 
-        guard !title.isEmpty else {
+        var allValid = true
+
+        if title.isEmpty || !titleTextField.isValid {
+            allValid = false
             titleTextField.showAlert(titleTextField.dataSource?.animatedFieldValidationError(titleTextField))
-            return
-        }
-        guard !description.isEmpty else {
-            descriptionTextField.showAlert(descriptionTextField.dataSource?.animatedFieldValidationError(descriptionTextField))
-            return
         }
 
-        guard titleTextField.isValid && descriptionTextField.isValid else { return }
+        if description.isEmpty || !descriptionTextField.isValid {
+            allValid = false
+            descriptionTextField.showAlert(descriptionTextField.dataSource?.animatedFieldValidationError(descriptionTextField))
+        }
+
+        guard allValid else { return }
 
         setActivity(visible: true)
         let promise: Promise<PublicMovie>
@@ -336,7 +339,7 @@ class StaffMovieInfoViewController: UIViewController,
             message = "Неизвестаня ошибка. Свяжитесь со службой технической поддержки."
         }
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .default))
+        alert.addAction(.init(title: "Ок", style: .default))
 
         self.present(alert, animated: true, completion: nil)
     }

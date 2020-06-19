@@ -208,6 +208,8 @@ class CustomerMoviesViewController: UITableViewController, UISearchResultsUpdati
     }
 
     private func filter(_ movies: [PublicMovieWithTicket]) {
+        let now = Date()
+        let movies = movies.filter { $0.showtime >= now }
         filteredMovies = isSearchBarEmpty ? movies : filtered(movies, using: searchController.searchBar.text ?? "")
     }
 

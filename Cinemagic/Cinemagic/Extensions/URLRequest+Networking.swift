@@ -47,8 +47,9 @@ extension URLRequest {
 
     // MARK: - Movies
 
-    static func allMovies() throws -> URLRequest {
-        let request = try URLRequest(url: URL.v1.movies.route, method: .get)
+    static func allMovies(bearer: String) throws -> URLRequest {
+        var request = try URLRequest(url: URL.v1.movies.route, method: .get)
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         return request
     }
 

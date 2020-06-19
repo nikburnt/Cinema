@@ -125,7 +125,7 @@ class CinemaDataProvider {
     // MARK: - Movies
 
     func moviesList() -> Promise<[PublicMovie]> {
-        networkProvider.allMovies()
+        networkProvider.allMovies(keychainProvider.token.require())
     }
 
     func update(_ movie: PublicMovie) -> Promise<PublicMovie> {

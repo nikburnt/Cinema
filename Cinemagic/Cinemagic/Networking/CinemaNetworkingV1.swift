@@ -92,8 +92,8 @@ class CinemaNetworkingV1 {
 
     // MARK: - Movies
 
-    func allMovies() -> Promise<[PublicMovie]> {
-        firstly { Promise<URLRequest>.value(try URLRequest.allMovies()) }
+    func allMovies(_ bearer: String) -> Promise<[PublicMovie]> {
+        firstly { Promise<URLRequest>.value(try URLRequest.allMovies(bearer: bearer)) }
             .then { Alamofire.request($0).responseData() }
             .map { try JSONDecoder.decode($0.data) }
     }

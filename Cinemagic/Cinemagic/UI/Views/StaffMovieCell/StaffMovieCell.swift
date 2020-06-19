@@ -31,7 +31,7 @@ class StaffMovieCell: UITableViewCell {
 
     // MARK: - Private Variables
 
-    private let dateFormatter: DateFormatter = .dateFormatter(using: " d MMMM")
+    private let dateFormatter: DateFormatter = .dateFormatter(using: "d MMMM")
 
 
     // MARK: - Lifecycle
