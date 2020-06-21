@@ -44,7 +44,7 @@ class CustomerMovieInfoViewController: UIViewController {
 
     private var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateFormat = "d MMMM yyyy"
         return dateFormatter
     }()
@@ -161,7 +161,7 @@ class CustomerMovieInfoViewController: UIViewController {
             message = "Неизвестаня ошибка. Свяжитесь со службой технической поддержки."
         }
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .default))
+        alert.addAction(.init(title: "Ок", style: .default))
 
         self.present(alert, animated: true, completion: nil)
     }

@@ -73,7 +73,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AnimatedField:
-    :commit: 8711ea3f9adb326e9c1af63b644f35f0815f4228
+    :commit: 0e532b8320f3b8705146fe04610a91b5d96cb47d
     :git: https://github.com/nikburnt/AnimatedField.git
   GeometricLoaders:
     :commit: fc54d1d92dd72b5cc9c20740ee3ff8e4d6ed061e
@@ -97,6 +97,6 @@ SPEC CHECKSUMS:
   Require: f93abc18dda985f665465cf027cea7166455fb28
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
 
-PODFILE CHECKSUM: 2290840799fe7bdfeecf052dc05e3a86a1d8fa43
+PODFILE CHECKSUM: 883062913d4bd1cd7c328042a12627af9a4f43aa
 
 COCOAPODS: 1.8.4

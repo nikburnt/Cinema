@@ -44,6 +44,7 @@
 		1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */; };
 		1C577B2F24700ED40047B87A /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 1C577B2E24700ED40047B87A /* Authentication */; };
 		1C577B3224713A180047B87A /* UsersControllerV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C577B3124713A180047B87A /* UsersControllerV1.swift */; };
+		1C5B8C6D249A5BB9004ED8BA /* MovieWithTicket+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5B8C6C249A5BB9004ED8BA /* MovieWithTicket+Update.swift */; };
 		1C7B956B247D106F009710B1 /* CommonCRUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B956A247D106F009710B1 /* CommonCRUDController.swift */; };
 		1C7D0BFB246B4E0B00139D45 /* Backyard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D0BFA246B4E0B00139D45 /* Backyard.swift */; };
 		1C7F66E22465AB5300781406 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F66E12465AB5300781406 /* main.swift */; };
@@ -128,6 +129,7 @@
 		1C577B27246FE2640047B87A /* BackyardVapor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackyardVapor.swift; sourceTree = "<group>"; };
 		1C577B2B246FEA440047B87A /* SwiftyBeaverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaverService.swift; sourceTree = "<group>"; };
 		1C577B3124713A180047B87A /* UsersControllerV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersControllerV1.swift; sourceTree = "<group>"; };
+		1C5B8C6C249A5BB9004ED8BA /* MovieWithTicket+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieWithTicket+Update.swift"; sourceTree = "<group>"; };
 		1C7B956A247D106F009710B1 /* CommonCRUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCRUDController.swift; sourceTree = "<group>"; };
 		1C7D0BFA246B4E0B00139D45 /* Backyard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backyard.swift; sourceTree = "<group>"; };
 		1C7F66DE2465AB5300781406 /* backyard */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = backyard; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -414,6 +416,7 @@
 				1C9DA86024980C79007180AD /* MovieWithTicket.swift */,
 				1C9DA86224980CB7007180AD /* MovieWithTicket+Conten.swift */,
 				1C9DA86E249822B9007180AD /* MovieWithTicket+Public.swift */,
+				1C5B8C6C249A5BB9004ED8BA /* MovieWithTicket+Update.swift */,
 			);
 			path = MovieWithTicket;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				1C0ECF7C2477D1F200D5A597 /* User+Password.swift in Sources */,
 				1C0ECF7A2477CA5100D5A597 /* User+Registration.swift in Sources */,
 				1C8315D224716521004B9D0C /* User+Content.swift in Sources */,
+				1C5B8C6D249A5BB9004ED8BA /* MovieWithTicket+Update.swift in Sources */,
 				1C577B2C246FEA440047B87A /* SwiftyBeaverService.swift in Sources */,
 				1C0FC580246C8B25002E0EA4 /* OutputProcessor.swift in Sources */,
 				1C0ECF782477C8F400D5A597 /* User+Update.swift in Sources */,

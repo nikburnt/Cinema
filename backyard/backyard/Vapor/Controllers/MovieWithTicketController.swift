@@ -35,8 +35,8 @@ struct MovieWithTicketController: RouteCollection {
         let authorizedRoute = unauthorizedRoute.grouped(tokenAuthMiddleware, guardAuthMiddleware)
 
         authorizedRoute.get(use: getAllHandler)
-        authorizedRoute.post(Movie.self, at: "claim", use: addHandler)
-        authorizedRoute.post(Movie.self, at: "refound", use: deleteHandler)
+        authorizedRoute.post(MovieWithTicket.UpdateData.self, at: "claim", use: addHandler)
+        authorizedRoute.post(MovieWithTicket.UpdateData.self, at: "refound", use: deleteHandler)
     }
 
 
@@ -63,7 +63,7 @@ struct MovieWithTicketController: RouteCollection {
     }
 
 
-    private func addHandler(_ request: Request, data: Movie) throws -> Future<PublicMovieWithTicket> {
+    private func addHandler(_ request: Request, data: MovieWithTicket.UpdateData) throws -> Future<PublicMovieWithTicket> {
         guard let movieId = data.id else { throw Abort(.badRequest, reason: "Movie has no id.") }
         let loggedInUser: User = try request.requireAuthenticated()
         let currentUserId = try loggedInUser.requireID()
@@ -75,7 +75,7 @@ struct MovieWithTicketController: RouteCollection {
             .map { $0.makePublic(currentUserId) }
     }
 
-    private func deleteHandler(_ request: Request, data: Movie) throws -> Future<PublicMovieWithTicket> {
+    private func deleteHandler(_ request: Request, data: MovieWithTicket.UpdateData) throws -> Future<PublicMovieWithTicket> {
         guard let movieId = data.id else { throw Abort(.badRequest, reason: "Movie has no id.") }
         let loggedInUser: User = try request.requireAuthenticated()
         let currentUserId = try loggedInUser.requireID()

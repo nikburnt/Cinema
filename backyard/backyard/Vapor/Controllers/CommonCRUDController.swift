@@ -76,15 +76,8 @@ struct CommonCRUDController<T: CRUDModel>: RouteCollection {
         let guardAuthMiddleware = User.guardAuthMiddleware()
         let authorizedRoute = unauthorizedRoute.grouped(tokenAuthMiddleware, guardAuthMiddleware)
 
-
-        // Public Actions
-
-        unauthorizedRoute.get(use: getAllHandler)
-        unauthorizedRoute.get(T.parameter, use: getHandler)
-
-
-        // Staff Only Actions
-
+        authorizedRoute.get(use: getAllHandler)
+        authorizedRoute.get(T.parameter, use: getHandler)
         authorizedRoute.post(T.CreateData.self, use: addHandler)
         authorizedRoute.put(T.parameter, use: updateHandler)
         authorizedRoute.patch(T.parameter, use: addPictureHandler)
@@ -95,11 +88,19 @@ struct CommonCRUDController<T: CRUDModel>: RouteCollection {
     // MARK: - Private Methods
 
     private func getAllHandler(_ request: Request) throws -> Future<[T]> {
-        T.query(on: request).decode(data: T.self).all()
+        guard try request.authenticated(User.self)?.role == .staff else {
+            throw Abort(.forbidden, reason: "You are not allowed to get \(route).")
+        }
+
+       return  T.query(on: request).decode(data: T.self).all()
     }
 
     private func getHandler(_ request: Request) throws -> Future<T> {
-        try request.parameters.nextFuture(T.self)
+        guard try request.authenticated(User.self)?.role == .staff else {
+            throw Abort(.forbidden, reason: "You are not allowed to get \(route).")
+        }
+
+        return try request.parameters.nextFuture(T.self)
     }
 
     private func addHandler(_ request: Request, data: T.CreateData) throws -> Future<T> {
@@ -120,7 +121,8 @@ struct CommonCRUDController<T: CRUDModel>: RouteCollection {
         return try flatMap(to: T.self,
                            request.parameters.nextFuture(T.self),
                            request.content.decode(T.UpdateData.self)) { data, updateData in
-            data.updated(with: updateData).save(on: request)
+            try updateData.validate()
+            return data.updated(with: updateData).save(on: request)
         }
     }
 

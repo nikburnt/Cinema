@@ -104,6 +104,9 @@ struct CommandLineApp: ParsableCommand {
 
     // MARK: - ParsableCommand
 
+    // swiftlint:disable identifier_name
+    static var _commandName: String { "backyard" }
+
     func run() throws {
         let storage = MySQLDataStorage(host: self.dbHost ?? defaultHost,
                                        port: self.dbPort ?? defaultPort,

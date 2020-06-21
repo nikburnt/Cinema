@@ -121,7 +121,7 @@ class LoadingViewController: UIViewController {
     private func showLoginError(_ error: Error) {
         let message = error is URLError ? "Ошибка соединения с сервером. Проверьте подключение или повторите попытку позже." : "Логин и/или пароль не верные."
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .default))
+        alert.addAction(.init(title: "Ок", style: .default))
 
         let presentedViewController = SwiftEntryKit.window?.rootViewController ?? self
         presentedViewController.present(alert, animated: true, completion: nil)
@@ -137,7 +137,7 @@ class LoadingViewController: UIViewController {
             message = "Неизвестаня ошибка. Свяжитесь со службой технической поддержки."
         }
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .default))
+        alert.addAction(.init(title: "Ок", style: .default))
 
         let presentedViewController = SwiftEntryKit.window?.rootViewController ?? self
         presentedViewController.present(alert, animated: true, completion: nil)
@@ -145,7 +145,7 @@ class LoadingViewController: UIViewController {
 
     private func showPasswordResetted() {
         let alert = UIAlertController(title: "Информация", message: "На указанную Вами почту был отправлен новый пароль для входа.", preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .default))
+        alert.addAction(.init(title: "Ок", style: .default))
 
         let presentedViewController = SwiftEntryKit.window?.rootViewController ?? self
         presentedViewController.present(alert, animated: true, completion: nil)
@@ -161,17 +161,10 @@ class LoadingViewController: UIViewController {
             message = "Неизвестаня ошибка. Свяжитесь со службой технической поддержки."
         }
         let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .default))
+        alert.addAction(.init(title: "Ок", style: .default))
 
         let presentedViewController = SwiftEntryKit.window?.rootViewController ?? self
         presentedViewController.present(alert, animated: true, completion: nil)
-    }
-
-    private func processExpiredToken() {
-        CinemaDataProvider.shared
-            .refreshToken()
-            .done { self.goToMain() }
-            .catch { _ in self.showLogin() }
     }
 
 }
