@@ -9,6 +9,12 @@
 import Alamofire
 
 
+// MARK: - URLRequestErrors
+
+enum URLRequestErrors: Error {
+    case idNotSpecified
+}
+
 // MARK: - URLRequest+Networking
 
 extension URLRequest {
@@ -54,7 +60,8 @@ extension URLRequest {
     }
 
     static func update(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
-        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent(movie.id.require().description), method: .put)
+        guard let id = movie.id else { throw URLRequestErrors.idNotSpecified }
+        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent("\(id)"), method: .put)
         request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try JSONEncoder.encodeWithStringDate(movie)
@@ -71,14 +78,16 @@ extension URLRequest {
     }
 
     static func upload(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
-        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent(movie.id.require().description), method: .patch)
+        guard let id = movie.id else { throw URLRequestErrors.idNotSpecified }
+        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent("\(id)"), method: .patch)
         request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         request.addValue("multipart/form-data;boundary=----WebKitFormBoundaryyrV7KO0BoCBuDbTL", forHTTPHeaderField: "Content-Type")
         return request
     }
 
     static func remove(_ movie: PublicMovie, bearer: String) throws -> URLRequest {
-        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent(movie.id.require().description), method: .delete)
+        guard let id = movie.id else { throw URLRequestErrors.idNotSpecified }
+        var request = try URLRequest(url: URL.v1.movies.route.appendingPathComponent("\(id)"), method: .delete)
         request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
         return request
     }

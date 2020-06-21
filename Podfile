@@ -9,11 +9,8 @@ target 'backyardTests' do
   pod 'Nimble'
 end
 
-target 'Cinemagic' do
-  platform :ios, '13.0'
-  use_frameworks!
-  project 'Cinemagic/Cinemagic.xcodeproj'
 
+def core()
   pod 'AlamofireImage'
   pod 'AttributedLib'
   pod 'AnimatedField', :git => 'https://github.com/nikburnt/AnimatedField.git', :branch => 'master'
@@ -27,4 +24,24 @@ target 'Cinemagic' do
   pod 'PromiseKit'
   pod 'PromiseKit/Alamofire'
   pod 'Require'
+end
+
+target 'Cinemagic' do
+  platform :ios, '13.0'
+  use_frameworks!
+  project 'Cinemagic/Cinemagic.xcodeproj'
+
+  core()
+end
+
+
+target 'CinemagicTests' do
+  platform :ios, '13.0'
+  use_frameworks!
+  project 'Cinemagic/Cinemagic.xcodeproj'
+
+  pod 'Quick'
+  pod 'Nimble'
+
+  core()
 end

@@ -167,11 +167,4 @@ class LoadingViewController: UIViewController {
         presentedViewController.present(alert, animated: true, completion: nil)
     }
 
-    private func processExpiredToken() {
-        CinemaDataProvider.shared
-            .refreshToken()
-            .done { self.goToMain() }
-            .catch { _ in self.showLogin() }
-    }
-
 }

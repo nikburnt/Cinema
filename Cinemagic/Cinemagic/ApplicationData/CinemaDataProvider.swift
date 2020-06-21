@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 import PromiseKit
-import Require
 
 
 // MARK: - UserState
@@ -37,12 +36,15 @@ class CinemaDataProvider {
 
     static var shared = CinemaDataProvider()
 
-    var userState: UserState {
+
+    // MARK: - Private Variables
+
+    private var userState: UserState {
         guard let tokenExpirationDate = keychainProvider.tokenExpirationDate,
-              keychainProvider.token != nil,
-              keychainProvider.email != nil,
-              keychainProvider.password != nil else {
-            return .notLoggedIn
+            keychainProvider.token != nil,
+            keychainProvider.email != nil,
+            keychainProvider.password != nil else {
+                return .notLoggedIn
         }
 
         let result: UserState = tokenExpirationDate < Date() ? .tokenExpired : .loggedIn
@@ -66,11 +68,6 @@ class CinemaDataProvider {
 
     // MARK: - Authentication
 
-    func refreshToken() -> Promise<Void> {
-        userState == .tokenExpired ? login(email: keychainProvider.email.require(), password: keychainProvider.password.require())
-                                   : .init(error: CinemaErrors.notLoggedIn)
-    }
-
     func login(email: String, password: String) -> Promise<Void> {
         networkProvider
             .login(email: email, password: password)
@@ -81,6 +78,10 @@ class CinemaDataProvider {
                 self.keychainProvider.tokenExpirationDate = response.expirationDate
                 return ()
             }
+        .recover {
+            self.logout()
+            throw $0
+        }
     }
 
     func register(email: String, password: String) -> Promise<Void> {
@@ -122,42 +123,58 @@ class CinemaDataProvider {
         return result
     }
 
+
     // MARK: - Movies
 
     func moviesList() -> Promise<[PublicMovie]> {
-        networkProvider.allMovies(keychainProvider.token.require())
-    }
-
-    func update(_ movie: PublicMovie) -> Promise<PublicMovie> {
-        networkProvider.update(movie, bearer: keychainProvider.token.require())
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.allMovies(token)
     }
 
     func create(_ movie: PublicMovie) -> Promise<PublicMovie> {
-        networkProvider.create(movie, bearer: keychainProvider.token.require())
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.create(movie, bearer: token)
+    }
+
+    func update(_ movie: PublicMovie) -> Promise<PublicMovie> {
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.update(movie, bearer: token)
     }
 
     func upload(_ movie: PublicMovie, poster: UIImage) -> Promise<PublicMovie> {
-        networkProvider.upload(movie, poster: poster, bearer: keychainProvider.token.require())
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.upload(movie, poster: poster, bearer: token)
     }
 
     func remove(_ movie: PublicMovie) -> Promise<Void> {
-        networkProvider.remove(movie, bearer: keychainProvider.token.require())
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.remove(movie, bearer: token)
     }
 
 
     // MARK: - Movies With Tickets
 
     func moviesWithTicketsList() -> Promise<[PublicMovieWithTicket]> {
-        networkProvider.allMoviesWithTickets(bearer: keychainProvider.token.require())
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.allMoviesWithTickets(bearer: token)
     }
 
     func claimTicket(for movie: PublicMovieWithTicket) -> Promise<PublicMovieWithTicket> {
-        networkProvider.claimTicket(for: movie, bearer: keychainProvider.token.require())
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.claimTicket(for: movie, bearer: token)
     }
 
     func refoundTicket(for movie: PublicMovieWithTicket) -> Promise<PublicMovieWithTicket> {
-        networkProvider.refoundTicket(for: movie, bearer: keychainProvider.token.require())
+        guard let token = keychainProvider.token else { return .init(error: CinemaErrors.notLoggedIn) }
+        return networkProvider.refoundTicket(for: movie, bearer: token)
     }
 
+
+    // MARK: - Private Methods
+
+    func refreshToken() -> Promise<Void> {
+        userState == .tokenExpired ? login(email: keychainProvider.email.require(), password: keychainProvider.password.require())
+            : .init(error: CinemaErrors.notLoggedIn)
+    }
 
 }
